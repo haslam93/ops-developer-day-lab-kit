@@ -14,6 +14,14 @@ Every prompt in the lab guide, ready to copy. They work the same in VS Code and 
 Reply with the single word READY.
 ```
 
+### Own form only: create the outline
+
+```
+Run tools/extract-form/extract_form_outline.py on forms/my-form/form.pdf.
+Install its one dependency first if it is missing.
+Tell me how many fields it found.
+```
+
 ### Write the form spec
 
 ```

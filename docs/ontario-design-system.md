@@ -18,11 +18,12 @@ websites and applications. Use it for every page you build today.
 
 | Option | Use it when | How |
 | --- | --- | --- |
-| Complete styles package | Plain HTML, or any server-rendered pages | `npm install @ongov/ontario-design-system-complete-styles` |
+| Complete styles package | Plain HTML, or any server-rendered pages | `npm install @ongov/ontario-design-system-complete-styles`. The compiled CSS is in the package at `dist/styles/css/compiled/ontario-theme.min.css`. Fonts and other assets are under `dist`. |
 | Web component library | You want ready-made elements such as `<ontario-button>` | `npm install @ongov/ontario-design-system-component-library` (React: `...-component-library-react`, Angular: `...-component-library-angular`) |
 | Distribution package | No npm, or you want the HTML samples | Download the ZIP from the "Getting started for developers" page, unzip it into your project and import `styles/ds-theme.min.css` |
 
 The distribution package includes an `html-samples` folder with the HTML for each component.
+Whichever option you use, serve the files from your own application. Do not link to a CDN.
 
 ## Components a form needs
 

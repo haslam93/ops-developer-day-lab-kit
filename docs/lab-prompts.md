@@ -1,0 +1,220 @@
+# Lab prompts
+
+Every prompt in the lab guide, ready to copy. They work the same in VS Code and in the GitHub Copilot app.
+
+- Replace `<form>` with your form's folder name under `forms`.
+- Replace other values in `<angle brackets>` with your own.
+- Use made-up data only.
+
+## Lab 1
+
+### Check Copilot
+
+```
+Reply with the single word READY.
+```
+
+### Write the form spec
+
+```
+Read forms/<form>/outline.md. It is the content of an Ontario government PDF form:
+sections, fields, labels, options and the scripts behind its rules.
+Create docs/form-spec.md from it. Use docs/form-spec-template.md as the layout.
+Do not write any application code.
+
+List every question a person answers, grouped by section, with: ID, label as on the
+form, type, required (yes, no or unknown), options or format, rule or condition, and
+who completes it (applicant, organization or office).
+Then list the rules that show, hide, enable or disable fields, the groups that repeat,
+the calculations and format checks, and the signatures.
+Leave out buttons, fonts, page layout and navigation scripts.
+Finish with anything you could not work out from the outline.
+```
+
+### Correct the form spec
+
+```
+In docs/form-spec.md, field <ID> is wrong: <what the PDF shows>.
+Correct that row only.
+```
+
+## Lab 2
+
+### Pull the user story from Azure DevOps
+
+```
+Use the Azure DevOps MCP server. In project <project>, get work item <number>.
+Show its title, description and acceptance criteria exactly as written.
+Do not create or change anything in Azure DevOps.
+Then save that text as docs/story.md.
+```
+
+### Plan the application
+
+```
+Plan a small web application that puts the form in docs/form-spec.md online and
+meets docs/story.md. Follow .github/copilot-instructions.md.
+
+Stack: <your stack, or: the simplest option in the project instructions>.
+Build only the questions the applicant answers. Leave out sections completed by an
+organization or an office, and any section the spec marks "not today".
+Include the required and format checks, the rules that show, hide or enable fields,
+the repeating groups, and a declaration checkbox with a typed full name in place of
+each signature.
+On submit, check every rule again on the server, store the submission in a local
+file and show a confirmation page with a reference number.
+Plain pages are fine for now. The Ontario Design System comes in the next lab.
+Add a test for every rule.
+List the files you will create, the commands that start the application and run
+the tests, and any decision you need from me.
+```
+
+### Run the application
+
+```
+Start the application and give me the address to open in my browser.
+Tell me how to stop it.
+```
+
+### Fix one gap
+
+```
+In the web form, field <ID> is wrong: <what happens now>.
+The form spec says: <the rule>.
+Fix it. Add a test that fails before the fix and passes after it. Run the tests.
+```
+
+### Optional: record progress in Azure DevOps
+
+```
+Use the Azure DevOps MCP server to add this comment to work item <number>:
+"First version built by <your name>. <n> of <m> questions were right after one prompt."
+```
+
+## Lab 3
+
+### Apply the Ontario Design System
+
+```
+Restyle the web form with the Ontario Design System.
+Read docs/ontario-design-system.md first. Add the design system with the option
+that suits this stack.
+Use its header, footer, fieldsets, labels, hint text, text inputs, text areas, radio
+buttons, checkboxes, dropdown lists, buttons and error messaging. Copy the markup and
+class names from the design system's own samples.
+Group the questions under the same section headings as the PDF.
+Show errors as the design system describes: a summary at the top of the page that
+links to each field, and a message at each field.
+Write custom CSS only where no component fits, and tell me where you did.
+Keep every question, rule and test working. Run the tests before you finish.
+```
+
+### Accessibility review (Accessibility Reviewer agent)
+
+```
+Review the web form's pages for accessibility problems against WCAG 2.0 Level AA
+and docs/accessibility-checklist.md. For each finding give the file and line, who
+is affected and the fix. Do not edit files.
+```
+
+### Fix the accessibility findings
+
+```
+Fix the findings listed in docs/a11y-findings.md.
+Change only what each finding needs. Keep every rule and test working.
+Then mark each finding in that file as fixed or not fixed, with the reason.
+```
+
+## Lab 4
+
+### Build the address lookup service
+
+```
+Build the shared address lookup service described in
+docs/address-lookup-contract.md, in services/address-lookup.
+Follow the contract exactly. Keep the service separate from the web application:
+its own start command and its own tests.
+Add a test for each response in the contract. Run the tests.
+Tell me how to start the service, and give me three addresses to try in my browser:
+one found, one not found and the one that simulates an outage.
+```
+
+### Connect the form to the service
+
+```
+Connect the address questions in the web form to the address lookup service at
+http://localhost:4000, as docs/address-lookup-contract.md describes.
+When the user enters a postal code, fill in the city and province. The user can
+still change them.
+If the service finds nothing, is down or is slow, say so in plain words and let
+the user type the address.
+Keep the format checks from the form spec. If the address block repeats, the
+lookup works in every copy.
+Add tests for found, not found and unavailable. Run the tests.
+```
+
+### Test the form with Playwright
+
+```
+Add end-to-end tests with Playwright in app/e2e.
+Read docs/testing-with-playwright.md first.
+Use the Microsoft Edge that is installed on this computer (channel "msedge").
+Do not download other browsers.
+Write these tests, with made-up data:
+1. Complete the form with valid answers and submit: a reference number is shown.
+2. Submit with a required question empty: the error summary appears and links to
+   the field.
+3. Each rule in docs/form-spec.md that shows, hides or enables a field.
+4. Add and remove a repeating group.
+5. Complete and submit the form using the keyboard only.
+6. Address lookup: found, not found and unavailable.
+Find elements by their label or role, as a user would.
+Run the tests. If a test finds a real fault, fix the application. If the test is
+wrong, fix the test. Tell me which was which.
+```
+
+### Add an accessibility check to the tests
+
+```
+Add an accessibility check to the Playwright tests with @axe-core/playwright, for
+WCAG 2.0 Level A and AA. Check the empty form, the form showing errors and the
+confirmation page.
+Run the tests and list each violation with the element it is on. Then fix the
+violations and run the tests again.
+```
+
+### Optional: let Copilot explore the form in a browser
+
+```
+Open the web form in a browser and try to break it: unexpected input, very long
+answers, the Back button, submitting twice. Use made-up data.
+List what you find, with the steps to reproduce each one. Do not change any code.
+```
+
+### Write the hand-off note
+
+```
+Write docs/handoff.md, one page, using only what is in this repository.
+No estimates and no praise.
+1. What the web form does now.
+2. What was converted from the PDF: number of questions, rules and repeating groups.
+3. What was left out and why.
+4. Test and accessibility results, from the last test run and docs/a11y-findings.md.
+   Write "not run" for anything that is missing.
+5. What is still needed before real use: sign-in, the real back end, privacy and
+   security review, French, records retention, testing with users.
+6. Shared services this form could use.
+```
+
+## Advanced track
+
+### Capture the process as a skill
+
+```
+Create a project skill named form-to-app in .github/skills/form-to-app.
+It converts one Ontario government PDF form into a web form in this repository, in
+the order used today: write the form spec and stop for my review, plan, build,
+apply the Ontario Design System, check accessibility, then test with Playwright.
+It stops and asks me before each stage that changes files.
+Include a description of when to use the skill.
+```

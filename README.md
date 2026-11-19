@@ -17,6 +17,12 @@ cd ops-developer-day-lab-kit
 Open the folder in **VS Code**, in the **GitHub Copilot app**, or in both at once.
 Both read the same instructions, agent and files from this folder.
 
+## What you need
+
+- VS Code and the GitHub Copilot app, signed in with an OPS account that has a GitHub Copilot licence.
+- Git, Node.js 22 or later, Microsoft Edge and Adobe Acrobat Reader.
+- Python 3.9 or later, only if you choose a form from your own ministry.
+
 ## What is in the kit
 
 | Path | What it is | Use it in |
@@ -24,10 +30,10 @@ Both read the same instructions, agent and files from this folder.
 | `.github/copilot-instructions.md` | Project rules that Copilot reads on every request | Every lab |
 | `.github/agents/accessibility-reviewer.agent.md` | A custom agent that reviews pages for accessibility and cannot edit | Lab 3 |
 | `docs/lab-prompts.md` | Every prompt in the lab guide, ready to copy | Every lab |
-| `forms/` | The forms to convert, each with an outline Copilot can read | Lab 1 |
-| `tools/extract-form/` | Creates an outline from your own form's PDF | Lab 1, own form only |
+| `forms/` | Sample forms to convert, each with an outline Copilot can read | Lab 1 |
+| `tools/extract-form/` | Creates an outline from a form you choose from your own ministry | Lab 1, your own form only |
 | `docs/form-spec-template.md` | Layout for the form spec | Lab 1 |
-| `docs/user-story.md` | Offline copy of the Azure DevOps user story | Lab 2 |
+| `docs/user-story.md` | The user story you create in Azure DevOps | Lab 2 |
 | `docs/ontario-design-system.md` | Where to find the Ontario Design System and how to add it | Lab 3 |
 | `docs/accessibility-checklist.md` | AODA and WCAG 2.0 Level AA checklist for a form | Lab 3 |
 | `docs/address-lookup-contract.md` | Contract for the shared address lookup service you build | Lab 4 |
@@ -37,8 +43,9 @@ Both read the same instructions, agent and files from this folder.
 
 | Path | What it is |
 | --- | --- |
+| `forms/my-form/` | Your own ministry's form and its outline, if you choose one |
 | `docs/form-spec.md` | What your form asks and the rules it applies |
-| `docs/story.md` | The user story from Azure DevOps |
+| `docs/story.md` | Your user story, pulled from Azure DevOps through MCP |
 | `app/` | Your web application |
 | `services/address-lookup/` | Your address lookup service |
 | `docs/a11y-findings.md`, `docs/handoff.md` | Your accessibility findings and hand-off note |
@@ -47,16 +54,18 @@ Both read the same instructions, agent and files from this folder.
 
 | Item | Value |
 | --- | --- |
-| Azure DevOps organization and project | To be confirmed |
-| Work item numbers for the user stories | To be confirmed |
+| Azure DevOps organization and project | To be confirmed. One project for the event, with a backlog and a repository for each team |
+| Your team | Your table lead tells you which team is yours |
+| Your work item | You create it in Lab 2 |
 | Help channel | To be confirmed |
 
 ## Rules
 
 - Sign in with your OPS account only.
-- Made-up data only. Never type real personal information.
+- Made-up data only. Never type real personal information, and never start from a form that someone has filled in.
 - Use approved tools only: this kit and MCP servers from the ITOD registry.
-- Do not push or deploy what you build, and do not submit anything to AEM or another OPS system.
+- Do not deploy what you build, and do not submit anything to AEM or another OPS system.
+  Push it only to your team's repository in the event's Azure DevOps project, if your team has one.
 - Read what Copilot changed before you keep it.
 
 Forms are published by the Government of Ontario, © King's Printer for Ontario.

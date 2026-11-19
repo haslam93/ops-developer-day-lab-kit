@@ -14,12 +14,23 @@ Every prompt in the lab guide, ready to copy. They work the same in VS Code and 
 Reply with the single word READY.
 ```
 
-### Own form only: create the outline
+### A form from your ministry only: create the outline
 
 ```
 Run tools/extract-form/extract_form_outline.py on forms/my-form/form.pdf.
 Install its one dependency first if it is missing.
 Tell me how many fields it found.
+```
+
+### A form from your ministry, without Python: outline from screenshots
+
+```
+The screenshots attached are the pages of a blank Ontario government PDF form.
+Create forms/my-form/outline.md from them: every section heading, question, label,
+option and instruction, in page order and in the form's own wording.
+Do not guess. Write "unclear" where you cannot read something.
+Finish with a note: rules that show, hide or enable fields cannot be seen in
+screenshots and must be checked in the PDF.
 ```
 
 ### Write the form spec
@@ -48,10 +59,10 @@ Correct that row only.
 
 ## Lab 2
 
-### Pull the user story from Azure DevOps
+### Pull your user story from Azure DevOps
 
 ```
-Use the Azure DevOps MCP server. In project <project>, get work item <number>.
+Use the Azure DevOps MCP server. In project <project>, get work item <ID>.
 Show its title, description and acceptance criteria exactly as written.
 Do not create or change anything in Azure DevOps.
 Then save that text as docs/story.md.
@@ -95,7 +106,7 @@ Fix it. Add a test that fails before the fix and passes after it. Run the tests.
 ### Optional: record progress in Azure DevOps
 
 ```
-Use the Azure DevOps MCP server to add this comment to work item <number>:
+Use the Azure DevOps MCP server to add this comment to work item <ID>:
 "First version built by <your name>. <n> of <m> questions were right after one prompt."
 ```
 
@@ -173,9 +184,10 @@ Write these tests, with made-up data:
 2. Submit with a required question empty: the error summary appears and links to
    the field.
 3. Each rule in docs/form-spec.md that shows, hides or enables a field.
-4. Add and remove a repeating group.
+4. Add and remove a repeating group, if the form has one.
 5. Complete and submit the form using the keyboard only.
-6. Address lookup: found, not found and unavailable.
+6. Address lookup: found, not found and unavailable, if the form has an address.
+Leave out a test that does not apply to this form, and tell me which you left out.
 Find elements by their label or role, as a user would.
 Run the tests. If a test finds a real fault, fix the application. If the test is
 wrong, fix the test. Tell me which was which.
@@ -212,6 +224,15 @@ No estimates and no praise.
 5. What is still needed before real use: sign-in, the real back end, privacy and
    security review, French, records retention, testing with users.
 6. Shared services this form could use.
+```
+
+### Optional: push to your team's repository
+
+```
+Push my work to my team's repository in the event's Azure DevOps project:
+<repository address>
+Add it as a remote named team. Push the current commit to a new branch named
+<your-name>. Do not push to any other remote or branch.
 ```
 
 ## Advanced track

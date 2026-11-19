@@ -1,27 +1,34 @@
 # Forms
 
-Each folder here holds one form to convert.
+Each folder here holds one form to convert. Choose a sample form, or bring a form from your own ministry.
 
 | File | What it is |
 | --- | --- |
-| `README.md` | The form's name, number and where to download the PDF |
+| `README.md` | The form's name and number, and where its blank PDF is |
 | `outline.md` | The form's sections, fields, labels, options and scripts, as text Copilot can read |
-| `form.pdf` | The PDF itself. Download it and open it in Adobe Acrobat Reader. It is not stored in this repository. |
+| `form.pdf` | The blank PDF. Open it in Adobe Acrobat Reader. It does not open in a browser. |
 
-## Forms in this kit
+## Sample forms
 
-| Folder | Form |
-| --- | --- |
-| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) |
+| Folder | Form | Notes |
+| --- | --- | --- |
+| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) | A longer form, kept as a worked example. Its README says which sections to build. |
 
-More forms are added before the event.
+Two or three shorter sample forms, blank and one or two pages long, are added before the event.
 
-## Use your own form
+## A form from your own ministry
 
-1. Find it in the Central Forms Repository: https://forms.mgcs.gov.on.ca/en/
-2. Create a folder `forms/my-form` and save the English PDF there as `form.pdf`.
-3. Create the outline with the extractor in `tools/extract-form`.
-   No Python, or the extractor fails? Attach screenshots of the form pages to the Copilot chat instead.
+1. Open the Central Forms Repository and select **Ministries**, then your ministry:
+   https://forms.mgcs.gov.on.ca/en/organization/
+2. Choose a form that people fill in, not a guide or a set of guidelines, of one or two pages.
+   A longer form does not fit in the day. Allow yourself 5 minutes, then take a sample form.
+3. Create the folder `forms/my-form` and save the blank English PDF there as `form.pdf`.
+4. Create the outline with the tool in `tools/extract-form`.
+   If the tool finds no fields, the PDF is a guide or a print-only form: choose another.
+   No Python? Attach a screenshot of each page to the Copilot chat and send the screenshot prompt
+   in `docs/lab-prompts.md`.
+
+If the site does not load, use a sample form. If a PDF will not download, ask your table lead for it.
 
 Forms are published by the Government of Ontario. © King's Printer for Ontario.
-Use made-up data when you fill them in.
+Use blank forms and made-up data only. Never use a form that someone has filled in.

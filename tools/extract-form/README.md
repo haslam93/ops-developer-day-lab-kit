@@ -26,10 +26,11 @@ Install its one dependency first if it is missing. Tell me how many fields it fo
 ## If it does not work
 
 - **No Python on your laptop, or the install is blocked:** open the PDF in Adobe Acrobat Reader,
-  take a screenshot of each page and attach the screenshots to the Copilot chat. Copilot reads the
-  labels and layout from the images. It cannot see hidden rules that way, so test each rule by hand.
-- **"no form fields found":** the PDF is a flat, print-only form. Use screenshots.
-- **Still stuck:** use the example form in `forms/example-security-screening-check`.
+  take a screenshot of each page and attach the screenshots to the Copilot chat. Then send the
+  screenshot prompt in `docs/lab-prompts.md`. Copilot writes `forms/my-form/outline.md` from the
+  images. It cannot see hidden rules that way, so test each rule by hand in the PDF.
+- **"no form fields found":** the PDF is a guide or a flat, print-only form. Choose another form, or use screenshots.
+- **Still stuck:** use a sample form from `forms`.
 
 ## What the outline does not tell you
 

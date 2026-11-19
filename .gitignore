@@ -6,4 +6,6 @@ data/
 *.log
 .env
 __pycache__/
-forms/**/form.pdf
+# Sample forms may be stored in the kit. The example's PDF and your own form's PDF are downloaded, not stored.
+forms/example-security-screening-check/form.pdf
+forms/my-form/form.pdf

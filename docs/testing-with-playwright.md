@@ -43,9 +43,11 @@ npx playwright show-report          # open the HTML report
 | Fill in every question with valid made-up data and submit | The main path works and shows a reference number |
 | Submit with a required question empty | The error summary appears, links to the field, and nothing is stored |
 | Trigger each rule from the form spec | Fields show, hide, enable and disable as the PDF does |
-| Add and remove a repeating group | Repeating groups keep their data |
+| Add and remove a repeating group, if the form has one | Repeating groups keep their data |
 | Complete the form with the keyboard only | No mouse is needed |
-| Address lookup: found, not found, unavailable | The form copes with all three answers |
+| Address lookup: found, not found, unavailable, if the form has an address | The form copes with all three answers |
+
+Leave out a test that does not apply to your form.
 
 Find elements the way a user does, by label or role, not by CSS class:
 

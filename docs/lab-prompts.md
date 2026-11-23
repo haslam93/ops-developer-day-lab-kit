@@ -59,12 +59,12 @@ Correct that row only.
 
 ## Lab 2
 
-### Pull your user story from Azure DevOps
+### Pull your user story from your GitHub issue
 
 ```
-Use the Azure DevOps MCP server. In project <project>, get work item <ID>.
-Show its title, description and acceptance criteria exactly as written.
-Do not create or change anything in Azure DevOps.
+Use the GitHub MCP server. In repository <organization>/<repository>, get issue <number>.
+Show its title and description exactly as written.
+Do not create or change anything on GitHub.
 Then save that text as docs/story.md.
 ```
 
@@ -103,11 +103,13 @@ The form spec says: <the rule>.
 Fix it. Add a test that fails before the fix and passes after it. Run the tests.
 ```
 
-### Optional: record progress in Azure DevOps
+### Optional: record progress on your GitHub issue
 
 ```
-Use the Azure DevOps MCP server to add this comment to work item <ID>:
-"First version built by <your name>. <n> of <m> questions were right after one prompt."
+Use the GitHub MCP server to add this comment to issue <number> in
+<organization>/<repository>:
+"First version built. <n> of <m> questions were right after one prompt."
+Do not change anything else on GitHub.
 ```
 
 ## Lab 3
@@ -226,13 +228,13 @@ No estimates and no praise.
 6. Shared services this form could use.
 ```
 
-### Optional: push to your team's repository
+### Optional, only if your table lead says you can push: push and open a pull request
 
 ```
-Push my work to my team's repository in the event's Azure DevOps project:
-<repository address>
-Add it as a remote named team. Push the current commit to a new branch named
-<your-name>. Do not push to any other remote or branch.
+Create a branch named <your-name> from my current commit and push it to the lab
+repository <organization>/<repository>. Push to no other branch or repository.
+Then open a draft pull request from that branch. In its description write
+"Closes #<number>", with the number of my issue. Do not merge it.
 ```
 
 ## Advanced track

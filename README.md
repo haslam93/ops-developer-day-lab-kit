@@ -33,7 +33,8 @@ Both read the same instructions, agent and files from this folder.
 | `forms/` | Sample forms to convert, each with an outline Copilot can read | Lab 1 |
 | `tools/extract-form/` | Creates an outline from a form you choose from your own ministry | Lab 1, your own form only |
 | `docs/form-spec-template.md` | Layout for the form spec | Lab 1 |
-| `docs/user-story.md` | The user story you create in Azure DevOps | Lab 2 |
+| `docs/user-story.md` | The user story you create as a GitHub issue | Lab 2 |
+| `.github/ISSUE_TEMPLATE/user-story.md` | The issue template that holds the user story | Lab 2 |
 | `docs/ontario-design-system.md` | Where to find the Ontario Design System and how to add it | Lab 3 |
 | `docs/accessibility-checklist.md` | AODA and WCAG 2.0 Level AA checklist for a form | Lab 3 |
 | `docs/address-lookup-contract.md` | Contract for the shared address lookup service you build | Lab 4 |
@@ -45,7 +46,7 @@ Both read the same instructions, agent and files from this folder.
 | --- | --- |
 | `forms/my-form/` | Your own ministry's form and its outline, if you choose one |
 | `docs/form-spec.md` | What your form asks and the rules it applies |
-| `docs/story.md` | Your user story, pulled from Azure DevOps through MCP |
+| `docs/story.md` | Your user story, pulled from your GitHub issue through MCP |
 | `app/` | Your web application |
 | `services/address-lookup/` | Your address lookup service |
 | `docs/a11y-findings.md`, `docs/handoff.md` | Your accessibility findings and hand-off note |
@@ -54,9 +55,10 @@ Both read the same instructions, agent and files from this folder.
 
 | Item | Value |
 | --- | --- |
-| Azure DevOps organization and project | To be confirmed. One project for the event, with a backlog and a repository for each team |
-| Your team | Your table lead tells you which team is yours |
-| Your work item | You create it in Lab 2 |
+| GitHub organization for the event | To be confirmed |
+| Lab repository, where you create your issue | To be confirmed. Written as `organization/repository` |
+| Your issue | You create it in Lab 2 |
+| GitHub MCP server | Install it from the OPS registry: in VS Code, search `@mcp` in the Extensions view |
 | Help channel | To be confirmed |
 
 ## Rules
@@ -65,7 +67,7 @@ Both read the same instructions, agent and files from this folder.
 - Made-up data only. Never type real personal information, and never start from a form that someone has filled in.
 - Use approved tools only: this kit and MCP servers from the ITOD registry.
 - Do not deploy what you build, and do not submit anything to AEM or another OPS system.
-  Push it only to your team's repository in the event's Azure DevOps project, if your team has one.
+  Push it only to the lab repository in the event's GitHub organization, and only if your table lead says you can.
 - Read what Copilot changed before you keep it.
 
 Forms are published by the Government of Ontario, © King's Printer for Ontario.

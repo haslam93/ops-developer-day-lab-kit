@@ -41,8 +41,10 @@ government PDF form into a small, accessible web application. Follow these rules
 - Made-up data only, in code, tests and samples. Never real names, birth dates or licence numbers.
 - No secrets in the repository.
 - Nothing is deployed. The application talks only to services on this computer.
-- Push only when the developer asks, and only to the repository they name: their team's
-  repository in the event's Azure DevOps project. Never push anywhere else.
+- Push only when the developer asks, and only to the lab repository they name in the event's
+  GitHub organization. Never push anywhere else.
+- On GitHub, read freely. Create or change an issue, a comment or a pull request only when
+  the developer asks for that change.
 - Check every rule on the server as well as in the browser, from one shared definition.
 
 ## Quality

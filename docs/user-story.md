@@ -1,12 +1,13 @@
 # User story: put this form online
 
-In Lab 2 you create this user story as a work item on your team's backlog in Azure DevOps.
-You then pull it into `docs/story.md` through the Azure DevOps MCP server.
+In Lab 2 you create this user story as an issue in the lab repository on GitHub.
+You then pull it into `docs/story.md` through the GitHub MCP server.
 
-Copy the title, the description and the acceptance criteria into the work item.
+When you create the issue, choose the template **User story: put a form online**. It holds this text.
 Put your form's number and your initials in the title.
+No template? Copy the description and the acceptance criteria below into the issue.
 
-Cannot reach Azure DevOps? Copy this file to `docs/story.md`, put your form's number in the title and continue.
+Cannot reach GitHub issues? Copy this file to `docs/story.md`, put your form's number in the title and continue.
 
 ## Title
 

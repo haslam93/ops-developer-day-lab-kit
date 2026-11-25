@@ -23,12 +23,25 @@ government PDF form into a small, accessible web application. Follow these rules
 - Use the stack the developer asks for.
 - If they have no preference: plain HTML, CSS and JavaScript in the browser, and a small Node.js
   server with no framework and as few dependencies as possible.
+- Use the Ontario Design System web components (see `docs/ontario-design-system.md`), unless the
+  developer asks for another option.
 - Say which commands start the application and run the tests. Add them to `app/README.md`.
 
 ## Ontario Design System
 
 - All pages use the Ontario Design System. Read `docs/ontario-design-system.md` first.
-- Copy the markup and class names from the design system's own samples. Do not guess class names.
+- Every page has the application header, one `main` and the simple footer. The footer is at the
+  bottom of the window on a short page and after the content on a long page.
+- HTML components: copy the markup and class names from the design system's own samples. Do not
+  guess class names. If a page mixes HTML and web components, each follows its own source.
+- Not everything is in the design system. If it has no component for something (a skip link, the
+  page layout, a confirmation page), build it as plain, accessible HTML and CSS, specific to what
+  is needed and in the spirit of the design system: its guidance, directions and ideas as well as
+  its look, so that it feels like one cohesive system. It is custom work, so it can be flexible.
+  Tell me what you built.
+- Web components: use only their documented properties, slots and events, as in each component's
+  readme. Never reach into a component's shadow DOM, inject styles into it, or fork or patch it.
+  If a component does not do what you need, use what it documents and tell me what is missing.
 - Do not add another CSS framework. Write custom CSS only where no component fits, and say where.
 
 ## Accessibility

@@ -42,10 +42,11 @@ npx playwright show-report          # open the HTML report
 | --- | --- |
 | Fill in every question with valid made-up data and submit | The main path works and shows a reference number |
 | Submit with a required question empty | The error summary appears, links to the field, and nothing is stored |
-| Trigger each rule from the form spec | Fields show, hide, enable and disable as the PDF does |
+| Trigger each rule from the form spec | Fields show and hide as the PDF does, and a rule the PDF enforces by locking a field shows a message instead |
 | Add and remove a repeating group, if the form has one | Repeating groups keep their data |
 | Complete the form with the keyboard only | No mouse is needed |
 | Address lookup: found, not found, unavailable, if the form has an address | The form copes with all three answers |
+| Footer position, on a short and a long page | The footer is at the bottom of the window on a short page, and below the last content on a long one |
 
 Leave out a test that does not apply to your form.
 

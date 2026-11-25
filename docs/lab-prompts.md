@@ -43,12 +43,13 @@ Create docs/form-spec.md from it. Use docs/form-spec-template.md as the layout.
 Do not write any application code.
 
 List every question a person answers, grouped by section, with: ID, label as on the
-form, type, required (yes, no or unknown), options or format, rule or condition, and
+form, type, required (yes or no), options or format, rule or condition, and
 who completes it (applicant, organization or office).
 Then list the rules that show, hide, enable or disable fields, the groups that repeat,
 the calculations and format checks, and the signatures.
 Leave out buttons, fonts, page layout and navigation scripts.
-Finish with anything you could not work out from the outline.
+Finish with anything you could not work out from the outline, including each required
+answer you chose without evidence in the form.
 ```
 
 ### Correct the form spec
@@ -82,9 +83,11 @@ Build only the questions the applicant answers. Leave out sections completed by 
 organization or an office, and any section the spec marks "not today".
 Show the form's notice of collection as text above the questions, in the form's own
 wording.
-Include the required and format checks, the rules that show, hide or enable fields,
+Include the required and format checks, the rules that show or hide fields,
 the repeating groups, and a declaration checkbox with a typed full name in place of
 each signature.
+The design system does not disable or lock controls. Where the PDF does, show the field
+when it applies, or keep it available and say what is needed in a message.
 On submit, check every rule again on the server, store the submission in a local
 file and show a confirmation page with a reference number.
 Plain pages are fine for now. The Ontario Design System comes in the next lab.
@@ -126,15 +129,20 @@ Do not change anything else on GitHub.
 
 ```
 Restyle the web form with the Ontario Design System.
-Read docs/ontario-design-system.md first. Add the design system with the option
-that suits this stack.
-Use its header, footer, fieldsets, labels, hint text, text inputs, text areas, radio
-buttons, checkboxes, dropdown lists, buttons and error messaging. Copy the markup and
-class names from the design system's own samples.
+Read docs/ontario-design-system.md first. Add the design system as web
+components, unless this stack needs another option.
+Use its application header, simple footer, fieldsets, labels, hint text, text inputs, text
+areas, radio buttons, checkboxes, dropdown lists, buttons and error messaging.
+The footer sits at the bottom of the window when the page is short, and after the content
+when it is long. Use each component from its own source: a web component from its readme
+and properties, an HTML component from the design system's sample.
 Group the questions under the same section headings as the PDF.
 Show errors as the design system describes: a summary at the top of the page that
 links to each field, and a message at each field.
 Write custom CSS only where no component fits, and tell me where you did.
+If the design system has no component for something, build it as plain HTML and CSS in
+the spirit of the design system, including its guidance, and tell me what you built.
+Do not reach into or change a component: if one does not do what you need, tell me.
 Keep every question, rule and test working. Run the tests before you finish.
 ```
 
@@ -193,10 +201,13 @@ Write these tests, with made-up data:
 1. Complete the form with valid answers and submit: a reference number is shown.
 2. Submit with a required question empty: the error summary appears and links to
    the field.
-3. Each rule in docs/form-spec.md that shows, hides or enables a field.
+3. Each rule in docs/form-spec.md that shows or hides a field, and each rule the web form
+   turns into a message.
 4. Add and remove a repeating group, if the form has one.
 5. Complete and submit the form using the keyboard only.
 6. Address lookup: found, not found and unavailable, if the form has an address.
+7. Footer: on a short page it sits at the bottom of the window, and on a long page it is
+   below the last content and covers nothing.
 Leave out a test that does not apply to this form, and tell me which you left out.
 Find elements by their label or role, as a user would.
 Run the tests. If a test finds a real fault, fix the application. If the test is

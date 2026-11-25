@@ -10,11 +10,16 @@ Each folder here holds one form to convert. Choose a sample form, or bring a for
 
 ## Sample forms
 
+Three sample forms, shortest first. Each folder holds the blank PDF and a ready outline.
+
 | Folder | Form | Notes |
 | --- | --- | --- |
-| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) | A longer form, kept as a worked example. Its README says which sections to build. |
+| `marriage-licence-fee-affidavit` | 11010, Affidavit to Waive Provincial Fee for a Marriage Licence (Ministry of Public and Business Service Delivery and Procurement) | 30 fields. The shortest. |
+| `place-of-business-questionnaire` | 023-5026, Established Place of Business and Residence Questionnaire (Ministry of Transportation) | 37 fields. Short, with rules to build. |
+| `amend-business-name` | 5295, Amend a Business Name for a Corporation (Ministry of Public and Business Service Delivery and Procurement) | 332 fields. Long: build two or three sections. Its README lists them. |
+| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) | A longer form, kept as a worked example. Its README says which sections to build and where to download its PDF. |
 
-Two or three shorter sample forms, blank and one or two pages long, are added before the event.
+New to Copilot? Take one of the first two.
 
 ## A form from your own ministry
 
@@ -31,4 +36,6 @@ Two or three shorter sample forms, blank and one or two pages long, are added be
 If the site does not load, use a sample form. If a PDF will not download, ask your table lead for it.
 
 Forms are published by the Government of Ontario. © King's Printer for Ontario.
+The PDFs stored here are unchanged copies from the Central Forms Repository.
+Each `outline.md` is a text extract made with `tools/extract-form`, not an official version of the form.
 Use blank forms and made-up data only. Never use a form that someone has filled in.

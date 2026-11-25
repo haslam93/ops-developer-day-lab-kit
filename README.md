@@ -5,7 +5,7 @@ In the labs you turn one Ontario government PDF form into a small web applicatio
 GitHub Copilot. You build the application yourself, in this folder. The kit gives Copilot
 the context it needs and gives you reference material. Use what helps and ignore the rest.
 
-Kit version 3.2, 24 November 2026. It goes with lab guide version 3.2,
+Kit version 3.2, updated 25 November 2026. It goes with lab guide version 3.2,
 `OPS-Developer-Day-Lab-Guide-DRAFT-v3.2`. The lab guide has the steps.
 
 ## Get started
@@ -31,7 +31,7 @@ Both read the same instructions, agent and files from this folder.
 | `.github/copilot-instructions.md` | Project rules that Copilot reads on every request | Every lab |
 | `.github/agents/accessibility-reviewer.agent.md` | A custom agent that reviews pages for accessibility and cannot edit | Lab 3 |
 | `docs/lab-prompts.md` | Every prompt in the lab guide, ready to copy | Every lab |
-| `forms/` | Sample forms to convert, each with an outline Copilot can read | Lab 1 |
+| `forms/` | Three sample forms to convert, each with its blank PDF and an outline Copilot can read | Lab 1 |
 | `tools/extract-form/` | Creates an outline from a form you choose from your own ministry | Lab 1, your own form only |
 | `docs/form-spec-template.md` | Layout for the form spec | Lab 1 |
 | `docs/user-story.md` | The user story you create as a GitHub issue | Lab 2 |

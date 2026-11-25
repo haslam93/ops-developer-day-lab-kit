@@ -20,7 +20,9 @@ You can also ask Copilot to do it:
 
 ```
 Run tools/extract-form/extract_form_outline.py on forms/my-form/form.pdf.
-Install its one dependency first if it is missing. Tell me how many fields it found.
+If Python is not installed, stop and tell me. Do not install Python.
+Install its one dependency first if it is missing.
+Tell me how many fields it found.
 ```
 
 ## If it does not work

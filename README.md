@@ -5,7 +5,8 @@ In the labs you turn one Ontario government PDF form into a small web applicatio
 GitHub Copilot. You build the application yourself, in this folder. The kit gives Copilot
 the context it needs and gives you reference material. Use what helps and ignore the rest.
 
-The lab guide has the steps: `OPS-Developer-Day-Lab-Guide`.
+Kit version 3.2, 24 November 2026. It goes with lab guide version 3.2,
+`OPS-Developer-Day-Lab-Guide-DRAFT-v3.2`. The lab guide has the steps.
 
 ## Get started
 
@@ -37,6 +38,7 @@ Both read the same instructions, agent and files from this folder.
 | `.github/ISSUE_TEMPLATE/user-story.md` | The issue template that holds the user story | Lab 2 |
 | `docs/ontario-design-system.md` | Where to find the Ontario Design System and how to add it | Lab 3 |
 | `docs/accessibility-checklist.md` | AODA and WCAG 2.0 Level AA checklist for a form | Lab 3 |
+| `docs/a11y-findings-template.md` | Layout for your accessibility findings | Lab 3 |
 | `docs/address-lookup-contract.md` | Contract for the shared address lookup service you build | Lab 4 |
 | `docs/testing-with-playwright.md` | How to test the form with Playwright and axe | Lab 4 |
 

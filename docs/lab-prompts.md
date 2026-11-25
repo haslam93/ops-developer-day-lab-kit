@@ -18,6 +18,7 @@ Reply with the single word READY.
 
 ```
 Run tools/extract-form/extract_form_outline.py on forms/my-form/form.pdf.
+If Python is not installed, stop and tell me. Do not install Python.
 Install its one dependency first if it is missing.
 Tell me how many fields it found.
 ```
@@ -54,7 +55,7 @@ Finish with anything you could not work out from the outline.
 
 ```
 In docs/form-spec.md, field <ID> is wrong: <what the PDF shows>.
-Correct that row only.
+Correct that row and any row the same fact changes. Tell me which rows you changed.
 ```
 
 ## Lab 2
@@ -63,6 +64,8 @@ Correct that row only.
 
 ```
 Use the GitHub MCP server. In repository <organization>/<repository>, get issue <number>.
+Read the issue with that server only. If it has no tool that reads an issue, stop and
+tell me. Do not use the gh command or the web instead.
 Show its title and description exactly as written.
 Do not create or change anything on GitHub.
 Then save that text as docs/story.md.
@@ -77,13 +80,15 @@ meets docs/story.md. Follow .github/copilot-instructions.md.
 Stack: <your stack, or: the simplest option in the project instructions>.
 Build only the questions the applicant answers. Leave out sections completed by an
 organization or an office, and any section the spec marks "not today".
+Show the form's notice of collection as text above the questions, in the form's own
+wording.
 Include the required and format checks, the rules that show, hide or enable fields,
 the repeating groups, and a declaration checkbox with a typed full name in place of
 each signature.
 On submit, check every rule again on the server, store the submission in a local
 file and show a confirmation page with a reference number.
 Plain pages are fine for now. The Ontario Design System comes in the next lab.
-Add a test for every rule.
+Add a test for every rule. Unit and server tests only: browser tests come in Lab 4.
 List the files you will create, the commands that start the application and run
 the tests, and any decision you need from me.
 ```
@@ -91,7 +96,9 @@ the tests, and any decision you need from me.
 ### Run the application
 
 ```
-Start the application and give me the address to open in my browser.
+If a copy of the application is already running, stop it first: find it by the port
+it listens on.
+Then start the application and give me the address to open in my browser.
 Tell me how to stop it.
 ```
 
@@ -100,7 +107,8 @@ Tell me how to stop it.
 ```
 In the web form, field <ID> is wrong: <what happens now>.
 The form spec says: <the rule>.
-Fix it. Add a test that fails before the fix and passes after it. Run the tests.
+Fix it. If the form spec is wrong too, correct it. Add a test that fails before the
+fix and passes after it. Run the tests.
 ```
 
 ### Optional: record progress on your GitHub issue

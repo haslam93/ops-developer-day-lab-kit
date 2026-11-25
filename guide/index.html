@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OPS Microsoft Developer Day | Hands-on lab guide</title>
+  <meta name="description" content="Hands-on lab guide for OPS Microsoft Developer Day, 1 December 2026: turn one Ontario government PDF form into a web application with GitHub Copilot.">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="img/event-logo.svg">
+  <link rel="stylesheet" href="guide.css">
+  <!--
+    OPS Microsoft Developer Day: hands-on lab guide, version 3.2.
+    This page is the guide. Edit the text here. guide.css holds the look and guide.js the behaviour.
+    The page needs no server and no network: open it from the kit folder, or from a web address.
+    An element marked data-ui is a control the page adds (a tick, a field, a filter). It is not part of the guide's text and is left out on paper.
+    A prompt here must stay the same, line for line, as the prompt in ../docs/lab-prompts.md.
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- Stays at the top of the window: the three logos, the sections, and the steps of the lab you are in. -->
+  <header class="site-header" id="site-header">
+    <div class="brand">
+      <div class="wrap brand-row">
+        <img class="logo logo-ontario" src="img/ontario-logo.svg" alt="Ontario" width="180" height="45">
+        <a class="brand-event" href="#overview">
+          <img src="img/event-logo.svg" alt="" width="64" height="64">
+          <span class="brand-text"><span class="brand-name">OPS Microsoft Developer Day</span> <span class="brand-doc">Hands-on lab guide</span></span>
+        </a>
+        <span class="brand-partners">
+          <img class="logo logo-microsoft" src="img/microsoft-logo.svg" alt="Microsoft" width="108" height="24">
+          <img class="logo logo-github" src="img/github-logo.svg" alt="GitHub" width="416" height="95">
+        </span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Sections of the guide">
+      <div class="wrap">
+        <ul id="main-nav-list">
+          <li><a href="#overview" data-nav="overview">Overview</a></li>
+          <li><a href="#before" data-nav="before">Before you arrive</a></li>
+          <li><a href="#day" data-nav="day">Your day</a></li>
+          <li><a href="#tools" data-nav="tools">Two tools</a></li>
+          <li class="nav-lab nav-lab-1"><a href="#lab1" data-nav="lab1">Lab 1</a></li>
+          <li class="nav-lab nav-lab-2"><a href="#lab2" data-nav="lab2">Lab 2</a></li>
+          <li class="nav-lab nav-lab-3"><a href="#lab3" data-nav="lab3">Lab 3</a></li>
+          <li class="nav-lab nav-lab-4"><a href="#lab4" data-nav="lab4">Lab 4</a></li>
+          <li><a href="#showcase" data-nav="showcase">Showcase</a></li>
+          <li><a href="#advanced" data-nav="advanced">Advanced</a></li>
+          <li><a href="#help" data-nav="help">Help</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="lab-bar" id="lab-bar" hidden>
+      <div class="wrap lab-bar-row">
+        <span class="lab-bar-name" id="lab-bar-name"></span>
+        <ol class="lab-bar-steps" id="lab-bar-steps" aria-label="Steps of this lab"></ol>
+        <span class="lab-bar-count" id="lab-bar-count"></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="overview" aria-labelledby="page-title">
+      <div class="wrap">
+        <div class="hero-top">
+          <div class="hero-text">
+            <p class="kicker">1 DECEMBER 2026 | IN PERSON | HANDS-ON LAB GUIDE</p>
+            <h1 id="page-title">OPS Microsoft Developer Day</h1>
+            <p class="hero-sub">Hands-on lab guide</p>
+            <p class="hero-date">Tuesday 1 December 2026 | 08:30-16:00 ET | In person | Guide version 3.2</p>
+            <p class="hero-intro">Today you take one Ontario government PDF form and turn it into a working web application with GitHub Copilot. You work the way you would on an OPS project: with MCP servers from the ITOD registry, the Ontario Design System and the AODA accessibility standard.</p>
+          </div>
+          <img class="hero-mark" src="img/event-logo.svg" alt="" width="64" height="64">
+        </div>
+        <div class="labs" data-diagram>
+          <p class="labs-title">ONE FORM. FOUR LABS. VS CODE AND THE GITHUB COPILOT APP.</p>
+          <ol class="lab-cards">
+            <li><a class="lab-card lab-c1" href="#lab1"><span class="lc-head">LAB 1 <span class="lc-verb">SET UP</span></span> <span class="lc-what">Both tools, your form</span> <span class="lc-what">+ the form spec</span> <span class="lc-time">11:45-12:30</span></a></li>
+            <li><a class="lab-card lab-c2" href="#lab2"><span class="lc-head">LAB 2 <span class="lc-verb">BUILD</span></span> <span class="lc-what">GitHub issue</span> <span class="lc-what">+ first version</span> <span class="lc-time">13:15-14:00</span></a></li>
+            <li><a class="lab-card lab-c3" href="#lab3"><span class="lc-head">LAB 3 <span class="lc-verb">DESIGN</span></span> <span class="lc-what">Design system</span> <span class="lc-what">+ accessibility</span> <span class="lc-time">14:00-14:45</span></a></li>
+            <li><a class="lab-card lab-c4" href="#lab4"><span class="lc-head">LAB 4 <span class="lc-verb">TEST</span></span> <span class="lc-what">Address service</span> <span class="lc-what">+ Playwright tests</span> <span class="lc-time">15:00-15:45</span></a></li>
+          </ol>
+          <p class="labs-foot">Work at your own pace. <a href="#advanced">Advanced track</a> (optional): from one form to many.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:32.3%"><col style="width:24.5%"><col style="width:43.3%"></colgroup>
+            <thead><tr><th scope="col">Lab</th><th scope="col">Time</th><th scope="col">You finish with</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href="#lab1">Lab 1 | Set up and write the form spec</a></th><td>11:45-12:30 | 45 min</td><td>VS Code and the GitHub Copilot app working on the same folder, a form chosen, and a checked list of what the form asks.</td></tr>
+              <tr><th scope="row"><a href="#lab2">Lab 2 | Connect to GitHub issues and build</a></th><td>13:15-14:00 | 45 min</td><td>Your user story created as a GitHub issue and pulled through MCP, and a first working version of your form.</td></tr>
+              <tr><th scope="row"><a href="#lab3">Lab 3 | Ontario Design System and accessibility</a></th><td>14:00-14:45 | 45 min</td><td>The Ontario look and feel, and accessibility problems found and fixed.</td></tr>
+              <tr><th scope="row"><a href="#lab4">Lab 4 | Shared service and testing</a></th><td>15:00-15:45 | 45 min</td><td>An address lookup service you built, Playwright tests and a hand-off note.</td></tr>
+              <tr><th scope="row"><a href="#advanced">Advanced track | From one form to many</a></th><td>Optional</td><td>A repeatable way to convert the next form.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="today" aria-labelledby="today-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">READ THIS FIRST</p>
+          <h2 id="today-h">What today is for</h2>
+        </header>
+        <p>The form is the exercise. The skill is the point: a way of working with GitHub Copilot that fits how OPS builds software, and that you can use on your own project next week.</p>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:51.8%"><col style="width:48.2%"></colgroup>
+            <thead><tr><th scope="col">Today you practise</th><th scope="col">Where it applies in OPS</th></tr></thead>
+            <tbody>
+              <tr><td>Giving Copilot the context it needs: project instructions and a written spec</td><td>Any repository. Copilot follows your team’s conventions instead of guessing.</td></tr>
+              <tr><td>Connecting Copilot to OPS tools through MCP servers in the ITOD registry</td><td>GitHub issues today. The same steps work for any server ITOD approves.</td></tr>
+              <tr><td>Asking for a plan, reviewing it, then building</td><td>Any change that touches more than one file.</td></tr>
+              <tr><td>Building to the Ontario Design System</td><td>Every public-facing Ontario website and application.</td></tr>
+              <tr><td>Checking accessibility against the AODA standard, WCAG 2.0 Level AA</td><td>Every Government of Ontario website, public or internal.</td></tr>
+              <tr><td>Building and calling a shared service</td><td>Functions that many applications need, such as address lookup.</td></tr>
+              <tr><td>Testing in a real browser with Playwright</td><td>Any web application.</td></tr>
+              <tr><td>Working in VS Code and in the GitHub Copilot app</td><td>VS Code to edit and review code. The app to run and follow several tasks at once.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="too-easy-too-hard-choose-your-level">Too easy? Too hard? Choose your level</h3>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:29.3%"><col style="width:70.7%"></colgroup>
+            <thead><tr><th scope="col">If you</th><th scope="col">Do this</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Are new to Copilot’s agent mode</th><td>Use a sample form from the lab kit. Follow the steps and copy the prompts. A working form at the end of the day is a good result.</td></tr>
+              <tr><th scope="row">Are comfortable with Copilot</th><td>Choose a form from your own ministry, so that you leave with something to show your team. Choose your own stack. Write your own prompts and compare them with the ones in this guide.</td></tr>
+              <tr><th scope="row">Use Copilot every day</th><td>Move through the labs quickly, help your table, then take the advanced track: from one form to many.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-info" role="note">
+          <p class="callout-title">What to expect</p>
+          <p>Copilot produces a form quickly. Checking it is the real work: against the PDF, against the design system and against the accessibility standard. The labs spend most of their time there.</p>
+          <p>What you build today is a prototype on your laptop. It is not a production service, and passing today’s checks does not certify it as accessible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="before" aria-labelledby="before-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">A FEW DAYS BEFORE | 20 MINUTES</p>
+          <h2 id="before-h">Before you arrive</h2>
+        </header>
+        <p>Check these on your OPS laptop a few days ahead, so that problems can be fixed before the day. Everyone needs an active GitHub Copilot licence on their OPS account. The labs cannot be done without one.</p>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:26.4%"><col style="width:73.6%"></colgroup>
+            <thead><tr><th scope="col">You need</th><th scope="col">Ready means</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">GitHub Copilot licence</th><td>You are signed in to GitHub in VS Code with your OPS account, and Copilot Chat answers a test question. This is GitHub Copilot, not Microsoft 365 Copilot.</td></tr>
+              <tr><th scope="row">VS Code</th><td>The current OPS build.</td></tr>
+              <tr><th scope="row">GitHub Copilot app</th><td>Installed and signed in with your OPS account. Download: <a href="https://github.com/features/ai/github-app" target="_blank" rel="noopener">github.com/features/ai/github-app<span class="sr-only" data-ui> (opens in a new tab)</span></a>. If you cannot install it before the day, Lab 1 has the steps.</td></tr>
+              <tr><th scope="row">Git</th><td>Any recent version, with your name and email set. If <code>git config user.name</code> prints nothing, run <code>git config --global user.name "Your Name"</code>, and the same for <code>user.email</code>.</td></tr>
+              <tr><th scope="row">Node.js, with npm</th><td>Version 22 or later. It runs the default application stack and the Playwright tests.</td></tr>
+              <tr><th scope="row">Python</th><td>Version 3.9 or later. It reads the PDF of a form you choose from your own ministry. A sample form from the lab kit does not need it.</td></tr>
+              <tr><th scope="row">Rights to install</th><td>The install commands below finish without an error. If your laptop needs administrator rights to install software or packages, arrange them before the day.</td></tr>
+              <tr><th scope="row">Microsoft Edge</th><td>DevTools opens with <strong>F12</strong> and shows the <strong>Lighthouse</strong> tool. You use it in Lab 3.</td></tr>
+              <tr><th scope="row">Adobe Acrobat Reader</th><td>It opens a form from the <a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a>. The forms do not open in a browser.</td></tr>
+              <tr><th scope="row">GitHub in your browser</th><td>You can sign in to <a href="https://github.com/" target="_blank" rel="noopener">github.com<span class="sr-only" data-ui> (opens in a new tab)</span></a> with your OPS account. If you are invited to the event’s GitHub organization, accept the invitation before the day.</td></tr>
+              <tr><th scope="row">The lab kit</th><td>You can open <a href="https://github.com/haslam93/ops-developer-day-lab-kit" target="_blank" rel="noopener">github.com/haslam93/ops-developer-day-lab-kit<span class="sr-only" data-ui> (opens in a new tab)</span></a>.</td></tr>
+              <tr><th scope="row">Optional: a form from your ministry</th><td>A blank form of one or two pages. In the <a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a> select <strong>Ministries</strong>, then your ministry. Save the English PDF. Never bring a form that someone has filled in.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box box-terminal" data-copy>
+          <p class="box-label">TERMINAL | EACH COMMAND PRINTS A VERSION</p>
+          <pre><code>git --version
+node --version
+npm --version
+python --version
+code --version</code></pre>
+        </div>
+        <p class="note">On Windows, “Python was not found” means Python is not installed.</p>
+        <div class="box box-terminal" data-copy>
+          <p class="box-label">TERMINAL | CAN YOU INSTALL PACKAGES? RUN THESE IN A NEW, EMPTY FOLDER</p>
+          <pre><code>npm init -y
+npm install @playwright/test
+python -m pip install "pypdf[crypto]"</code></pre>
+        </div>
+        <p class="note">Delete the folder afterwards. The Python package stays installed: Lab 1 uses it to read a form from your ministry.</p>
+        <div class="callout callout-warn" role="note">
+          <p class="callout-title">If a check fails</p>
+          <p>Tell the event organizers before the day. Do not turn off security settings, bypass a certificate or proxy warning, or sign in with a personal account.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sec" id="day" aria-labelledby="day-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">TUESDAY 1 DECEMBER 2026 | IN PERSON</p>
+          <h2 id="day-h">Your day at a glance</h2>
+        </header>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:16.6%"><col style="width:66.7%"><col style="width:16.6%"></colgroup>
+            <thead><tr><th scope="col">Time (ET)</th><th scope="col">Session</th><th scope="col">Length</th></tr></thead>
+            <tbody>
+              <tr><td>08:30-09:15</td><td>Arrival and tech check</td><td>45 min</td></tr>
+              <tr><td>09:15-09:30</td><td>Welcome and land acknowledgement</td><td>15 min</td></tr>
+              <tr><td>09:30-11:00</td><td>Microsoft keynote</td><td>90 min</td></tr>
+              <tr><td>11:00-11:15</td><td>Break</td><td>15 min</td></tr>
+              <tr><td>11:15-11:45</td><td>OPS GitHub Copilot success story</td><td>30 min</td></tr>
+              <tr><td>11:45-12:30</td><td><a href="#lab1"><strong>Lab 1 | Set up and write the form spec</strong></a></td><td>45 min</td></tr>
+              <tr><td>12:30-13:15</td><td>Lunch (provided)</td><td>45 min</td></tr>
+              <tr><td>13:15-14:00</td><td><a href="#lab2"><strong>Lab 2 | Connect to GitHub issues and build</strong></a></td><td>45 min</td></tr>
+              <tr><td>14:00-14:45</td><td><a href="#lab3"><strong>Lab 3 | Ontario Design System and accessibility</strong></a></td><td>45 min</td></tr>
+              <tr><td>14:45-15:00</td><td>Break</td><td>15 min</td></tr>
+              <tr><td>15:00-15:45</td><td><a href="#lab4"><strong>Lab 4 | Shared service and testing</strong></a></td><td>45 min</td></tr>
+              <tr><td>15:45-16:00</td><td>Showcase and close</td><td>15 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="how-the-labs-work">How the labs work</h3>
+        <ul>
+          <li><strong>Work at your own pace.</strong> The minutes beside each step are a guide. Nobody checks your progress, and there is nothing to hand in.</li>
+          <li><strong>Each lab continues from the one before.</strong> If you are behind when a lab starts, finish the earlier step first.</li>
+          <li><strong>Use VS Code, the GitHub Copilot app, or both.</strong> Every step works in each. Where the clicks differ, a two-column box shows both. The prompts are the same.</li>
+          <li><strong>The prompts are suggestions.</strong> Change them, or write your own.</li>
+          <li><strong>Everyone starts from the lab kit.</strong> It is one repository with sample forms, project instructions and a custom agent for Copilot, reference pages for the Ontario Design System and accessibility, and every prompt ready to copy. Use what helps. You build the application yourself.</li>
+          <li><strong>Ask your table lead first.</strong> Each table has one, an experienced Copilot user. Work alone or as a pair.</li>
+        </ul>
+        <h3 id="five-rules">Five rules</h3>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:26.4%"><col style="width:73.6%"></colgroup>
+            <thead><tr><th scope="col">Rule</th><th scope="col">What it means</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">OPS account only</th><td>Sign in with your OPS account. No personal GitHub account or personal Copilot plan.</td></tr>
+              <tr><th scope="row">Made-up data only</th><td>The forms ask for names, birth dates and licence numbers. Invent them. Never type real personal information, and never start from a form that someone has filled in.</td></tr>
+              <tr><th scope="row">Approved tools only</th><td>Use MCP servers from the ITOD registry. Do not add a server from anywhere else.</td></tr>
+              <tr><th scope="row">No deployment</th><td>Today’s work is a prototype on your laptop. Do not deploy it or submit anything to AEM or another OPS system. Push it only to the lab repository in the event’s GitHub organization, and only if your table lead says you can.</td></tr>
+              <tr><th scope="row">You check every change</th><td>Read what Copilot changed before you keep it. Try it yourself. Compare it with the PDF.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="tools" aria-labelledby="tools-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">TWO TOOLS, ONE FOLDER</p>
+          <h2 id="tools-h">VS Code and the GitHub Copilot app</h2>
+        </header>
+        <p>Both tools run the same Copilot with the same licence. VS Code puts the chat beside your code. The GitHub Copilot app is built for starting several sessions and following them. Today you open the same folder in both.</p>
+        <figure class="shot" style="--w:760px">
+          <a href="img/two-tools-one-folder.png" target="_blank" rel="noopener"><img src="img/two-tools-one-folder.png" alt="VS Code and the GitHub Copilot app both work on the lab kit folder on your laptop: the same files, project instructions and custom agent, and the same approved MCP servers." width="1600" height="560" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+        </figure>
+        <h3 id="where-things-are">Where things are</h3>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:24.5%"><col style="width:37.8%"><col style="width:37.8%"></colgroup>
+            <thead><tr><th scope="col">You want to</th><th scope="col">In VS Code</th><th scope="col">In the GitHub Copilot app</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Open Copilot</th><td><strong>Ctrl+Alt+I</strong> opens the Chat view</td><td>Open <strong>GitHub Copilot</strong> from the Start menu</td></tr>
+              <tr><th scope="row">Start a fresh conversation</th><td><strong>New Chat</strong> (+) at the top of the Chat view</td><td><strong>+</strong> beside <strong>Sessions</strong>, then select the kit folder</td></tr>
+              <tr><th scope="row">Let Copilot change files</th><td>Session Target: <strong>Copilot</strong>. Agent: <strong>Agent</strong></td><td>Mode: <strong>Interactive</strong></td></tr>
+              <tr><th scope="row">Get a plan first</th><td>Type <code>/plan</code> before your request</td><td>Mode: <strong>Plan</strong></td></tr>
+              <tr><th scope="row">Use a custom agent</th><td><strong>Agent</strong> dropdown</td><td>Agent picker in the prompt box, or type <code>/agent</code></td></tr>
+              <tr><th scope="row">See and add MCP servers</th><td><strong>Extensions</strong> view, <strong>Ctrl+Shift+X</strong>: search <code>@mcp</code></td><td><strong>Customize</strong> &gt; <strong>MCP</strong></td></tr>
+              <tr><th scope="row">Review what changed</th><td><strong>Source Control</strong> view, <strong>Ctrl+Shift+G</strong></td><td><strong>Changes</strong>, above the prompt box</td></tr>
+              <tr><th scope="row">Run a second task</th><td><strong>New Chat</strong> (+)</td><td><strong>+</strong> beside <strong>Sessions</strong> starts another session</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-info" role="note">
+          <p class="callout-title">When you use both at once</p>
+          <p>In the app, set <strong>Workspace</strong> to <strong>Current checkout</strong>. Both tools then read and write the same files. <strong>New worktree</strong> gives a session its own copy of the files on a separate branch, which VS Code does not show.</p>
+          <p>Give two sessions different folders, for example <code>app/</code> in one and <code>services/address-lookup/</code> in the other. Two sessions that edit the same file overwrite each other.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec lab lab-1" id="lab1" aria-labelledby="lab1-h" data-lab="1" data-time="11:45-12:30">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">LAB 1 OF 4 | 11:45-12:30 | 45 MINUTES</p>
+          <h2 id="lab1-h"><span class="badge">Lab 1</span> Set up and write the form spec</h2>
+        </header>
+        <p><strong>You finish with:</strong> VS Code and the GitHub Copilot app working on the same folder, a form chosen, and a checked list of what the form asks.</p>
+        <div class="table-wrap">
+          <table class="data steps-table">
+            <colgroup><col style="width:10.8%"><col style="width:72.6%"><col style="width:16.6%"></colgroup>
+            <thead><tr><th scope="col">Step</th><th scope="col">What you do</th><th scope="col">About</th></tr></thead>
+            <tbody>
+              <tr data-step-row="lab1-step1"><td>1</td><td><a href="#lab1-step1">Set up VS Code</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab1-step2"><td>2</td><td><a href="#lab1-step2">Set up the GitHub Copilot app</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab1-step3"><td>3</td><td><a href="#lab1-step3">Get the lab kit and open it in both tools</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab1-step4"><td>4</td><td><a href="#lab1-step4">Choose your form</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab1-step5"><td>5</td><td><a href="#lab1-step5">Write the form spec with Copilot</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab1-step6"><td>6</td><td><a href="#lab1-step6">Check the form spec against the PDF</a></td><td>10 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="step" id="lab1-step1">
+          <div class="step-head">
+            <h3><span class="step-no">Step 1</span> Set up VS Code</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step1" aria-label="Done: step 1, Set up VS Code"> Done</label>
+          </div>
+          <ol>
+            <li>Open VS Code. Select the <strong>Accounts</strong> icon at the bottom left and confirm that you are signed in to GitHub with your OPS account.</li>
+            <li>Open the Chat view with <strong>Ctrl+Alt+I</strong>.</li>
+            <li>
+              <p>In the <strong>Session Target</strong> control select <strong>Copilot</strong>. In the <strong>Agent</strong> dropdown select <strong>Agent</strong>.</p>
+              <figure class="shot" style="--w:543px">
+                <a href="img/vscode-session-target.png" target="_blank" rel="noopener"><img src="img/vscode-session-target.png" alt="The Session Target control in the VS Code chat, with Copilot selected." width="1304" height="248" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+                <figcaption>The Session Target control in VS Code. Source: VS Code documentation.</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p>Send this prompt.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Reply with the single word READY.</code></pre>
+              </div>
+              <p class="see"><strong>You should see:</strong> READY. If Copilot asks you to sign in or says you have no access, tell your table lead now.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="step" id="lab1-step2">
+          <div class="step-head">
+            <h3><span class="step-no">Step 2</span> Set up the GitHub Copilot app</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step2" aria-label="Done: step 2, Set up the GitHub Copilot app"> Done</label>
+          </div>
+          <p>Installed it before today? Open it, check that you are signed in with your OPS account, set the tool permissions (number 5 below) and go to <a href="#lab1-step3">step 3</a>. Not installed? Install it now, and allow 10 minutes. If it cannot be installed on your laptop, do the labs in VS Code. Every step works there.</p>
+          <ol>
+            <li>
+              <p>Download the app from <a href="https://github.com/features/ai/github-app" target="_blank" rel="noopener">github.com/features/ai/github-app<span class="sr-only" data-ui> (opens in a new tab)</span></a>. The direct link for Windows is <a href="https://gh.io/copilot-app-win64" target="_blank" rel="noopener">gh.io/copilot-app-win64<span class="sr-only" data-ui> (opens in a new tab)</span></a>. Setup help: <a href="https://docs.github.com/en/copilot/get-started/quickstart-copilot-app" target="_blank" rel="noopener">Getting started with the GitHub Copilot app<span class="sr-only" data-ui> (opens in a new tab)</span></a>.</p>
+              <figure class="shot" style="--w:465px">
+                <a href="img/copilot-app-download.png" target="_blank" rel="noopener"><img src="img/copilot-app-download.png" alt="The GitHub Copilot app download page with the Download for Windows button." width="1284" height="348" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+                <figcaption>The download page for the GitHub Copilot app.</figcaption>
+              </figure>
+            </li>
+            <li>Run the installer, then open <strong>GitHub Copilot</strong> from the Start menu.</li>
+            <li>Select <strong>Sign in to GitHub</strong> and sign in with your OPS account.</li>
+            <li>The app offers to add repositories. Skip that for now. Choose a theme and finish the setup.</li>
+            <li>Open the app’s settings, select <strong>Sessions</strong> and set <strong>Tool permissions</strong> to <strong>Assisted</strong> or <strong>Ask every time</strong>. <strong>Assisted</strong> asks about fewer requests. With <strong>Ask every time</strong> you approve every command and file change, which takes many clicks from Lab 2 on. Do not use <strong>Approve all</strong> today.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab1-step3">
+          <div class="step-head">
+            <h3><span class="step-no">Step 3</span> Get the lab kit and open it in both tools</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step3" aria-label="Done: step 3, Get the lab kit and open it in both tools"> Done</label>
+          </div>
+          <p>The lab kit is one small repository of help for the labs. You build your application inside it.</p>
+          <div class="box box-terminal" data-copy>
+            <p class="box-label">TERMINAL</p>
+            <pre><code>git clone https://github.com/haslam93/ops-developer-day-lab-kit.git</code></pre>
+          </div>
+          <div class="tools">
+            <div class="tool tool-vscode">
+              <p class="tool-label">IN VS CODE</p>
+              <ol>
+                <li>Select <strong>File &gt; Open Folder</strong> and open the <code>ops-developer-day-lab-kit</code> folder.</li>
+                <li>Select <strong>Yes, I trust the authors</strong>.</li>
+              </ol>
+            </div>
+            <div class="tool tool-app">
+              <p class="tool-label">IN THE GITHUB COPILOT APP</p>
+              <ol>
+                <li>Select <strong>+</strong> beside <strong>Sessions</strong>, then <strong>Open local folder</strong>, and select the same folder.</li>
+                <li>Under the prompt box set <strong>Environment</strong> to <strong>This computer</strong> and <strong>Workspace</strong> to <strong>Current checkout</strong>.</li>
+                <li>Set the mode to <strong>Interactive</strong>.</li>
+              </ol>
+            </div>
+          </div>
+          <ol>
+            <li>Send the READY prompt from <a href="#lab1-step1">step 1</a> in the app as well.</li>
+            <li>Open <code>README.md</code>. It lists what is in the kit and gives the GitHub details for today.</li>
+            <li>Open <code>.github/copilot-instructions.md</code>. These are the project’s rules. Copilot reads them on every request, in both tools.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab1-step4">
+          <div class="step-head">
+            <h3><span class="step-no">Step 4</span> Choose your form</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step4" aria-label="Done: step 4, Choose your form"> Done</label>
+          </div>
+          <div class="table-wrap">
+            <table class="data">
+              <colgroup><col style="width:26.4%"><col style="width:73.6%"></colgroup>
+              <thead><tr><th scope="col">Your choice</th><th scope="col">What to do</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">A sample form from the kit</th><td>Open the <code>forms</code> folder and choose one of the three sample forms: <code>marriage-licence-fee-affidavit</code> (30 fields), <code>place-of-business-questionnaire</code> (37 fields) or <code>amend-business-name</code> (332 fields: build two or three sections only). Each folder holds the blank PDF, <code>form.pdf</code>, and a ready <code>outline.md</code>.</td></tr>
+                <tr><th scope="row">A form from your ministry</th><td>In the <a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a> select <strong>Ministries</strong>, then your ministry. The list of ministries has two pages. Choose a form that people fill in, not a guide, of one or two pages. Save the English PDF as <code>forms/my-form/form.pdf</code>.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="shot" style="--w:558px">
+            <a href="img/forms-repository-ministries.png" target="_blank" rel="noopener"><img src="img/forms-repository-ministries.png" alt="The Central Forms Repository with the Ministries tab selected and 38 ministries listed." width="1304" height="368" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+            <figcaption>Ministries in the Central Forms Repository.</figcaption>
+          </figure>
+          <ol>
+            <li>Allow 5 minutes to choose. If nothing fits, or the site does not load, take a sample form.</li>
+            <li>Open the PDF in Adobe Acrobat Reader. It does not open in a browser. Click through it once.</li>
+            <li>
+              <p>Ministry form only: ask Copilot to create the outline.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Run tools/extract-form/extract_form_outline.py on forms/my-form/form.pdf.
+If Python is not installed, stop and tell me. Do not install Python.
+Install its one dependency first if it is missing.
+Tell me how many fields it found.</code></pre>
+              </div>
+            </li>
+          </ol>
+          <p class="note">The field count is the real size of the form: the site shows no page count. More than about 50 fields? Plan to build two or three sections only (<a href="#lab1-step6">step 6</a>).</p>
+          <div class="callout callout-info" role="note">
+            <p class="callout-title">Why Copilot needs an outline</p>
+            <p>Most forms in the repository are Adobe forms. Copilot, like a browser, sees only a page that says the file needs Adobe Reader. <code>outline.md</code> is the form’s content as plain text: every section, field, label, option and script. No fields found? The PDF is a guide or a print-only form: choose another. No Python? Use a sample form, or attach a screenshot of each page to the chat and send the screenshot prompt in <code>docs/lab-prompts.md</code>.</p>
+          </div>
+        </div>
+        <div class="step" id="lab1-step5">
+          <div class="step-head">
+            <h3><span class="step-no">Step 5</span> Write the form spec with Copilot</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step5" aria-label="Done: step 5, Write the form spec with Copilot"> Done</label>
+          </div>
+          <p>A <strong>form spec</strong> is a plain list of what the form asks: every question, its type, whether it is required, and its rules, such as “enable this question only when that box is ticked”. You write it before any code, for three reasons.</p>
+          <ul>
+            <li><strong>Copilot builds from it.</strong> A clear spec gives a correct form. Without one, Copilot guesses, and the form looks right but is wrong.</li>
+            <li><strong>You can check it.</strong> Comparing a short list with the PDF takes minutes. Finding a missing rule in generated code takes far longer.</li>
+            <li><strong>Every later step uses it:</strong> the build, the tests and the hand-off note.</li>
+          </ul>
+          <p class="note">Three rows of a form spec, from form 026-LE221, Security Screening Check:</p>
+          <div class="table-wrap">
+            <table class="data wide">
+              <colgroup><col style="width:9.8%"><col style="width:26.4%"><col style="width:10.3%"><col style="width:11.2%"><col style="width:28.6%"><col style="width:13.7%"></colgroup>
+              <thead><tr><th scope="col">ID</th><th scope="col">Label, as on the form</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Rule or condition</th><th scope="col">Completed by</th></tr></thead>
+              <tbody>
+                <tr><td>APP-01</td><td>Last name</td><td>Text</td><td>Yes</td><td>None</td><td>Applicant</td></tr>
+                <tr><td>APP-09</td><td>Driver’s licence number</td><td>Text</td><td>Unknown</td><td>Enabled only when the driving-history check is ticked</td><td>Applicant</td></tr>
+                <tr><td>ORG-01</td><td>Form checked for completeness</td><td>Checkbox</td><td>No</td><td>None</td><td>Organization</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol>
+            <li>Start a fresh conversation in VS Code or in the app.</li>
+            <li>
+              <p>Send this prompt. Replace <code>&lt;form&gt;</code> with your form’s folder name, for example <code>example-security-screening-check</code>.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <div class="fill" data-ui>
+                  <span class="fill-lead">Fill in, and the prompt uses it:</span>
+                  <label>Form folder
+                    <select data-fill="form" id="prompt-6-form">
+                      <option value="">Choose your form</option>
+                      <optgroup label="Sample forms">
+                        <option>marriage-licence-fee-affidavit</option>
+                        <option>place-of-business-questionnaire</option>
+                        <option>amend-business-name</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option>my-form</option>
+                        <option>example-security-screening-check</option>
+                      </optgroup>
+                    </select>
+                  </label>
+                </div>
+                <pre><code>Read forms/<span class="ph" data-ph="form"><span class="ph">&lt;form&gt;</span></span>/outline.md. It is the content of an Ontario government PDF form:
+sections, fields, labels, options and the scripts behind its rules.
+Create docs/form-spec.md from it. Use docs/form-spec-template.md as the layout.
+Do not write any application code.
+
+List every question a person answers, grouped by section, with: ID, label as on the
+form, type, required (yes, no or unknown), options or format, rule or condition, and
+who completes it (applicant, organization or office).
+Then list the rules that show, hide, enable or disable fields, the groups that repeat,
+the calculations and format checks, and the signatures.
+Leave out buttons, fonts, page layout and navigation scripts.
+Finish with anything you could not work out from the outline.</code></pre>
+              </div>
+            </li>
+            <li>Copilot works for a few minutes and creates <code>docs/form-spec.md</code>. Open it.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab1-step6">
+          <div class="step-head">
+            <h3><span class="step-no">Step 6</span> Check the form spec against the PDF</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab1-step6" aria-label="Done: step 6, Check the form spec against the PDF"> Done</label>
+          </div>
+          <p>Copilot wrote the spec from the outline. It can be wrong, and the outline does not hold everything. Put the PDF beside the spec and check five things.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <colgroup><col style="width:19.6%"><col style="width:80.4%"></colgroup>
+              <thead><tr><th scope="col">Check</th><th scope="col">What to look for</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Scope</th><td>A long form? Choose two or three sections for today and ask Copilot to mark the others <code>not today</code>.</td></tr>
+                <tr><th scope="row">Questions</th><td>Count the questions in one section of the PDF. The spec has the same number, with the same wording.</td></tr>
+                <tr><th scope="row">Who answers</th><td>Sections for an organization or an office are marked. They stay out of the web form.</td></tr>
+                <tr><th scope="row">Required</th><td>The PDF often does not say. Decide for the questions that matter and leave the others as <code>unknown</code>.</td></tr>
+                <tr><th scope="row">Rules</th><td>Try two rules in Adobe Reader, for example tick a box, and confirm that the spec says what happens.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol>
+            <li>
+              <p>Tell Copilot exactly what to correct.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>In docs/form-spec.md, field <span class="ph">&lt;ID&gt;</span> is wrong: <span class="ph">&lt;what the PDF shows&gt;</span>.
+Correct that row and any row the same fact changes. Tell me which rows you changed.</code></pre>
+              </div>
+            </li>
+            <li>Add your initials at the top of the spec: <code>Reviewed by &lt;your initials&gt; against the PDF.</code></li>
+            <li>
+              <p>Save your work. Ask Copilot to commit it, or run this in the kit folder.</p>
+              <div class="box box-terminal" data-copy>
+                <p class="box-label">TERMINAL</p>
+                <pre><code>git add -A
+git commit -m "Lab 1: form spec"</code></pre>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec lab lab-2" id="lab2" aria-labelledby="lab2-h" data-lab="2" data-time="13:15-14:00">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">LAB 2 OF 4 | 13:15-14:00 | 45 MINUTES</p>
+          <h2 id="lab2-h"><span class="badge">Lab 2</span> Connect to GitHub issues and build</h2>
+        </header>
+        <p><strong>You finish with:</strong> Your user story created as a GitHub issue and pulled into your project through MCP, and a first working version of your form, with tests.</p>
+        <div class="table-wrap">
+          <table class="data steps-table">
+            <colgroup><col style="width:10.8%"><col style="width:72.6%"><col style="width:16.6%"></colgroup>
+            <thead><tr><th scope="col">Step</th><th scope="col">What you do</th><th scope="col">About</th></tr></thead>
+            <tbody>
+              <tr data-step-row="lab2-step1"><td>1</td><td><a href="#lab2-step1">Create your user story as a GitHub issue</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step2"><td>2</td><td><a href="#lab2-step2">Connect the GitHub MCP server</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab2-step3"><td>3</td><td><a href="#lab2-step3">Pull your user story through MCP</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step4"><td>4</td><td><a href="#lab2-step4">Plan the application</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step5"><td>5</td><td><a href="#lab2-step5">Build it and try it</a></td><td>15 min</td></tr>
+              <tr data-step-row="lab2-step6"><td>6</td><td><a href="#lab2-step6">Fix the gaps</a></td><td>5 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="step" id="lab2-step1">
+          <div class="step-head">
+            <h3><span class="step-no">Step 1</span> Create your user story as a GitHub issue</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step1" aria-label="Done: step 1, Create your user story as a GitHub issue"> Done</label>
+          </div>
+          <p>On an OPS project, work starts as an item on a backlog. Today the backlog is the list of issues in the lab repository, in the event’s GitHub organization. The kit’s <code>README.md</code> gives the repository’s address.</p>
+          <ol>
+            <li>Open the lab repository in Edge and sign in to GitHub with your OPS account.</li>
+            <li>Select <strong>Issues</strong>, then <strong>New issue</strong>, and choose the template <strong>User story: put a form online</strong>. No template? Open a blank issue and paste the description and the acceptance criteria from the kit’s <code>docs/user-story.md</code>.</li>
+            <li>Give the issue a title that names your form, for example <code>Put form 026-LE221 online (JD)</code>, with your own initials.</li>
+            <li>Create the issue. Note the number beside its title, for example <code>#42</code>. It is the number of your issue.</li>
+          </ol>
+          <p class="note">Cannot open the repository, or cannot create an issue? Tell your table lead and carry on. <a href="#lab2-step3">Step 3</a> has a fallback.</p>
+        </div>
+        <div class="step" id="lab2-step2">
+          <div class="step-head">
+            <h3><span class="step-no">Step 2</span> Connect the GitHub MCP server</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step2" aria-label="Done: step 2, Connect the GitHub MCP server"> Done</label>
+          </div>
+          <p>MCP, the Model Context Protocol, lets Copilot use tools outside the editor: read an issue, query a database, search documentation. At OPS, ITOD keeps a registry of approved MCP servers, and Copilot runs servers from that registry only. Your OPS account already points Copilot at the registry: there is nothing to configure.</p>
+          <figure class="shot" style="--w:698px">
+            <a href="img/mcp-registry.png" target="_blank" rel="noopener"><img src="img/mcp-registry.png" alt="Copilot, in VS Code or the app, may only use servers from the ITOD registry. The GitHub MCP server reads your issue. Check the tool call in the conversation." width="1600" height="590" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+          </figure>
+          <div class="tools">
+            <div class="tool tool-vscode">
+              <p class="tool-label">IN VS CODE</p>
+              <ol>
+                <li>Open the <strong>Extensions</strong> view with <strong>Ctrl+Shift+X</strong> and type <code>@mcp</code> in the search box.</li>
+                <li>The list shows the servers in the OPS registry. If VS Code shows <strong>Browse MCP Servers</strong> instead, select it. No list at all? Press <strong>Ctrl+Shift+P</strong> and run <strong>MCP: Browse MCP Servers</strong>.</li>
+                <li>Select the GitHub server, then <strong>Install</strong>. When VS Code asks, confirm that you trust the server.</li>
+              </ol>
+            </div>
+            <div class="tool tool-app">
+              <p class="tool-label">IN THE GITHUB COPILOT APP</p>
+              <ol>
+                <li>Select <strong>Customize</strong> in the sidebar, then <strong>MCP</strong>.</li>
+                <li>If the GitHub server from the OPS registry is offered, follow the prompts to install it.</li>
+                <li>If it is not, do steps 2 and 3 in VS Code. The app then works from the same <code>docs/story.md</code>.</li>
+              </ol>
+            </div>
+          </div>
+          <figure class="shot" style="--w:667px">
+            <a href="img/vscode-mcp-extensions.png" target="_blank" rel="noopener"><img src="img/vscode-mcp-extensions.png" alt="The Extensions view in VS Code with @mcp github in the search box, the GitHub server in the list and its Install button." width="1304" height="321" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+            <figcaption>Searching <code>@mcp</code> in the VS Code Extensions view. Source: VS Code documentation. Your list shows the OPS registry.</figcaption>
+          </figure>
+          <ol>
+            <li>Read the list before you install. It shows the servers OPS has approved. Note one, besides GitHub, that you could use in your own work. A request for a new server goes to ITOD.</li>
+            <li>If a sign-in request appears, read it, then allow the server to use your OPS account on GitHub.</li>
+            <li>Check that it is there: <strong>MCP: List Servers</strong> from <strong>Ctrl+Shift+P</strong> in VS Code, <strong>Installed</strong> in the app.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab2-step3">
+          <div class="step-head">
+            <h3><span class="step-no">Step 3</span> Pull your user story through MCP</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step3" aria-label="Done: step 3, Pull your user story through MCP"> Done</label>
+          </div>
+          <p>Your user story is now an issue on GitHub. Ask Copilot to read it. Give it the lab repository, written as <code>organization/repository</code>, and the number of your issue.</p>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <div class="fill" data-ui>
+              <span class="fill-lead">Fill in, and the prompt uses it:</span>
+              <label>Lab repository
+                <input type="text" data-fill="repo" id="prompt-9-repo" placeholder="organization/repository" autocomplete="off" spellcheck="false" size="28">
+              </label>
+              <label>Issue number
+                <input type="text" data-fill="issue" id="prompt-9-issue" placeholder="42" inputmode="numeric" autocomplete="off" size="6">
+              </label>
+            </div>
+            <pre><code>Use the GitHub MCP server. In repository <span class="ph" data-ph="repo"><span class="ph">&lt;organization&gt;</span>/<span class="ph">&lt;repository&gt;</span></span>, get issue <span class="ph" data-ph="issue"><span class="ph">&lt;number&gt;</span></span>.
+Read the issue with that server only. If it has no tool that reads an issue, stop and
+tell me. Do not use the gh command or the web instead.
+Show its title and description exactly as written.
+Do not create or change anything on GitHub.
+Then save that text as docs/story.md.</code></pre>
+          </div>
+          <ol>
+            <li>Copilot asks before it runs the tool. Read what it wants to run, then approve.</li>
+            <li>Expand the tool call in the conversation. Check that it used the GitHub server, that the tool reads an issue (for example <code>issue_read</code>) and that the number is yours. A terminal command such as <code>gh issue view</code> is not the MCP server: return to <a href="#lab2-step2">step 2</a>. <strong>No tool call, no proof:</strong> Copilot then wrote the story from guesswork. Delete the file and ask again, naming the server.</li>
+            <li>Open <code>docs/story.md</code> and compare it with the issue in your browser.</li>
+          </ol>
+          <p class="note">Copilot answers that it has no tool that reads an issue? The server from the registry is not connected in that tool: return to <a href="#lab2-step2">step 2</a>. No access to GitHub issues at all? Copy <code>docs/user-story.md</code> to <code>docs/story.md</code>, put your form’s number in the title and continue.</p>
+        </div>
+        <div class="step" id="lab2-step4">
+          <div class="step-head">
+            <h3><span class="step-no">Step 4</span> Plan the application</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step4" aria-label="Done: step 4, Plan the application"> Done</label>
+          </div>
+          <p>This is the largest change of the day, so ask for a plan before Copilot writes any code. You choose the stack. If you have no preference, the project instructions name a simple one.</p>
+          <div class="tools">
+            <div class="tool tool-vscode">
+              <p class="tool-label">IN VS CODE</p>
+              <p>Start a new chat. Type <code>/plan</code>, a space, then paste the prompt.</p>
+            </div>
+            <div class="tool tool-app">
+              <p class="tool-label">IN THE GITHUB COPILOT APP</p>
+              <p>Start a new session in the kit folder. Set the mode to <strong>Plan</strong>, then paste the prompt.</p>
+            </div>
+          </div>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Plan a small web application that puts the form in docs/form-spec.md online and
+meets docs/story.md. Follow .github/copilot-instructions.md.
+
+Stack: <span class="ph">&lt;your stack, or: the simplest option in the project instructions&gt;</span>.
+Build only the questions the applicant answers. Leave out sections completed by an
+organization or an office, and any section the spec marks "not today".
+Show the form's notice of collection as text above the questions, in the form's own
+wording.
+Include the required and format checks, the rules that show, hide or enable fields,
+the repeating groups, and a declaration checkbox with a typed full name in place of
+each signature.
+On submit, check every rule again on the server, store the submission in a local
+file and show a confirmation page with a reference number.
+Plain pages are fine for now. The Ontario Design System comes in the next lab.
+Add a test for every rule. Unit and server tests only: browser tests come in Lab 4.
+List the files you will create, the commands that start the application and run
+the tests, and any decision you need from me.</code></pre>
+          </div>
+          <ol>
+            <li>Answer Copilot’s questions. If you are unsure, ask it to recommend an option and explain why.</li>
+            <li>Read the plan. It should build only today’s sections, name the files, check the rules on the server, include tests and say how to start the application.</li>
+            <li>Ask for changes until the plan is right. Then approve it.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab2-step5">
+          <div class="step-head">
+            <h3><span class="step-no">Step 5</span> Build it and try it</h3>
+            <p class="step-meta"><span class="time">about 15 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step5" aria-label="Done: step 5, Build it and try it"> Done</label>
+          </div>
+          <ol>
+            <li>Copilot builds the application. It asks before it runs commands, such as installing a package or running the tests. Read each request, then approve. Expect 5 to 10 minutes.</li>
+            <li>When it finishes, review what changed: the <strong>Source Control</strong> view in VS Code, or <strong>Changes</strong> in the app.</li>
+            <li>
+              <p>Ask Copilot to start the application.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>If a copy of the application is already running, stop it first: find it by the port
+it listens on.
+Then start the application and give me the address to open in my browser.
+Tell me how to stop it.</code></pre>
+              </div>
+            </li>
+            <li>
+              <p>Open the address in Edge. Fill in the form with made-up data and submit it.</p>
+              <p class="see"><strong>You should see:</strong> a confirmation page with a reference number.</p>
+            </li>
+            <li>
+              <p>Score the result against your form spec.</p>
+              <div class="table-wrap">
+                <table class="data score-table">
+                  <colgroup><col style="width:73.6%"><col style="width:26.4%"></colgroup>
+                  <thead><tr><th scope="col">Score</th><th scope="col">Your count</th></tr></thead>
+                  <tbody>
+                    <tr><td>Questions present, with the right label and type</td><td><span class="score" data-ui><input type="text" inputmode="numeric" size="3" data-score="0a" aria-label="Questions present, with the right label and type: how many"> of <input type="text" inputmode="numeric" size="3" data-score="0b" aria-label="Questions present, with the right label and type: out of how many"></span></td></tr>
+                    <tr><td>Required questions that refuse an empty answer</td><td><span class="score" data-ui><input type="text" inputmode="numeric" size="3" data-score="1a" aria-label="Required questions that refuse an empty answer: how many"> of <input type="text" inputmode="numeric" size="3" data-score="1b" aria-label="Required questions that refuse an empty answer: out of how many"></span></td></tr>
+                    <tr><td>Rules and repeating groups that work when you try them</td><td><span class="score" data-ui><input type="text" inputmode="numeric" size="3" data-score="2a" aria-label="Rules and repeating groups that work when you try them: how many"> of <input type="text" inputmode="numeric" size="3" data-score="2b" aria-label="Rules and repeating groups that work when you try them: out of how many"></span></td></tr>
+                    <tr><td>Tests passing</td><td><span class="score" data-ui><input type="text" inputmode="numeric" size="3" data-score="3a" aria-label="Tests passing: how many"> of <input type="text" inputmode="numeric" size="3" data-score="3b" aria-label="Tests passing: out of how many"></span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <figure class="shot" style="--w:496px">
+                <a href="img/first-version-example.png" target="_blank" rel="noopener"><img src="img/first-version-example.png" alt="Example of a first version of the web form, before the Ontario Design System is applied." width="1104" height="524" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+                <figcaption>Example of a first version, from a test run of this lab. Yours will differ.</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p>Save the first version before you fix anything. Ask Copilot to commit it, or run this in the kit folder.</p>
+              <div class="box box-terminal" data-copy>
+                <p class="box-label">TERMINAL</p>
+                <pre><code>git add -A
+git commit -m "Lab 2: first version"</code></pre>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="step" id="lab2-step6">
+          <div class="step-head">
+            <h3><span class="step-no">Step 6</span> Fix the gaps</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step6" aria-label="Done: step 6, Fix the gaps"> Done</label>
+          </div>
+          <p>Fix what the first build got wrong, one problem per prompt. Start with required questions and rules. Leave the look of the page for Lab 3.</p>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>In the web form, field <span class="ph">&lt;ID&gt;</span> is wrong: <span class="ph">&lt;what happens now&gt;</span>.
+The form spec says: <span class="ph">&lt;the rule&gt;</span>.
+Fix it. If the form spec is wrong too, correct it. Add a test that fails before the
+fix and passes after it. Run the tests.</code></pre>
+          </div>
+          <ol>
+            <li>After each fix, send the start prompt from <a href="#lab2-step5">step 5</a> again, so that the application restarts. Then reload the page and try the rule yourself.</li>
+            <li>
+              <p>When the tests pass, save your work again.</p>
+              <div class="box box-terminal" data-copy>
+                <p class="box-label">TERMINAL</p>
+                <pre><code>git add -A
+git commit -m "Lab 2: fixes"</code></pre>
+              </div>
+            </li>
+          </ol>
+          <p class="note">Optional: ask Copilot to add a comment with your score to your issue. The prompt is in <code>docs/lab-prompts.md</code>. Copilot asks before it writes to GitHub.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec lab lab-3" id="lab3" aria-labelledby="lab3-h" data-lab="3" data-time="14:00-14:45">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">LAB 3 OF 4 | 14:00-14:45 | 45 MINUTES</p>
+          <h2 id="lab3-h"><span class="badge">Lab 3</span> Ontario Design System and accessibility</h2>
+        </header>
+        <p><strong>You finish with:</strong> Your form in the Ontario look and feel, an accessibility check you ran yourself, and the problems fixed.</p>
+        <div class="table-wrap">
+          <table class="data steps-table">
+            <colgroup><col style="width:10.8%"><col style="width:72.6%"><col style="width:16.6%"></colgroup>
+            <thead><tr><th scope="col">Step</th><th scope="col">What you do</th><th scope="col">About</th></tr></thead>
+            <tbody>
+              <tr data-step-row="lab3-step1"><td>1</td><td><a href="#lab3-step1">Find your way around the Ontario Design System</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab3-step2"><td>2</td><td><a href="#lab3-step2">Apply it to your form</a></td><td>15 min</td></tr>
+              <tr data-step-row="lab3-step3"><td>3</td><td><a href="#lab3-step3">Check accessibility three ways</a></td><td>15 min</td></tr>
+              <tr data-step-row="lab3-step4"><td>4</td><td><a href="#lab3-step4">Fix what you found</a></td><td>10 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="step" id="lab3-step1">
+          <div class="step-head">
+            <h3><span class="step-no">Step 1</span> Find your way around the Ontario Design System</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab3-step1" aria-label="Done: step 1, Find your way around the Ontario Design System"> Done</label>
+          </div>
+          <p>The Ontario Design System is the design and coding standard for Government of Ontario websites and applications. It gives you components, styles and guidance, with code for each.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <colgroup><col style="width:37.2%"><col style="width:62.8%"></colgroup>
+              <thead><tr><th scope="col">Where</th><th scope="col">What you find</th></tr></thead>
+              <tbody>
+                <tr><td><a href="https://designsystem.ontario.ca/" target="_blank" rel="noopener">designsystem.ontario.ca<span class="sr-only" data-ui> (opens in a new tab)</span></a></td><td>The home page.</td></tr>
+                <tr><td><a href="https://designsystem.ontario.ca/components/detail/components.html" target="_blank" rel="noopener">Components<span class="sr-only" data-ui> (opens in a new tab)</span></a></td><td>Every component, with guidance, a preview and code. Form components are under <strong>Forms and inputs</strong>.</td></tr>
+                <tr><td><a href="https://designsystem.ontario.ca/docs/documentation/develop/for-developers.html" target="_blank" rel="noopener">Getting started for developers<span class="sr-only" data-ui> (opens in a new tab)</span></a></td><td>How to add it: the distribution package, npm packages or web components.</td></tr>
+                <tr><td><a href="https://designsystem.ontario.ca/components/detail/error-messaging.html" target="_blank" rel="noopener">Error messaging<span class="sr-only" data-ui> (opens in a new tab)</span></a></td><td>How Ontario services show errors on a form.</td></tr>
+                <tr><td><code>docs/ontario-design-system.md</code> in the kit</td><td>The same links, the install options and the components a form needs. Copilot reads this file.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="shot" style="--w:620px">
+            <a href="img/design-system-components.png" target="_blank" rel="noopener"><img src="img/design-system-components.png" alt="The Components page of the Ontario Design System, with the list of component groups." width="1284" height="704" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+            <figcaption>The Components page of the Ontario Design System.</figcaption>
+          </figure>
+          <ol>
+            <li>Open the Components page. Under <strong>Forms and inputs</strong>, open <strong>Text inputs</strong> and <strong>Error messaging</strong>. Look at the preview and the code of each.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab3-step2">
+          <div class="step-head">
+            <h3><span class="step-no">Step 2</span> Apply it to your form</h3>
+            <p class="step-meta"><span class="time">about 15 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab3-step2" aria-label="Done: step 2, Apply it to your form"> Done</label>
+          </div>
+          <ol>
+            <li>
+              <p>Start a fresh conversation and send this prompt.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Restyle the web form with the Ontario Design System.
+Read docs/ontario-design-system.md first. Add the design system with the option
+that suits this stack.
+Use its header, footer, fieldsets, labels, hint text, text inputs, text areas, radio
+buttons, checkboxes, dropdown lists, buttons and error messaging. Copy the markup and
+class names from the design system's own samples.
+Group the questions under the same section headings as the PDF.
+Show errors as the design system describes: a summary at the top of the page that
+links to each field, and a message at each field.
+Write custom CSS only where no component fits, and tell me where you did.
+Keep every question, rule and test working. Run the tests before you finish.</code></pre>
+              </div>
+            </li>
+            <li>Copilot adds the design system to your project. It may ask to install a package or download a file. Read the request, then approve.</li>
+            <li>Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again, so that the application restarts. Then reload your form. Compare it with the component pages. Narrow the browser window to the width of a phone. Note anything that differs from the component pages, such as a missing icon or arrow. It goes in <code>docs/a11y-findings.md</code> in <a href="#lab3-step3">step 3</a>.</li>
+            <li>
+              <p>Submit the form with a mistake in it, for example empty.</p>
+              <p class="see"><strong>You should see:</strong> a summary at the top headed “There is a problem”, a link from each error to its field, and a message at each field.</p>
+            </li>
+          </ol>
+          <figure class="shot" style="--w:620px">
+            <a href="img/design-system-example.png" target="_blank" rel="noopener"><img src="img/design-system-example.png" alt="Example of the web form in the Ontario Design System, showing the error summary and messages at each field." width="1104" height="1004" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+            <figcaption>Example after this step, from a test run of this lab. Yours will differ.</figcaption>
+          </figure>
+        </div>
+        <div class="step" id="lab3-step3">
+          <div class="step-head">
+            <h3><span class="step-no">Step 3</span> Check accessibility three ways</h3>
+            <p class="step-meta"><span class="time">about 15 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab3-step3" aria-label="Done: step 3, Check accessibility three ways"> Done</label>
+          </div>
+          <p>Ontario’s accessibility law, the AODA, requires Government of Ontario websites, public and internal, to meet <a href="https://www.ontario.ca/page/how-make-websites-accessible" target="_blank" rel="noopener">WCAG 2.0 Level AA<span class="sr-only" data-ui> (opens in a new tab)</span></a>. The design system helps, but only testing shows whether your form works for everyone. The kit’s <code>docs/accessibility-checklist.md</code> lists what a form needs. Copy <code>docs/a11y-findings-template.md</code> to <code>docs/a11y-findings.md</code> and write every problem you find there.</p>
+          <h4>A. Automated audit (5 min)</h4>
+          <ol>
+            <li>With your form open in Edge, press <strong>F12</strong>. Open the <strong>Lighthouse</strong> tool, select <strong>Accessibility</strong> only, then select <strong>Analyze page load</strong>.</li>
+            <li>Write down the score and each failed audit. A score of 100 with nothing failed is common: an automated audit checks only part of the standard. Carry on with B and C.</li>
+          </ol>
+          <h4>B. Keyboard only, no mouse (5 min)</h4>
+          <div class="table-wrap">
+            <table class="data">
+              <colgroup><col style="width:39.1%"><col style="width:60.9%"></colgroup>
+              <thead><tr><th scope="col">Try this</th><th scope="col">Passes when</th></tr></thead>
+              <tbody>
+                <tr><td>Press <strong>Tab</strong> through the whole form</td><td>You reach every field and button in a sensible order, and you can always see where you are.</td></tr>
+                <tr><td>Radio buttons, checkboxes, dropdown lists</td><td>The arrow keys move between radio buttons and through a dropdown list. <strong>Space</strong> ticks a checkbox.</td></tr>
+                <tr><td>Submit the form with a mistake in it</td><td>The keyboard focus moves to the error summary, and each link in it takes you to its field.</td></tr>
+                <tr><td>Zoom the browser to 200%</td><td>Nothing is cut off and you do not have to scroll sideways.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>C. Reviewer agent (5 min)</h4>
+          <p>The kit includes a custom agent, <strong>Accessibility Reviewer</strong>. It can read and search. It cannot edit files or run commands.</p>
+          <div class="tools">
+            <div class="tool tool-vscode">
+              <p class="tool-label">IN VS CODE</p>
+              <p>In the <strong>Agent</strong> dropdown select <strong>Accessibility Reviewer</strong>.</p>
+            </div>
+            <div class="tool tool-app">
+              <p class="tool-label">IN THE GITHUB COPILOT APP</p>
+              <p>Select <strong>Accessibility Reviewer</strong> in the agent picker in the prompt box, or type <code>/agent</code>.</p>
+            </div>
+          </div>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Review the web form's pages for accessibility problems against WCAG 2.0 Level AA
+and docs/accessibility-checklist.md. For each finding give the file and line, who
+is affected and the fix. Do not edit files.</code></pre>
+          </div>
+          <ol>
+            <li>Check two findings in the browser before you accept them. A reviewer can be wrong: when a finding is about the design system, check it against the component page too. Add the ones you agree with to <code>docs/a11y-findings.md</code>. A finding that needs a new page, such as a review step before submitting, does not fit today: record it as not fixed.</li>
+            <li>Switch back to the default agent.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab3-step4">
+          <div class="step-head">
+            <h3><span class="step-no">Step 4</span> Fix what you found</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab3-step4" aria-label="Done: step 4, Fix what you found"> Done</label>
+          </div>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Fix the findings listed in docs/a11y-findings.md.
+Change only what each finding needs. Keep every rule and test working.
+Then mark each finding in that file as fixed or not fixed, with the reason.</code></pre>
+          </div>
+          <ol>
+            <li>Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again. Run the Lighthouse audit again and repeat the keyboard checks that failed. Add the new score to <code>docs/a11y-findings.md</code>.</li>
+            <li>
+              <p>Save your work. Ask Copilot to commit it, or run this in the kit folder.</p>
+              <div class="box box-terminal" data-copy>
+                <p class="box-label">TERMINAL</p>
+                <pre><code>git add -A
+git commit -m "Lab 3: design system and accessibility"</code></pre>
+              </div>
+            </li>
+          </ol>
+          <p class="note">An automated audit finds only some accessibility problems. Passing these checks does not certify AODA or WCAG conformance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec lab lab-4" id="lab4" aria-labelledby="lab4-h" data-lab="4" data-time="15:00-15:45">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">LAB 4 OF 4 | 15:00-15:45 | 45 MINUTES</p>
+          <h2 id="lab4-h"><span class="badge">Lab 4</span> Shared service and testing</h2>
+        </header>
+        <p><strong>You finish with:</strong> An address lookup service you built, your form connected to it, Playwright tests and a one-page hand-off note.</p>
+        <div class="table-wrap">
+          <table class="data steps-table">
+            <colgroup><col style="width:10.8%"><col style="width:72.6%"><col style="width:16.6%"></colgroup>
+            <thead><tr><th scope="col">Step</th><th scope="col">What you do</th><th scope="col">About</th></tr></thead>
+            <tbody>
+              <tr data-step-row="lab4-step1"><td>1</td><td><a href="#lab4-step1">Build the address lookup service</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab4-step2"><td>2</td><td><a href="#lab4-step2">Connect your form to it</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab4-step3"><td>3</td><td><a href="#lab4-step3">Test the form with Playwright</a></td><td>15 min</td></tr>
+              <tr data-step-row="lab4-step4"><td>4</td><td><a href="#lab4-step4">Add an accessibility check to the tests</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab4-step5"><td>5</td><td><a href="#lab4-step5">Write the hand-off note</a></td><td>5 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="shot" style="--w:760px">
+          <a href="img/lab4-what-you-build.png" target="_blank" rel="noopener"><img src="img/lab4-what-you-build.png" alt="In Lab 4 you build an address lookup service to a shared contract, connect your web form to it, and test the form with Playwright and axe. Everything runs on your laptop." width="1600" height="640" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+        </figure>
+        <div class="step" id="lab4-step1">
+          <div class="step-head">
+            <h3><span class="step-no">Step 1</span> Build the address lookup service</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab4-step1" aria-label="Done: step 1, Build the address lookup service"> Done</label>
+          </div>
+          <p>Addresses appear on most forms. If every form checks postal codes its own way, there are hundreds of versions to maintain. A shared service is written once, and every form calls it. You build one now. The kit’s <code>docs/address-lookup-contract.md</code> is its contract: the request, the responses and the sample data. Everyone builds to the same contract, so your form also works with a neighbour’s service.</p>
+          <div class="callout callout-info" role="note">
+            <p class="callout-title">Try both tools at once</p>
+            <p>Start this step in the GitHub Copilot app. While it builds the service in <code>services/address-lookup</code>, read <a href="#lab4-step3">step 3</a> in VS Code and decide what you want tested. Two sessions can work at the same time when they work in different folders.</p>
+          </div>
+          <ol>
+            <li>Read the contract. It is one page.</li>
+            <li>
+              <p>Send this prompt. Approve the commands Copilot asks to run.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Build the shared address lookup service described in
+docs/address-lookup-contract.md, in services/address-lookup.
+Follow the contract exactly. Keep the service separate from the web application:
+its own start command and its own tests.
+Add a test for each response in the contract. Run the tests.
+Tell me how to start the service, and give me three addresses to try in my browser:
+one found, one not found and the one that simulates an outage.</code></pre>
+              </div>
+            </li>
+            <li>
+              <p>Ask Copilot to start the service and leave it running. Then open the three addresses it gave you in Edge.</p>
+              <p class="see"><strong>You should see:</strong> a city and a province for the first, <code>not_found</code> for the second and <code>unavailable</code> for the third.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="step" id="lab4-step2">
+          <div class="step-head">
+            <h3><span class="step-no">Step 2</span> Connect your form to it</h3>
+            <p class="step-meta"><span class="time">about 10 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab4-step2" aria-label="Done: step 2, Connect your form to it"> Done</label>
+          </div>
+          <p>No address question on your form? Go to <a href="#lab4-step3">step 3</a>. The service you built is ready for any form that has one.</p>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Connect the address questions in the web form to the address lookup service at
+http://localhost:4000, as docs/address-lookup-contract.md describes.
+When the user enters a postal code, fill in the city and province. The user can
+still change them.
+If the service finds nothing, is down or is slow, say so in plain words and let
+the user type the address.
+Keep the format checks from the form spec. If the address block repeats, the
+lookup works in every copy.
+Add tests for found, not found and unavailable. Run the tests.</code></pre>
+          </div>
+          <ol>
+            <li>Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again, so that the application restarts with the lookup. If the service from <a href="#lab4-step1">step 1</a> has stopped, ask Copilot to start it again.</li>
+            <li>
+              <p>In your form, try three postal codes: <code>K1A 0B1</code>, which is in the sample data; <code>A1A 1A1</code>, which is not; and <code>X0X 0X0</code>, which makes the service fail.</p>
+              <p class="see"><strong>You should see:</strong> the city and province filled in for the first. A clear message, and fields you can still type in, for the other two.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="step" id="lab4-step3">
+          <div class="step-head">
+            <h3><span class="step-no">Step 3</span> Test the form with Playwright</h3>
+            <p class="step-meta"><span class="time">about 15 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab4-step3" aria-label="Done: step 3, Test the form with Playwright"> Done</label>
+          </div>
+          <p><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a> drives a real browser the way a person does: it opens the form, types, clicks and checks what the page shows. You get the checks a tester would do by hand, and they run again after every change. The kit’s <code>docs/testing-with-playwright.md</code> has the details.</p>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Add end-to-end tests with Playwright in app/e2e.
+Read docs/testing-with-playwright.md first.
+Use the Microsoft Edge that is installed on this computer (channel "msedge").
+Do not download other browsers.
+Write these tests, with made-up data:
+1. Complete the form with valid answers and submit: a reference number is shown.
+2. Submit with a required question empty: the error summary appears and links to
+   the field.
+3. Each rule in docs/form-spec.md that shows, hides or enables a field.
+4. Add and remove a repeating group, if the form has one.
+5. Complete and submit the form using the keyboard only.
+6. Address lookup: found, not found and unavailable, if the form has an address.
+Leave out a test that does not apply to this form, and tell me which you left out.
+Find elements by their label or role, as a user would.
+Run the tests. If a test finds a real fault, fix the application. If the test is
+wrong, fix the test. Tell me which was which.</code></pre>
+          </div>
+          <ol>
+            <li>Copilot installs Playwright and writes the tests. Approve the install. The tests use the Edge that is already on your laptop.</li>
+            <li>When a test fails, Copilot says whether the application or the test was wrong. Read its reasoning. Do not accept a test that was weakened to make it pass.</li>
+            <li>Watch the tests drive the browser. Ask Copilot to run them in headed mode, or run <code>npx playwright test --headed</code> in the application folder.</li>
+            <li>Open the report with <code>npx playwright show-report</code>.</li>
+          </ol>
+        </div>
+        <div class="step" id="lab4-step4">
+          <div class="step-head">
+            <h3><span class="step-no">Step 4</span> Add an accessibility check to the tests</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab4-step4" aria-label="Done: step 4, Add an accessibility check to the tests"> Done</label>
+          </div>
+          <p><a href="https://playwright.dev/docs/accessibility-testing" target="_blank" rel="noopener">axe<span class="sr-only" data-ui> (opens in a new tab)</span></a> is an accessibility scanner that runs inside a Playwright test. It repeats the automated part of Lab 3 on every test run, so a later change cannot quietly break it.</p>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Add an accessibility check to the Playwright tests with @axe-core/playwright, for
+WCAG 2.0 Level A and AA. Check the empty form, the form showing errors and the
+confirmation page.
+Run the tests and list each violation with the element it is on. Then fix the
+violations and run the tests again.</code></pre>
+          </div>
+          <ol>
+            <li>Compare what axe found with your Lighthouse result from Lab 3.</li>
+          </ol>
+          <p class="note">More time? Ask Copilot to open the form in a browser and try to break it. The prompt is in <code>docs/lab-prompts.md</code>. Copilot uses the Playwright from <a href="#lab4-step3">step 3</a>, or browser tools if your tool has them.</p>
+        </div>
+        <div class="step" id="lab4-step5">
+          <div class="step-head">
+            <h3><span class="step-no">Step 5</span> Write the hand-off note</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab4-step5" aria-label="Done: step 5, Write the hand-off note"> Done</label>
+          </div>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Write docs/handoff.md, one page, using only what is in this repository.
+No estimates and no praise.
+1. What the web form does now.
+2. What was converted from the PDF: number of questions, rules and repeating groups.
+3. What was left out and why.
+4. Test and accessibility results, from the last test run and docs/a11y-findings.md.
+   Write "not run" for anything that is missing.
+5. What is still needed before real use: sign-in, the real back end, privacy and
+   security review, French, records retention, testing with users.
+6. Shared services this form could use.</code></pre>
+          </div>
+          <ol>
+            <li>Read the note and correct it. It is the page to take to your manager if you want to keep going with this form.</li>
+            <li>
+              <p>Save your work. Ask Copilot to commit it, or run this in the kit folder.</p>
+              <div class="box box-terminal" data-copy>
+                <p class="box-label">TERMINAL</p>
+                <pre><code>git add -A
+git commit -m "Lab 4: address service, tests and hand-off"</code></pre>
+              </div>
+            </li>
+          </ol>
+          <p class="note">Optional, and only if your table lead says the lab repository accepts pushes: push your work to a branch named after you and open a draft pull request that mentions your issue. The prompt is in <code>docs/lab-prompts.md</code>. Push nowhere else.</p>
+          <p><strong>For the showcase:</strong> choose one thing to show in 60 seconds. The PDF beside your web form, one thing Copilot got wrong and how you caught it, or a Playwright test driving your form.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="showcase" aria-labelledby="showcase-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">15:45-16:00 | 15 MINUTES</p>
+          <h2 id="showcase-h">Showcase and after today</h2>
+        </header>
+        <p>Volunteers show their form for 60 seconds each: what they built, one thing Copilot got wrong and how they caught it, and what they would do next.</p>
+        <h3 id="what-you-take-away">What you take away</h3>
+        <ul>
+          <li>Your folder: the web form, the address service, the tests and a commit from each lab.</li>
+          <li><code>docs/form-spec.md</code> and <code>docs/handoff.md</code>: what was converted, and what real use would still need.</li>
+          <li>The kit’s project instructions, reviewer agent and accessibility checklist. Copy them into your own repository and adapt them.</li>
+        </ul>
+        <h3 id="after-today">After today</h3>
+        <ul>
+          <li>Try the same steps on a form or a feature from your own backlog: write the spec, plan, build, check, test.</li>
+          <li>Do not deploy today’s work or use it with real data. Taking a form further needs your manager’s support and the usual OPS approvals.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="advanced" aria-labelledby="advanced-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">OPTIONAL | FOR EXPERIENCED COPILOT USERS | WHEN YOU ARE AHEAD</p>
+          <h2 id="advanced-h"><span class="badge">Advanced track</span> From one form to many</h2>
+        </header>
+        <p>You converted one form by hand. The Central Forms Repository lists about 2,500. If you use Copilot every day and finish a lab early, work on this question: how would a team convert the next fifty forms to the same standard, without starting each one from nothing?</p>
+        <figure class="shot" style="--w:760px">
+          <a href="img/one-form-to-many.png" target="_blank" rel="noopener"><img src="img/one-form-to-many.png" alt="From one form to many: many forms, the same extract tool, one form spec schema, generation with a skill and shared components, automatic checks, and a person who reviews every form." width="1600" height="430" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
+        </figure>
+        <p><strong>Before you start:</strong> finish the lab you are in. Table leads, your table comes first. You will not finish all five steps today. Pick the ones that fit your time and keep the rest for after the event.</p>
+        <div class="table-wrap">
+          <table class="data wide">
+            <colgroup><col style="width:6.8%"><col style="width:12.2%"><col style="width:9.8%"><col style="width:46.7%"><col style="width:24.5%"></colgroup>
+            <thead><tr><th scope="col">Step</th><th scope="col">Start after</th><th scope="col">Time</th><th scope="col">Do</th><th scope="col">Done when</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A1</th><td>Lab 1</td><td>15 min</td><td>Make the form spec machine-readable. Define <code>docs/form-spec.schema.json</code>: sections, questions, types, options, rules, repeating groups and who completes each question. Convert your spec to <code>docs/form-spec.json</code> and validate it.</td><td>A neighbour’s spec also fits your schema.</td></tr>
+              <tr><th scope="row">A2</th><td>Lab 3</td><td>20 min</td><td>Capture your process as an agent skill, so that the next form starts from what you learned. Use the prompt below.</td><td>The skill appears when you type <code>/</code> in the chat, in both tools.</td></tr>
+              <tr><th scope="row">A3</th><td>Lab 4</td><td>20 min</td><td>Make common inputs generic. Move the address block, person name, contact details and dates into shared components that any form can use, each with its own tests.</td><td>Your form uses the shared components and every test passes.</td></tr>
+              <tr><th scope="row">A4</th><td>A2</td><td>20 min</td><td>Run the skill on a second form. In the GitHub Copilot app, start a session with <strong>Workspace</strong> set to <strong>New worktree</strong>, so that your first form stays untouched. Count what is right without a fix by hand.</td><td>A second form runs, with a score to set beside your Lab 2 score.</td></tr>
+              <tr><th scope="row">A5</th><td>Any time</td><td>Discuss</td><td>List what must be true before a team relies on this: who reviews each spec, which checks run on every form, what happens when the PDF changes, who owns each shared service, where submissions go, privacy and security review.</td><td>A short list in <code>docs/scaling-notes.md</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Prompt for step A2:</strong> review what Copilot writes before you rely on it.</p>
+        <div class="box box-prompt" data-copy>
+          <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+          <pre><code>Create a project skill named form-to-app in .github/skills/form-to-app.
+It converts one Ontario government PDF form into a web form in this repository, in
+the order used today: write the form spec and stop for my review, plan, build,
+apply the Ontario Design System, check accessibility, then test with Playwright.
+It stops and asks me before each stage that changes files.
+Include a description of when to use the skill.</code></pre>
+        </div>
+        <div class="callout callout-info" role="note">
+          <p class="callout-title">Keep a person accountable</p>
+          <p>The aim is repeatable steps and the same quality checks on every form. A person still reviews each spec and each change, and answers for the result.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sec" id="help" aria-labelledby="help-h">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">ASK EARLY | NEVER BYPASS A SECURITY WARNING</p>
+          <h2 id="help-h">If something goes wrong</h2>
+        </header>
+        <div class="filter" data-ui>
+          <label for="help-filter">Filter this list</label>
+          <input type="search" id="help-filter" placeholder="For example: python, sign in, styling" autocomplete="off">
+          <span class="filter-count" id="help-count" role="status"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="data help-table">
+            <colgroup><col style="width:40.1%"><col style="width:59.9%"></colgroup>
+            <thead><tr><th scope="col">What you see</th><th scope="col">What to do</th></tr></thead>
+            <tbody>
+              <tr><td>Copilot asks you to sign in, or says you have no access</td><td>Check the account you are signed in with. OPS account only. Tell your table lead.</td></tr>
+              <tr><td>The GitHub Copilot app will not install or sign in</td><td>Do the labs in VS Code. Every step works there.</td></tr>
+              <tr><td>No <strong>Session Target</strong> control or no <strong>Agent</strong> dropdown in VS Code</td><td>Your VS Code build differs from this guide. Ask your table lead.</td></tr>
+              <tr><td><code>git clone</code> cannot find the lab kit</td><td>Check that you are signed in to GitHub with your OPS account. Ask your table lead for a copy of the kit.</td></tr>
+              <tr><td>The Central Forms Repository does not load, or blocks your request</td><td>Use a sample form from the kit, or ask your table lead for another way to get the PDF.</td></tr>
+              <tr><td>The outline tool finds no fields, or fails on your PDF</td><td>No fields: the file is a guide or a print-only form, so choose another. Any other failure: use a sample form from the kit, or the screenshot prompt in <code>docs/lab-prompts.md</code>.</td></tr>
+              <tr><td>Node.js or Python is missing, and you cannot install it</td><td>No Python: use a sample form from the kit. No Node.js: pair with a neighbour, or ask Copilot to build with the runtime you have and to test with Playwright for that language.</td></tr>
+              <tr><td><code>git commit</code> prints a warning about your name and email, or stops with “Please tell me who you are”</td><td>Set them once, as in <a href="#before">Before you arrive</a>: <code>git config --global user.name "Your Name"</code>, and the same for <code>user.email</code>. Then commit again.</td></tr>
+              <tr><td>You cannot open the lab repository on GitHub, or the GitHub server is not in the list or will not install</td><td>Tell your table lead. Only servers in the ITOD registry can run. Copy <code>docs/user-story.md</code> to <code>docs/story.md</code>, put your form’s number in the title and continue.</td></tr>
+              <tr><td>Copilot describes the issue, but the conversation shows no tool call, or only a terminal command</td><td>It did not use the GitHub server. Check that the server is installed (<a href="#lab2-step2">Lab 2 step 2</a>), then send the prompt again.</td></tr>
+              <tr><td>A change made in one tool does not appear in the other</td><td>In the app, the session’s <strong>Workspace</strong> must be <strong>Current checkout</strong>. Start a new session with that setting.</td></tr>
+              <tr><td>Copilot changes files you did not ask about</td><td>Review them in <strong>Source Control</strong> or <strong>Changes</strong> and discard the ones you do not want. Send the prompt again and name the folders Copilot may change.</td></tr>
+              <tr><td>Copilot repeats the same failing action, or shows no progress for 5 minutes</td><td>Stop it and review what it changed. Start a fresh conversation and ask for a smaller piece, such as one section of the form.</td></tr>
+              <tr><td>The address is already in use when the application starts</td><td>An earlier copy is still running. Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again: it stops the earlier copy first.</td></tr>
+              <tr><td>A change does not show after you reload, or the form has lost its styling</td><td>An earlier copy of the application is still running, often out of sight. Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again, then reload.</td></tr>
+              <tr><td>Packages cannot be installed, or Playwright cannot find a browser</td><td>Tell your table lead: an install can need administrator rights. Ask Copilot to use the installed Edge. If installs are blocked, test by hand with the list in <code>docs/testing-with-playwright.md</code>.</td></tr>
+              <tr><td><strong>Accessibility Reviewer</strong> is not offered as an agent</td><td>Check that you opened the kit folder itself, so that <code>.github/agents</code> is at its top level.</td></tr>
+              <tr><td>No <strong>Lighthouse</strong> tool in DevTools</td><td>Select <strong>More tools</strong> (+) in DevTools and add it. If it is not offered, rely on the keyboard checks and the reviewer agent.</td></tr>
+              <tr><td>A certificate or proxy warning</td><td>Stop and tell your table lead. Do not bypass it.</td></tr>
+              <tr><td>A usage limit message</td><td>Tell your table lead and pair with a neighbour.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="references">References</h3>
+        <div class="table-wrap">
+          <table class="data">
+            <colgroup><col style="width:26.4%"><col style="width:73.6%"></colgroup>
+            <thead><tr><th scope="col">Topic</th><th scope="col">Links</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Ontario Design System</th><td><a href="https://designsystem.ontario.ca/" target="_blank" rel="noopener">Home<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://designsystem.ontario.ca/components/detail/components.html" target="_blank" rel="noopener">Components<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://designsystem.ontario.ca/docs/documentation/develop/for-developers.html" target="_blank" rel="noopener">Getting started for developers<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">Forms and accessibility</th><td><a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://forms.mgcs.gov.on.ca/en/organization/" target="_blank" rel="noopener">Forms by ministry<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://www.ontario.ca/page/how-make-websites-accessible" target="_blank" rel="noopener">How to make websites accessible (AODA)<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">GitHub Copilot app</th><td><a href="https://github.com/features/ai/github-app" target="_blank" rel="noopener">Download<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/get-started/quickstart-copilot-app" target="_blank" rel="noopener">Getting started<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions" target="_blank" rel="noopener">Sessions and modes<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app" target="_blank" rel="noopener">MCP, skills and agents<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">VS Code</th><td><a href="https://code.visualstudio.com/docs/agent-customization/mcp-servers" target="_blank" rel="noopener">MCP servers<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agents/run/planning" target="_blank" rel="noopener">Planning<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/custom-agents" target="_blank" rel="noopener">Custom agents<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/agent-skills" target="_blank" rel="noopener">Agent skills<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">GitHub and testing</th><td><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue" target="_blank" rel="noopener">Creating an issue<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server" target="_blank" rel="noopener">GitHub MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/accessibility-testing" target="_blank" rel="noopener">Accessibility testing with axe<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Links checked on 23 November 2026. Menu names can differ in the OPS builds of VS Code and the GitHub Copilot app.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-logos">
+        <img src="img/ontario-logo-white.svg" alt="Ontario" width="180" height="45">
+        <img src="img/microsoft-logo-white.svg" alt="Microsoft" width="108" height="24">
+        <img src="img/github-logo-white.svg" alt="GitHub" width="416" height="95">
+      </p>
+      <p class="footer-version">DRAFT v3.2 | 1 DECEMBER 2026</p>
+      <p class="footer-tools" data-ui><a href="#overview">Back to the top</a> <button type="button" id="reset-progress">Clear my ticks and entries</button></p>
+      <p class="footer-note" data-ui>Your ticks and entries are saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </footer>
+
+  <script id="lab-data" type="application/json">[{"id":"lab1","lab":1,"name":"Set up and write the form spec","steps":[{"id":"lab1-step1","n":1,"title":"Set up VS Code"},{"id":"lab1-step2","n":2,"title":"Set up the GitHub Copilot app"},{"id":"lab1-step3","n":3,"title":"Get the lab kit and open it in both tools"},{"id":"lab1-step4","n":4,"title":"Choose your form"},{"id":"lab1-step5","n":5,"title":"Write the form spec with Copilot"},{"id":"lab1-step6","n":6,"title":"Check the form spec against the PDF"}]},{"id":"lab2","lab":2,"name":"Connect to GitHub issues and build","steps":[{"id":"lab2-step1","n":1,"title":"Create your user story as a GitHub issue"},{"id":"lab2-step2","n":2,"title":"Connect the GitHub MCP server"},{"id":"lab2-step3","n":3,"title":"Pull your user story through MCP"},{"id":"lab2-step4","n":4,"title":"Plan the application"},{"id":"lab2-step5","n":5,"title":"Build it and try it"},{"id":"lab2-step6","n":6,"title":"Fix the gaps"}]},{"id":"lab3","lab":3,"name":"Ontario Design System and accessibility","steps":[{"id":"lab3-step1","n":1,"title":"Find your way around the Ontario Design System"},{"id":"lab3-step2","n":2,"title":"Apply it to your form"},{"id":"lab3-step3","n":3,"title":"Check accessibility three ways"},{"id":"lab3-step4","n":4,"title":"Fix what you found"}]},{"id":"lab4","lab":4,"name":"Shared service and testing","steps":[{"id":"lab4-step1","n":1,"title":"Build the address lookup service"},{"id":"lab4-step2","n":2,"title":"Connect your form to it"},{"id":"lab4-step3","n":3,"title":"Test the form with Playwright"},{"id":"lab4-step4","n":4,"title":"Add an accessibility check to the tests"},{"id":"lab4-step5","n":5,"title":"Write the hand-off note"}]}]</script>
+  <script src="guide.js"></script>
+</body>
+</html>

@@ -15,6 +15,8 @@ government PDF form into a small, accessible web application. Follow these rules
 - The shared address lookup service: `services/address-lookup/`
 - End-to-end tests: `app/e2e/`
 - Notes, findings and the hand-off note: `docs/`
+- The lab guide: `guide/`. It is a web page for the developer to read. Do not change it,
+  and do not use its files in the application.
 
 ## Technology
 

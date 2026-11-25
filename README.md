@@ -5,8 +5,8 @@ In the labs you turn one Ontario government PDF form into a small web applicatio
 GitHub Copilot. You build the application yourself, in this folder. The kit gives Copilot
 the context it needs and gives you reference material. Use what helps and ignore the rest.
 
-Kit version 3.2, updated 25 November 2026. It goes with lab guide version 3.2,
-`OPS-Developer-Day-Lab-Guide-DRAFT-v3.2`. The lab guide has the steps.
+Kit version 3.2, updated 25 November 2026. The lab guide is in the kit: the web page
+`guide/index.html`, guide version 3.2. It has the steps.
 
 ## Get started
 
@@ -14,6 +14,8 @@ Kit version 3.2, updated 25 November 2026. It goes with lab guide version 3.2,
 git clone https://github.com/haslam93/ops-developer-day-lab-kit.git
 cd ops-developer-day-lab-kit
 ```
+
+Open `guide/index.html` in your browser. That is the lab guide. It needs no server and no network.
 
 Open the folder in **VS Code**, in the **GitHub Copilot app**, or in both at once.
 Both read the same instructions, agent and files from this folder.
@@ -28,6 +30,7 @@ Both read the same instructions, agent and files from this folder.
 
 | Path | What it is | Use it in |
 | --- | --- | --- |
+| `guide/` | The lab guide, as a web page. Open `guide/index.html` in your browser | Every lab |
 | `.github/copilot-instructions.md` | Project rules that Copilot reads on every request | Every lab |
 | `.github/agents/accessibility-reviewer.agent.md` | A custom agent that reviews pages for accessibility and cannot edit | Lab 3 |
 | `docs/lab-prompts.md` | Every prompt in the lab guide, ready to copy | Every lab |

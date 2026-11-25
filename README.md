@@ -8,6 +8,8 @@ the context it needs and gives you reference material. Use what helps and ignore
 Kit version 3.2, updated 25 November 2026. The lab guide is in the kit: the web page
 `guide/index.html`, guide version 3.2. It has the steps.
 
+Read the lab guide on the web: https://haslam93.github.io/ops-developer-day-lab-kit/guide/
+
 ## Get started
 
 ```
@@ -15,7 +17,8 @@ git clone https://github.com/haslam93/ops-developer-day-lab-kit.git
 cd ops-developer-day-lab-kit
 ```
 
-Open `guide/index.html` in your browser. That is the lab guide. It needs no server and no network.
+The lab guide is also in the folder you cloned: open `guide/index.html` in your browser.
+It needs no server and no network.
 
 Open the folder in **VS Code**, in the **GitHub Copilot app**, or in both at once.
 Both read the same instructions, agent and files from this folder.

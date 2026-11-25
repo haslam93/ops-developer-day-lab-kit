@@ -4,20 +4,21 @@ Each folder here holds one form to convert. Choose a sample form, or bring a for
 
 | File | What it is |
 | --- | --- |
-| `README.md` | The form's name and number, and where its blank PDF is |
+| `README.md` | The form's name and number, and where its blank PDF comes from |
 | `outline.md` | The form's sections, fields, labels, options and scripts, as text Copilot can read |
 | `form.pdf` | The blank PDF. Open it in Adobe Acrobat Reader. It does not open in a browser. |
 
 ## Sample forms
 
-Three sample forms, shortest first. Each folder holds the blank PDF and a ready outline.
+Three sample forms, shortest first, and a longer worked example. Each folder holds the blank PDF
+and a ready outline, so you do not need the forms website to use one.
 
 | Folder | Form | Notes |
 | --- | --- | --- |
 | `marriage-licence-fee-affidavit` | 11010, Affidavit to Waive Provincial Fee for a Marriage Licence (Ministry of Public and Business Service Delivery and Procurement) | 30 fields. The shortest. |
 | `place-of-business-questionnaire` | 023-5026, Established Place of Business and Residence Questionnaire (Ministry of Transportation) | 37 fields. Short, with rules to build. |
 | `amend-business-name` | 5295, Amend a Business Name for a Corporation (Ministry of Public and Business Service Delivery and Procurement) | 332 fields. Long: build two or three sections. Its README lists them. |
-| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) | A longer form, kept as a worked example. Its README says which sections to build and where to download its PDF. |
+| `example-security-screening-check` | 026-LE221, Security Screening Check (Ontario Provincial Police) | A longer form, kept as a worked example. Its README says which sections to build. |
 
 New to Copilot? Take one of the first two.
 

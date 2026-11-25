@@ -10,6 +10,8 @@ Central Forms Repository, under the Business Names Act. The PDF is numbered 5295
 `form.pdf` is the English PDF of the form, unchanged, downloaded on 25 November 2026.
 Open it in Adobe Acrobat Reader. It does not open in a browser.
 
+`instructions.pdf` is the instructions PDF, unchanged, downloaded on 25 November 2026. It has three pages.
+
 `outline.md` was created from `form.pdf` with `tools/extract-form` on 25 November 2026. It has 332 fields.
 
 ## What to know about this form

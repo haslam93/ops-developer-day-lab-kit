@@ -5,10 +5,10 @@ Published by the Ontario Provincial Police in the Central Forms Repository.
 - Form page: https://forms.mgcs.gov.on.ca/en/dataset/026-le221
 - English PDF: https://forms.mgcs.gov.on.ca/dataset/db43f6d7-e987-4173-96cc-c6b6b9d90d78/resource/52e30a5f-424f-4425-8545-27f8d089cae2/download/le221e.pdf
 
-Download the PDF, save it here as `form.pdf` and open it in Adobe Acrobat Reader.
-It does not open in a browser. If it will not download, ask your table lead for it.
+`form.pdf` is that English PDF, unchanged, downloaded on 25 November 2026.
+Open it in Adobe Acrobat Reader. It does not open in a browser.
 
-`outline.md` was created from the English PDF with `tools/extract-form` on 18 November 2026.
+`outline.md` was created from `form.pdf` with `tools/extract-form` on 25 November 2026. It has 86 fields.
 
 ## Why this form is a good exercise
 

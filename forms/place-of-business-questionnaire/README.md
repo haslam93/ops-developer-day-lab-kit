@@ -17,7 +17,9 @@ Open it in Adobe Acrobat Reader. It does not open in a browser.
 - Section 1 is for an established place of business and section 2 is for a residence.
   Section 3 is for both.
 - Three questions have a Yes checkbox, a No checkbox and a "where?" field. A script opens or
-  locks the field when an answer is ticked.
+  locks the field when an answer is ticked. The design system does not lock fields: reveal the
+  "where?" field when Yes is ticked. If it is always shown instead, mark it optional and say in
+  its hint to fill it in only after choosing Yes.
 - Yes and No are two separate checkboxes in the PDF, not one group.
 - It has one address block, a telephone number in the format 999-999-9999 and a date.
 - Section 4 is a list of seven supporting documents to tick.

@@ -69,6 +69,13 @@ Both read the same instructions, agent and files from this folder.
 | GitHub MCP server | Install it from the OPS registry: in VS Code, search `@mcp` in the Extensions view |
 | Help channel | To be confirmed |
 
+> [!NOTE]
+> Not everything is in the Ontario Design System. Where it has no component for something, such as
+> a skip link or the page layout, you build plain, accessible HTML and CSS for that need, in the
+> spirit of the design system: its guidance and ideas, not only its look, so that it all feels like
+> one system. That work is custom, so it can be flexible. You never change a design
+> system component to make it do something it does not do.
+
 ## Rules
 
 - Sign in with your OPS account only.

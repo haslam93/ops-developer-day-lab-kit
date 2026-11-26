@@ -16,7 +16,8 @@ Open it in Adobe Acrobat Reader. It does not open in a browser.
   Only the applicant's sections belong in the web form.
 - The address block repeats: addresses for the last five years.
 - One field depends on another: the driver's licence number is enabled only when a
-  driving-history check is selected.
+  driving-history check is selected. The design system does not disable fields: show it when
+  that check is selected.
 - It has signatures, which a web form has to replace.
 - No field is flagged as mandatory in the form definition. The form's scripts decide.
 

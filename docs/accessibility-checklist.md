@@ -11,12 +11,13 @@ Passing it does not certify conformance. It catches the common problems in forms
 - [ ] The page has a language (`<html lang="en">`) and a title that names the form. (3.1.1, 2.4.2)
 - [ ] One main heading, then section headings in order. (1.3.1, 2.4.6)
 - [ ] A "skip to main content" link is the first thing the Tab key reaches. (2.4.1)
+- [ ] The page has one header, one `main` and one footer. The footer is at the bottom of the window on a short page and after the content on a long page. (1.3.1, 2.4.1)
 
 ## Questions
 
 - [ ] Every input has a visible label that is tied to it in the code. (1.3.1, 3.3.2)
 - [ ] Radio buttons and checkboxes that belong together sit in a fieldset with a legend. (1.3.1)
-- [ ] Required questions say so in text, not by colour or an asterisk alone. (1.4.1, 3.3.2)
+- [ ] Every question says in its label, in brackets, whether it is "(required)" or "(optional)". Not by colour or an asterisk alone. (1.4.1, 3.3.2)
 - [ ] The expected format is shown before the user types, for example "yyyy/mm/dd". (3.3.2)
 - [ ] Nothing changes unexpectedly when a field gets the focus or a value is entered. (3.2.1, 3.2.2)
 

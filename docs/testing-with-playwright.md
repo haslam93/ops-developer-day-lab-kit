@@ -21,6 +21,7 @@ const { defineConfig } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './e2e',
   reporter: [['list'], ['html', { open: 'never' }]],
+  // Screenshots, video and trace are off unless you turn them on. Leave them off: see "If a policy gets in the way".
   use: { baseURL: 'http://localhost:3000', channel: 'msedge' },
   webServer: { command: 'npm start', url: 'http://localhost:3000', reuseExistingServer: true },
 });
@@ -75,3 +76,28 @@ test('the form has no accessibility violations axe can detect', async ({ page })
 
 Scan the page again after you submit it empty, so that the error state is checked too.
 axe finds only some problems. Keep doing the keyboard check by hand.
+
+## The Playwright MCP server
+
+In Lab 4, Copilot also opens your form through the Playwright MCP server from the OPS registry.
+It is a different thing from the tests: Copilot drives the browser itself, one step at a time.
+
+- It reads a page as text, with a snapshot (`browser_snapshot`). It does not need a screenshot.
+- It opens a browser window that you can watch. Leave the window in view.
+- It looks for Google Chrome unless it is set to use Microsoft Edge (`--browser msedge`).
+  If it says that a browser is not installed, do not install one: tell your table lead and
+  carry on with the tests. The tests do not need the server.
+
+## If a policy gets in the way
+
+On an OPS laptop, a browser policy can stop a browser that a program drives.
+Do not try to get around a policy. Do this instead.
+
+| What you see | What it means | What to do |
+| --- | --- | --- |
+| The browser does not start in headless mode, or a test stops as it starts | The policy does not allow headless mode: a browser with no window | Run the browser in a window: `npx playwright test --headed`, or `headless: false` under `use` in the configuration |
+| A screenshot fails or never finishes | The policy blocks it, or the browser window is minimized or hidden | Leave `screenshot`, `video` and `trace` off: they are off unless you turn them on. Keep the browser window in view. Do not compare screenshots in tests. With the MCP server, read the page with a snapshot |
+| The browser closes at once, even in a window, or the error says "DevTools remote debugging is disallowed by the system admin" | The policy does not let a program drive the installed browser | Only ITOD can change this. Tell your table lead and test by hand with the list in "What to test" |
+| Playwright asks to download a browser, or a download fails | The configuration does not name the installed Edge | Set `channel: 'msedge'` under `use`. Do not download a browser |
+
+You do not need headless mode or screenshots today. The tests check what the page says, and axe needs neither.

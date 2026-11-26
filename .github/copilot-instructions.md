@@ -7,7 +7,8 @@ government PDF form into a small, accessible web application. Follow these rules
 
 - Build from `docs/form-spec.md`. It lists what the form asks and the rules it applies.
 - Do not invent fields, options, rules or wording. If the spec is unclear, ask.
-- The user story is in `docs/story.md`.
+- The user story is in `docs/story.md`. It is also an issue in the lab repository on GitHub,
+  `OPS-Community/ops-dev-day-dec-1-2026`. The file and the issue say the same.
 
 ## Where things go
 
@@ -56,15 +57,21 @@ government PDF form into a small, accessible web application. Follow these rules
 - Made-up data only, in code, tests and samples. Never real names, birth dates or licence numbers.
 - No secrets in the repository.
 - Nothing is deployed. The application talks only to services on this computer.
-- Push only when the developer asks, and only to the lab repository they name in the event's
-  GitHub organization. Never push anywhere else.
+- Push only when the developer asks, and only to the lab repository,
+  `OPS-Community/ops-dev-day-dec-1-2026`. Never push anywhere else.
 - On GitHub, read freely. Create or change an issue, a comment or a pull request only when
-  the developer asks for that change.
+  the developer asks for that change, and only in the lab repository.
+- Reach GitHub issues through the GitHub MCP server. If it has no tool for what is asked, stop and
+  say so. Do not use the `gh` command or the web instead.
 - Check every rule on the server as well as in the browser, from one shared definition.
 
 ## Quality
 
 - Every rule in the spec has a test.
 - Run the tests before you say the work is done. Report failures and anything you could not do.
+- Browser tests and the Playwright MCP server use a browser that is already installed. Do not
+  download or install a browser. If a laptop policy blocks headless mode, a screenshot or the
+  browser itself, do not try to get around it: do what `docs/testing-with-playwright.md` says
+  and tell me.
 - Keep user-facing text in one place so that French can be added later.
 - Out of scope: sign-in, file uploads, payments and digital signatures.

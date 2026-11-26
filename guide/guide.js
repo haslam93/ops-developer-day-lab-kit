@@ -96,9 +96,9 @@
   });
 
   // ---------------------------------------------------------------------------------------------
-  // Values you fill in once: the form folder, the lab repository and the issue number
+  // Values you fill in once: the form folder, your alias and the issue number
   // ---------------------------------------------------------------------------------------------
-  var EMPTY = { form: '<form>', repo: '<organization>/<repository>', issue: '<number>' };
+  var EMPTY = { form: '<form>', alias: '<alias>', issue: '<number>' };
   function applyFill() {
     Object.keys(EMPTY).forEach(function (key) {
       var value = (store.fill[key] || '').trim();

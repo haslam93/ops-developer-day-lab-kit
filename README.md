@@ -5,12 +5,22 @@ In the labs you turn one Ontario government PDF form into a small web applicatio
 GitHub Copilot. You build the application yourself, in this folder. The kit gives Copilot
 the context it needs and gives you reference material. Use what helps and ignore the rest.
 
-Kit version 3.2, updated 25 November 2026. The lab guide is in the kit: the web page
+Kit version 3.2, updated 26 November 2026. The lab guide is in the kit: the web page
 `guide/index.html`, guide version 3.2. It has the steps.
 
-Read the lab guide on the web: https://haslam93.github.io/ops-developer-day-lab-kit/guide/
+Read the lab guide on the web: https://aka.ms/OPSDeveloperDay
 
 ## Get started
+
+```
+git clone https://github.com/OPS-Community/ops-dev-day-dec-1-2026.git
+cd ops-dev-day-dec-1-2026
+```
+
+That is the lab repository in the OPS GitHub organization. It opens only when you are signed in to
+the OPS GitHub instance with your ontario.ca account. Your issue goes in the same repository in Lab 2.
+
+Backup only, if you cannot reach it: a public copy of the kit that needs no sign-in.
 
 ```
 git clone https://github.com/haslam93/ops-developer-day-lab-kit.git
@@ -40,8 +50,8 @@ Both read the same instructions, agent and files from this folder.
 | `forms/` | Three sample forms to convert, each with its blank PDF and an outline Copilot can read | Lab 1 |
 | `tools/extract-form/` | Creates an outline from a form you choose from your own ministry | Lab 1, your own form only |
 | `docs/form-spec-template.md` | Layout for the form spec | Lab 1 |
-| `docs/user-story.md` | The user story you create as a GitHub issue | Lab 2 |
-| `.github/ISSUE_TEMPLATE/user-story.md` | The issue template that holds the user story | Lab 2 |
+| `docs/user-story.md` | Layout for the user story that Copilot writes from your form spec | Lab 2 |
+| `.github/ISSUE_TEMPLATE/user-story.md` | The same layout as an issue template, for creating the issue by hand | Lab 2, only without the GitHub MCP server |
 | `docs/ontario-design-system.md` | Where to find the Ontario Design System and how to add it | Lab 3 |
 | `docs/accessibility-checklist.md` | AODA and WCAG 2.0 Level AA checklist for a form | Lab 3 |
 | `docs/a11y-findings-template.md` | Layout for your accessibility findings | Lab 3 |
@@ -54,7 +64,7 @@ Both read the same instructions, agent and files from this folder.
 | --- | --- |
 | `forms/my-form/` | Your own ministry's form and its outline, if you choose one |
 | `docs/form-spec.md` | What your form asks and the rules it applies |
-| `docs/story.md` | Your user story, pulled from your GitHub issue through MCP |
+| `docs/story.md` | Your user story. Copilot writes it from your form spec, creates it as a GitHub issue through MCP and keeps it the same as the issue |
 | `app/` | Your web application |
 | `services/address-lookup/` | Your address lookup service |
 | `docs/a11y-findings.md`, `docs/handoff.md` | Your accessibility findings and hand-off note |
@@ -63,10 +73,10 @@ Both read the same instructions, agent and files from this folder.
 
 | Item | Value |
 | --- | --- |
-| GitHub organization for the event | To be confirmed |
-| Lab repository, where you create your issue | To be confirmed. Written as `organization/repository` |
-| Your issue | You create it in Lab 2 |
-| GitHub MCP server | Install it from the OPS registry: in VS Code, search `@mcp` in the Extensions view |
+| GitHub organization for the event | `OPS-Community`, in the OPS GitHub instance. Sign in with your ontario.ca account |
+| Lab repository, where your issue goes | `OPS-Community/ops-dev-day-dec-1-2026` |
+| Your issue | Copilot creates it in Lab 2, through the GitHub MCP server. Its title starts with your alias in square brackets: the first part of your ontario.ca email address, before the @ |
+| MCP servers | GitHub and Playwright. Install them from the OPS registry: in VS Code, search `@mcp` in the Extensions view |
 | Help channel | To be confirmed |
 
 > [!NOTE]
@@ -78,11 +88,11 @@ Both read the same instructions, agent and files from this folder.
 
 ## Rules
 
-- Sign in with your OPS account only.
+- Sign in with your OPS account only: your ontario.ca account.
 - Made-up data only. Never type real personal information, and never start from a form that someone has filled in.
 - Use approved tools only: this kit and MCP servers from the ITOD registry.
 - Do not deploy what you build, and do not submit anything to AEM or another OPS system.
-  Push it only to the lab repository in the event's GitHub organization, and only if your table lead says you can.
+  Push it only to the lab repository, `OPS-Community/ops-dev-day-dec-1-2026`, and only if your table lead says you can.
 - Read what Copilot changed before you keep it.
 
 Forms are published by the Government of Ontario, © King's Printer for Ontario.

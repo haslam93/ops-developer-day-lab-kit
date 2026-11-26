@@ -3,8 +3,12 @@
 Every prompt in the lab guide, ready to copy. They work the same in VS Code and in the GitHub Copilot app.
 
 - Replace `<form>` with your form's folder name under `forms`.
+- Replace `<alias>` with your alias: the first part of your ontario.ca email address, before the @.
+- Replace `<number>` with the number of your issue.
 - Replace other values in `<angle brackets>` with your own.
 - Use made-up data only.
+
+The lab repository is `OPS-Community/ops-dev-day-dec-1-2026`. Your issue goes there, and nowhere else.
 
 ## Lab 1
 
@@ -61,15 +65,60 @@ Correct that row and any row the same fact changes. Tell me which rows you chang
 
 ## Lab 2
 
-### Pull your user story from your GitHub issue
+### Check the GitHub and Playwright MCP servers
 
 ```
-Use the GitHub MCP server. In repository <organization>/<repository>, get issue <number>.
+Check two MCP servers for me. Change nothing and install nothing.
+1. With the GitHub MCP server, tell me the user name of the GitHub account it is
+   signed in with.
+2. With the Playwright MCP server, open https://www.ontario.ca/ in a browser, tell me
+   the title of the page, then close the browser.
+If a server has no tool for this, or the browser does not start, say which one and
+show me the error. Do not use the gh command or the web instead.
+```
+
+### Write your user story
+
+```
+Read docs/form-spec.md and docs/user-story.md.
+Write my user story as docs/story.md, in the layout that docs/user-story.md gives.
+The first line is the title, as a level 1 heading: my alias in square brackets,
+then "Put form", the form's number from the spec, and "online". My alias is <alias>.
+If the spec gives no number, use the form's name.
+Scope: name the sections to build today with the number of questions in each, and
+the sections left out, from the spec.
+Acceptance criteria: keep each criterion in the layout that applies to this form,
+and leave out one that does not. Add the facts from the spec that make it testable,
+such as the name of each rule. Add no requirement that is not in the spec or the
+layout.
+Do not write code. Do not create or change anything on GitHub.
+```
+
+### Create the issue through the GitHub MCP server
+
+```
+Use the GitHub MCP server to create one issue in repository
+OPS-Community/ops-dev-day-dec-1-2026.
+Title: the first line of docs/story.md, without the # sign. It starts with my alias
+in square brackets.
+Body: everything below that line, exactly as written.
+Create it with that server only. If it has no tool that creates an issue, stop and
+tell me. Do not use the gh command or the web instead.
+Create one issue and change nothing else on GitHub: no labels and no assignees.
+Then give me the number of the issue and its address.
+```
+
+### Read your issue back through the GitHub MCP server
+
+```
+Use the GitHub MCP server. In repository OPS-Community/ops-dev-day-dec-1-2026, get
+issue <number>.
 Read the issue with that server only. If it has no tool that reads an issue, stop and
 tell me. Do not use the gh command or the web instead.
-Show its title and description exactly as written.
 Do not create or change anything on GitHub.
-Then save that text as docs/story.md.
+Save the issue as docs/story.md, exactly as written: the title on the first line as
+a level 1 heading, then the description.
+Tell me the title, and what changed in docs/story.md, if anything.
 ```
 
 ### Plan the application
@@ -114,13 +163,16 @@ Fix it. If the form spec is wrong too, correct it. Add a test that fails before 
 fix and passes after it. Run the tests.
 ```
 
-### Optional: record progress on your GitHub issue
+### Report on your issue through the GitHub MCP server
 
 ```
-Use the GitHub MCP server to add this comment to issue <number> in
-<organization>/<repository>:
-"First version built. <n> of <m> questions were right after one prompt."
-Do not change anything else on GitHub.
+Use the GitHub MCP server to add one comment to issue <number> in repository
+OPS-Community/ops-dev-day-dec-1-2026.
+In the comment, list each acceptance criterion of the issue as met, partly met or
+not met, with one line of evidence from the code or the last test run. Write
+"not checked" where you have no evidence. End with the number of tests that pass.
+Add the comment with that server only. If it has no tool that adds a comment, stop
+and tell me. Do not close the issue and change nothing else on GitHub.
 ```
 
 ## Lab 3
@@ -190,6 +242,18 @@ lookup works in every copy.
 Add tests for found, not found and unavailable. Run the tests.
 ```
 
+### See the form through the Playwright MCP server
+
+```
+Use the Playwright MCP server to open the web form in a browser. If the application
+is not running, start it first.
+Fill in the form with made-up data, as a person would, and submit it.
+Read each page as text, with a snapshot. Do not take screenshots.
+Tell me what you saw: each page, its questions in order and any error message.
+If you have no browser tool from that server, or the browser does not start, stop
+and tell me. Do not install a browser, do not write tests and do not change any code.
+```
+
 ### Test the form with Playwright
 
 ```
@@ -197,6 +261,8 @@ Add end-to-end tests with Playwright in app/e2e.
 Read docs/testing-with-playwright.md first.
 Use the Microsoft Edge that is installed on this computer (channel "msedge").
 Do not download other browsers.
+A laptop policy can block headless mode and screenshots. If either fails, do what
+"If a policy gets in the way" in that file says, and tell me. Do not get around it.
 Write these tests, with made-up data:
 1. Complete the form with valid answers and submit: a reference number is shown.
 2. Submit with a required question empty: the error summary appears and links to
@@ -214,6 +280,18 @@ Run the tests. If a test finds a real fault, fix the application. If the test is
 wrong, fix the test. Tell me which was which.
 ```
 
+### If Playwright cannot run out of sight, or cannot take a screenshot
+
+```
+Playwright cannot run the browser out of sight (headless), or cannot take a
+screenshot, on this laptop. A laptop policy blocks it. Do not try to get around it.
+In the Playwright configuration, run the browser in a window (headless: false) and
+turn off screenshots, video and trace. Do not add tests that compare screenshots.
+With the Playwright MCP server, read pages with a snapshot, not a screenshot.
+Run the tests again and tell me the result. If the browser still does not start,
+stop and show me the error.
+```
+
 ### Add an accessibility check to the tests
 
 ```
@@ -224,11 +302,12 @@ Run the tests and list each violation with the element it is on. Then fix the
 violations and run the tests again.
 ```
 
-### Optional: let Copilot explore the form in a browser
+### Optional: let Copilot try to break the form through the Playwright MCP server
 
 ```
-Open the web form in a browser and try to break it: unexpected input, very long
-answers, the Back button, submitting twice. Use made-up data.
+Use the Playwright MCP server to open the web form in a browser and try to break it:
+unexpected input, very long answers, the Back button, submitting twice. Use made-up
+data. Read each page as text, with a snapshot. Do not take screenshots.
 List what you find, with the steps to reproduce each one. Do not change any code.
 ```
 
@@ -247,11 +326,21 @@ No estimates and no praise.
 6. Shared services this form could use.
 ```
 
+### Put the hand-off summary on your issue through the GitHub MCP server
+
+```
+Use the GitHub MCP server to add one comment to issue <number> in repository
+OPS-Community/ops-dev-day-dec-1-2026: the heading "Hand-off note", then a summary of
+docs/handoff.md in ten lines or fewer.
+Add the comment with that server only. If it has no tool that adds a comment, stop
+and tell me. Do not close the issue and change nothing else on GitHub.
+```
+
 ### Optional, only if your table lead says you can push: push and open a pull request
 
 ```
-Create a branch named <your-name> from my current commit and push it to the lab
-repository <organization>/<repository>. Push to no other branch or repository.
+Create a branch named <alias> from my current commit and push it to the lab
+repository OPS-Community/ops-dev-day-dec-1-2026. Push to no other branch or repository.
 Then open a draft pull request from that branch. In its description write
 "Closes #<number>", with the number of my issue. Do not merge it.
 ```

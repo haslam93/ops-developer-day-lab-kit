@@ -1,23 +1,31 @@
 ---
 name: "User story: put a form online"
-about: "The user story for the Developer Day labs. Put your form's number and your initials in the title."
-title: "Put form <form number> online (<your initials>)"
+about: "The layout of the user story for the Developer Day labs. In Lab 2, Copilot normally creates your issue through the GitHub MCP server. Use this only to create it by hand."
+title: "[<your alias>] Put form <form number> online"
 ---
 
 ## Description
 
-As a person who has to complete this form,
+As a person who has to complete <the form's name>,
 I want to fill it in and submit it in my browser,
 so that I do not have to download a PDF, fill it in and send it by email.
 
-Out of scope: sign-in, file uploads, payments, digital signatures, French, deployment,
-and any connection to AEM or another OPS system.
+## Scope
+
+- Build today: <each section the applicant answers that the form spec lists for today, with its number of questions>
+- Left out: <each section the spec marks "not today", and each section completed by an organization or an office>
+- Out of scope: sign-in, file uploads, payments, digital signatures, French, deployment,
+  and any connection to AEM or another OPS system.
+
+## Where
+
+- The form spec: `docs/form-spec.md`. Build from it.
+- The application: `app/`. Follow `.github/copilot-instructions.md`.
 
 ## Acceptance criteria
 
-1. The web form asks every question that the applicant answers in the sections the form spec lists for today,
-   with the same wording, grouped under the same section headings. Sections the spec marks "not today",
-   and sections completed by an organization or an office, are left out.
+1. The web form asks every question that the applicant answers in the sections to build today,
+   with the same wording, grouped under the same section headings. The sections left out are not built.
 2. Required questions and format rules are enforced. Each error message says what is wrong and how to fix it.
 3. Rules that show or hide a question work as they do on the PDF. Where the PDF disables or locks a question, the web form keeps it available and says what is needed in a message.
 4. A group that repeats on the PDF, such as several addresses, can be added and removed.

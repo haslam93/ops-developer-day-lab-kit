@@ -68,7 +68,7 @@
             <p class="kicker">1 DECEMBER 2026 | IN PERSON | HANDS-ON LAB GUIDE</p>
             <h1 id="page-title">OPS Microsoft Developer Day</h1>
             <p class="hero-sub">Hands-on lab guide</p>
-            <p class="hero-date">Tuesday 1 December 2026 | 08:30-16:00 ET | In person | Guide version 3.2</p>
+            <p class="hero-date">Tuesday 1 December 2026 | 08:30-16:00 ET | In person | Guide version 3.2, updated 26 November</p>
             <p class="hero-intro">Today you take one Ontario government PDF form and turn it into a working web application with GitHub Copilot. You work the way you would on an OPS project: with MCP servers from the ITOD registry, the Ontario Design System and the AODA accessibility standard.</p>
           </div>
           <img class="hero-mark" src="img/event-logo.svg" alt="" width="64" height="64">
@@ -89,7 +89,7 @@
             <thead><tr><th scope="col">Lab</th><th scope="col">Time</th><th scope="col">You finish with</th></tr></thead>
             <tbody>
               <tr><th scope="row"><a href="#lab1">Lab 1 | Set up and write the form spec</a></th><td>11:45-12:30 | 45 min</td><td>VS Code and the GitHub Copilot app working on the same folder, a form chosen, and a checked list of what the form asks.</td></tr>
-              <tr><th scope="row"><a href="#lab2">Lab 2 | Connect to GitHub issues and build</a></th><td>13:15-14:00 | 45 min</td><td>Your user story created as a GitHub issue and pulled through MCP, and a first working version of your form.</td></tr>
+              <tr><th scope="row"><a href="#lab2">Lab 2 | Connect to GitHub issues and build</a></th><td>13:15-14:00 | 45 min</td><td>A user story that Copilot wrote from your form spec, created as a GitHub issue through MCP, and a first working version of your form.</td></tr>
               <tr><th scope="row"><a href="#lab3">Lab 3 | Ontario Design System and accessibility</a></th><td>14:00-14:45 | 45 min</td><td>The Ontario look and feel, and accessibility problems found and fixed.</td></tr>
               <tr><th scope="row"><a href="#lab4">Lab 4 | Shared service and testing</a></th><td>15:00-15:45 | 45 min</td><td>An address lookup service you built, Playwright tests and a hand-off note.</td></tr>
               <tr><th scope="row"><a href="#advanced">Advanced track | From one form to many</a></th><td>Optional</td><td>A repeatable way to convert the next form.</td></tr>
@@ -112,7 +112,7 @@
             <thead><tr><th scope="col">Today you practise</th><th scope="col">Where it applies in OPS</th></tr></thead>
             <tbody>
               <tr><td>Giving Copilot the context it needs: project instructions and a written spec</td><td>Any repository. Copilot follows your team’s conventions instead of guessing.</td></tr>
-              <tr><td>Connecting Copilot to OPS tools through MCP servers in the ITOD registry</td><td>GitHub issues today. The same steps work for any server ITOD approves.</td></tr>
+              <tr><td>Connecting Copilot to OPS tools through MCP servers in the ITOD registry</td><td>Today Copilot creates, reads and updates your GitHub issue, and opens your form in a browser. The same steps work for any server ITOD approves.</td></tr>
               <tr><td>Asking for a plan, reviewing it, then building</td><td>Any change that touches more than one file.</td></tr>
               <tr><td>Building to the Ontario Design System</td><td>Every public-facing Ontario website and application.</td></tr>
               <tr><td>Checking accessibility against the AODA standard, WCAG 2.0 Level AA</td><td>Every Government of Ontario website, public or internal.</td></tr>
@@ -163,8 +163,8 @@
               <tr><th scope="row">Rights to install</th><td>The install commands below finish without an error. If your laptop needs administrator rights to install software or packages, arrange them before the day.</td></tr>
               <tr><th scope="row">Microsoft Edge</th><td>DevTools opens with <strong>F12</strong> and shows the <strong>Lighthouse</strong> tool. You use it in Lab 3.</td></tr>
               <tr><th scope="row">Adobe Acrobat Reader</th><td>It opens a form from the <a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a>. The forms do not open in a browser.</td></tr>
-              <tr><th scope="row">GitHub in your browser</th><td>You can sign in to <a href="https://github.com/" target="_blank" rel="noopener">github.com<span class="sr-only" data-ui> (opens in a new tab)</span></a> with your OPS account. If you are invited to the event’s GitHub organization, accept the invitation before the day.</td></tr>
-              <tr><th scope="row">The lab kit</th><td>You can open <a href="https://github.com/haslam93/ops-developer-day-lab-kit" target="_blank" rel="noopener">github.com/haslam93/ops-developer-day-lab-kit<span class="sr-only" data-ui> (opens in a new tab)</span></a>.</td></tr>
+              <tr><th scope="row">GitHub in your browser</th><td>You are signed in to the OPS GitHub instance on <a href="https://github.com/" target="_blank" rel="noopener">github.com<span class="sr-only" data-ui> (opens in a new tab)</span></a> with your ontario.ca account. When you are not, GitHub shows <strong>Single sign-on to Government of Ontario</strong> as you open the lab kit: select <strong>Continue</strong> and sign in with your ontario.ca account.</td></tr>
+              <tr><th scope="row">The lab kit</th><td>You can open <a href="https://github.com/OPS-Community/ops-dev-day-dec-1-2026" target="_blank" rel="noopener">github.com/OPS-Community/ops-dev-day-dec-1-2026<span class="sr-only" data-ui> (opens in a new tab)</span></a>, the lab repository in the OPS GitHub organization. It opens only when you are signed in to the OPS GitHub instance with your ontario.ca account. If it does not open after you sign in, tell the event organizers before the day. Backup only, if you cannot reach it: the public copy at <a href="https://github.com/haslam93/ops-developer-day-lab-kit" target="_blank" rel="noopener">github.com/haslam93/ops-developer-day-lab-kit<span class="sr-only" data-ui> (opens in a new tab)</span></a>, which needs no sign-in.</td></tr>
               <tr><th scope="row">Optional: a form from your ministry</th><td>A blank form of one or two pages. In the <a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a> select <strong>Ministries</strong>, then your ministry. Save the English PDF. Never bring a form that someone has filled in.</td></tr>
             </tbody>
           </table>
@@ -234,10 +234,10 @@ python -m pip install "pypdf[crypto]"</code></pre>
             <colgroup><col style="width:26.4%"><col style="width:73.6%"></colgroup>
             <thead><tr><th scope="col">Rule</th><th scope="col">What it means</th></tr></thead>
             <tbody>
-              <tr><th scope="row">OPS account only</th><td>Sign in with your OPS account. No personal GitHub account or personal Copilot plan.</td></tr>
+              <tr><th scope="row">OPS account only</th><td>Sign in with your OPS account: your ontario.ca account. No personal GitHub account or personal Copilot plan.</td></tr>
               <tr><th scope="row">Made-up data only</th><td>The forms ask for names, birth dates and licence numbers. Invent them. Never type real personal information, and never start from a form that someone has filled in.</td></tr>
               <tr><th scope="row">Approved tools only</th><td>Use MCP servers from the ITOD registry. Do not add a server from anywhere else.</td></tr>
-              <tr><th scope="row">No deployment</th><td>Today’s work is a prototype on your laptop. Do not deploy it or submit anything to AEM or another OPS system. Push it only to the lab repository in the event’s GitHub organization, and only if your table lead says you can.</td></tr>
+              <tr><th scope="row">No deployment</th><td>Today’s work is a prototype on your laptop. Do not deploy it or submit anything to AEM or another OPS system. Push it only to the OPS lab repository, <code>OPS-Community/ops-dev-day-dec-1-2026</code>, and only if your table lead says you can.</td></tr>
               <tr><th scope="row">You check every change</th><td>Read what Copilot changed before you keep it. Try it yourself. Compare it with the PDF.</td></tr>
             </tbody>
           </table>
@@ -354,16 +354,25 @@ python -m pip install "pypdf[crypto]"</code></pre>
             <p class="step-meta"><span class="time">about 5 min</span></p>
             <label class="done" data-ui><input type="checkbox" data-done="lab1-step3" aria-label="Done: step 3, Get the lab kit and open it in both tools"> Done</label>
           </div>
-          <p>The lab kit is one small repository of help for the labs. You build your application inside it.</p>
+          <p>The lab kit is one small repository of help for the labs. You build your application inside it. It is the lab repository in the OPS GitHub organization, <code>OPS-Community/ops-dev-day-dec-1-2026</code>. Your issue goes in the same repository in Lab 2.</p>
           <div class="box box-terminal" data-copy>
             <p class="box-label">TERMINAL</p>
-            <pre><code>git clone https://github.com/haslam93/ops-developer-day-lab-kit.git</code></pre>
+            <pre><code>git clone https://github.com/OPS-Community/ops-dev-day-dec-1-2026.git</code></pre>
+          </div>
+          <p>The repository opens only for people signed in to the OPS GitHub instance. If Git opens a sign-in window, sign in with your ontario.ca account, not a personal GitHub account.</p>
+          <div class="callout callout-info" role="note">
+            <p class="callout-title">Backup only: the public copy of the kit</p>
+            <p>Use it only if the clone still fails after you have checked your sign-in, and tell your table lead. It holds the same files and needs no sign-in. Its folder is named <code>ops-developer-day-lab-kit</code>. Your issue in Lab 2 still goes in the OPS repository.</p>
+            <div class="box box-terminal" data-copy>
+              <p class="box-label">TERMINAL | BACKUP ONLY</p>
+              <pre><code>git clone https://github.com/haslam93/ops-developer-day-lab-kit.git</code></pre>
+            </div>
           </div>
           <div class="tools">
             <div class="tool tool-vscode">
               <p class="tool-label">IN VS CODE</p>
               <ol>
-                <li>Select <strong>File &gt; Open Folder</strong> and open the <code>ops-developer-day-lab-kit</code> folder.</li>
+                <li>Select <strong>File &gt; Open Folder</strong> and open the <code>ops-dev-day-dec-1-2026</code> folder.</li>
                 <li>Select <strong>Yes, I trust the authors</strong>.</li>
               </ol>
             </div>
@@ -536,61 +545,66 @@ git commit -m "Lab 1: form spec"</code></pre>
           <p class="kicker">LAB 2 OF 4 | 13:15-14:00 | 45 MINUTES</p>
           <h2 id="lab2-h"><span class="badge">Lab 2</span> Connect to GitHub issues and build</h2>
         </header>
-        <p><strong>You finish with:</strong> Your user story created as a GitHub issue and pulled into your project through MCP, and a first working version of your form, with tests.</p>
+        <p><strong>You finish with:</strong> A user story that Copilot wrote from your form spec, created as an issue in the OPS lab repository through MCP, and a first working version of your form, built from that issue, with tests.</p>
+        <div class="flow">
+          <p class="flow-title">FROM YOUR SPEC TO A WORKING FORM. COPILOT REACHES GITHUB THROUGH MCP.</p>
+          <ol class="flow-steps">
+            <li><span class="flow-what">Form spec</span> <span class="flow-how">You checked it in Lab 1</span></li>
+            <li><span class="flow-what">User story</span> <span class="flow-how">Copilot writes it from the spec</span></li>
+            <li class="flow-mcp"><span class="flow-tag" aria-hidden="true">MCP</span> <span class="flow-what">GitHub issue</span> <span class="flow-how">Copilot creates it through MCP</span></li>
+            <li><span class="flow-what">Your check</span> <span class="flow-how">You read the issue on GitHub</span></li>
+            <li class="flow-mcp"><span class="flow-tag" aria-hidden="true">MCP</span> <span class="flow-what">Plan and build</span> <span class="flow-how">Copilot reads the issue through MCP</span></li>
+            <li class="flow-mcp"><span class="flow-tag" aria-hidden="true">MCP</span> <span class="flow-what">Report</span> <span class="flow-how">Copilot comments on the issue through MCP</span></li>
+          </ol>
+        </div>
+        <p>On an OPS project, work starts as an item on a backlog, and Copilot works from that item. Today the backlog is the list of issues in the OPS lab repository, <code>OPS-Community/ops-dev-day-dec-1-2026</code>. Every attendee’s issue is there, so the title of yours starts with your alias. The spec stays the source of truth: the story, the issue, the plan and the code each come from the step before.</p>
         <div class="table-wrap">
           <table class="data steps-table">
             <colgroup><col style="width:10.8%"><col style="width:72.6%"><col style="width:16.6%"></colgroup>
             <thead><tr><th scope="col">Step</th><th scope="col">What you do</th><th scope="col">About</th></tr></thead>
             <tbody>
-              <tr data-step-row="lab2-step1"><td>1</td><td><a href="#lab2-step1">Create your user story as a GitHub issue</a></td><td>5 min</td></tr>
-              <tr data-step-row="lab2-step2"><td>2</td><td><a href="#lab2-step2">Connect the GitHub MCP server</a></td><td>10 min</td></tr>
-              <tr data-step-row="lab2-step3"><td>3</td><td><a href="#lab2-step3">Pull your user story through MCP</a></td><td>5 min</td></tr>
-              <tr data-step-row="lab2-step4"><td>4</td><td><a href="#lab2-step4">Plan the application</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step1"><td>1</td><td><a href="#lab2-step1">Connect the GitHub and Playwright MCP servers</a></td><td>10 min</td></tr>
+              <tr data-step-row="lab2-step2"><td>2</td><td><a href="#lab2-step2">Write your user story with Copilot</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step3"><td>3</td><td><a href="#lab2-step3">Create the issue through MCP and check it on GitHub</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step4"><td>4</td><td><a href="#lab2-step4">Plan from your issue</a></td><td>5 min</td></tr>
               <tr data-step-row="lab2-step5"><td>5</td><td><a href="#lab2-step5">Build it and try it</a></td><td>15 min</td></tr>
-              <tr data-step-row="lab2-step6"><td>6</td><td><a href="#lab2-step6">Fix the gaps</a></td><td>5 min</td></tr>
+              <tr data-step-row="lab2-step6"><td>6</td><td><a href="#lab2-step6">Fix the gaps and report on your issue</a></td><td>5 min</td></tr>
             </tbody>
           </table>
         </div>
         <div class="step" id="lab2-step1">
           <div class="step-head">
-            <h3><span class="step-no">Step 1</span> Create your user story as a GitHub issue</h3>
-            <p class="step-meta"><span class="time">about 5 min</span></p>
-            <label class="done" data-ui><input type="checkbox" data-done="lab2-step1" aria-label="Done: step 1, Create your user story as a GitHub issue"> Done</label>
-          </div>
-          <p>On an OPS project, work starts as an item on a backlog. Today the backlog is the list of issues in the lab repository, in the event’s GitHub organization. The kit’s <code>README.md</code> gives the repository’s address.</p>
-          <ol>
-            <li>Open the lab repository in Edge and sign in to GitHub with your OPS account.</li>
-            <li>Select <strong>Issues</strong>, then <strong>New issue</strong>, and choose the template <strong>User story: put a form online</strong>. No template? Open a blank issue and paste the description and the acceptance criteria from the kit’s <code>docs/user-story.md</code>.</li>
-            <li>Give the issue a title that names your form, for example <code>Put form 026-LE221 online (JD)</code>, with your own initials.</li>
-            <li>Create the issue. Note the number beside its title, for example <code>#42</code>. It is the number of your issue.</li>
-          </ol>
-          <p class="note">Cannot open the repository, or cannot create an issue? Tell your table lead and carry on. <a href="#lab2-step3">Step 3</a> has a fallback.</p>
-        </div>
-        <div class="step" id="lab2-step2">
-          <div class="step-head">
-            <h3><span class="step-no">Step 2</span> Connect the GitHub MCP server</h3>
+            <h3><span class="step-no">Step 1</span> Connect the GitHub and Playwright MCP servers</h3>
             <p class="step-meta"><span class="time">about 10 min</span></p>
-            <label class="done" data-ui><input type="checkbox" data-done="lab2-step2" aria-label="Done: step 2, Connect the GitHub MCP server"> Done</label>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step1" aria-label="Done: step 1, Connect the GitHub and Playwright MCP servers"> Done</label>
           </div>
-          <p>MCP, the Model Context Protocol, lets Copilot use tools outside the editor: read an issue, query a database, search documentation. At OPS, ITOD keeps a registry of approved MCP servers, and Copilot runs servers from that registry only. Your OPS account already points Copilot at the registry: there is nothing to configure.</p>
-          <figure class="shot" style="--w:698px">
-            <a href="img/mcp-registry.png" target="_blank" rel="noopener"><img src="img/mcp-registry.png" alt="Copilot, in VS Code or the app, may only use servers from the ITOD registry. The GitHub MCP server reads your issue. Check the tool call in the conversation." width="1600" height="590" loading="lazy"><span class="sr-only" data-ui> Opens the full-size image in a new tab.</span></a>
-          </figure>
+          <p>MCP, the Model Context Protocol, lets Copilot use tools outside the editor: create and read an issue, drive a browser, query a database, search documentation. At OPS, ITOD keeps a registry of approved MCP servers, and Copilot runs servers from that registry only. Your OPS account already points Copilot at the registry: there is nothing to configure.</p>
+          <p>You install two servers from the registry now.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <colgroup><col style="width:17.6%"><col style="width:55.9%"><col style="width:26.5%"></colgroup>
+              <thead><tr><th scope="col">Server</th><th scope="col">What Copilot does with it today</th><th scope="col">You use it in</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">GitHub</th><td>Creates your issue in the lab repository, reads it back and comments on it.</td><td>This lab, and <a href="#lab4-step5">Lab 4 step 5</a></td></tr>
+                <tr><th scope="row">Playwright</th><td>Opens your form in a browser, clicks, types and reads the page.</td><td><a href="#lab4-step3">Lab 4 step 3</a></td></tr>
+              </tbody>
+            </table>
+          </div>
           <div class="tools">
             <div class="tool tool-vscode">
               <p class="tool-label">IN VS CODE</p>
               <ol>
                 <li>Open the <strong>Extensions</strong> view with <strong>Ctrl+Shift+X</strong> and type <code>@mcp</code> in the search box.</li>
                 <li>The list shows the servers in the OPS registry. If VS Code shows <strong>Browse MCP Servers</strong> instead, select it. No list at all? Press <strong>Ctrl+Shift+P</strong> and run <strong>MCP: Browse MCP Servers</strong>.</li>
-                <li>Select the GitHub server, then <strong>Install</strong>. When VS Code asks, confirm that you trust the server.</li>
+                <li>Select the <strong>GitHub</strong> server, then <strong>Install</strong>. When VS Code asks, confirm that you trust the server. Do the same for the <strong>Playwright</strong> server.</li>
               </ol>
             </div>
             <div class="tool tool-app">
               <p class="tool-label">IN THE GITHUB COPILOT APP</p>
               <ol>
-                <li>Select <strong>Customize</strong> in the sidebar, then <strong>MCP</strong>.</li>
-                <li>If the GitHub server from the OPS registry is offered, follow the prompts to install it.</li>
-                <li>If it is not, do steps 2 and 3 in VS Code. The app then works from the same <code>docs/story.md</code>.</li>
+                <li>Select <strong>Customize</strong> in the sidebar, then <strong>MCP</strong>. Look under <strong>Installed</strong> first: a server you added in VS Code can already be there.</li>
+                <li>If the GitHub and Playwright servers from the OPS registry are offered, select each one and follow the prompts to install it.</li>
+                <li>If they are not, send the prompts that name an MCP server from VS Code. The app works on the same files, so every other step works there.</li>
               </ol>
             </div>
           </div>
@@ -599,49 +613,160 @@ git commit -m "Lab 1: form spec"</code></pre>
             <figcaption>Searching <code>@mcp</code> in the VS Code Extensions view. Source: VS Code documentation. Your list shows the OPS registry.</figcaption>
           </figure>
           <ol>
-            <li>Read the list before you install. It shows the servers OPS has approved. Note one, besides GitHub, that you could use in your own work. A request for a new server goes to ITOD.</li>
-            <li>If a sign-in request appears, read it, then allow the server to use your OPS account on GitHub.</li>
-            <li>Check that it is there: <strong>MCP: List Servers</strong> from <strong>Ctrl+Shift+P</strong> in VS Code, <strong>Installed</strong> in the app.</li>
+            <li>Read the list before you install. It shows the servers OPS has approved. Note one, besides GitHub and Playwright, that you could use in your own work. A request for a new server goes to ITOD.</li>
+            <li>If a sign-in request appears for the GitHub server, read it, then allow the server to use your OPS account on GitHub: your ontario.ca account. The Playwright server needs no sign-in.</li>
+            <li>Check that both are there: <strong>MCP: List Servers</strong> from <strong>Ctrl+Shift+P</strong> in VS Code, <strong>Installed</strong> in the app.</li>
+            <li>
+              <p>Try both servers with one prompt, so that a problem shows now and not in the middle of a lab.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Check two MCP servers for me. Change nothing and install nothing.
+1. With the GitHub MCP server, tell me the user name of the GitHub account it is
+   signed in with.
+2. With the Playwright MCP server, open https://www.ontario.ca/ in a browser, tell me
+   the title of the page, then close the browser.
+If a server has no tool for this, or the browser does not start, say which one and
+show me the error. Do not use the gh command or the web instead.</code></pre>
+              </div>
+              <p class="see"><strong>You should see:</strong> the user name of your OPS account, a browser window that opens and closes, and the title of the page. Copilot asks before it uses each server: read the request, then approve.</p>
+            </li>
           </ol>
+          <p class="note">Copilot already has a few GitHub tools of its own. They do not create an issue or comment on one: the server from the registry adds those tools. A server is missing from the list, will not install or fails the check? Tell your table lead now and carry on. Each step below says what to do without it, and the Playwright server is not needed until Lab 4.</p>
+        </div>
+        <div class="step" id="lab2-step2">
+          <div class="step-head">
+            <h3><span class="step-no">Step 2</span> Write your user story with Copilot</h3>
+            <p class="step-meta"><span class="time">about 5 min</span></p>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step2" aria-label="Done: step 2, Write your user story with Copilot"> Done</label>
+          </div>
+          <p>A <strong>user story</strong> says who needs the form, what they need to do with it, and how you will know that the work is done: the acceptance criteria. Your form spec already holds the facts. Copilot turns them into a story that a team could put on its backlog. The kit’s <code>docs/user-story.md</code> is the layout.</p>
+          <ol>
+            <li>Start a fresh conversation in VS Code or in the app.</li>
+            <li>
+              <p>Send this prompt. Replace <code>&lt;alias&gt;</code> with your alias: the first part of your ontario.ca email address, before the @, for example <code>jane.doe</code>. It goes at the start of the title, so that you and your table lead can find your issue among everyone else’s.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <div class="fill" data-ui>
+                  <span class="fill-lead">Fill in, and the prompt uses it:</span>
+                  <label>Your alias
+                    <input type="text" data-fill="alias" id="prompt-alias" placeholder="jane.doe" autocomplete="off" autocapitalize="none" spellcheck="false" size="24">
+                  </label>
+                </div>
+                <pre><code>Read docs/form-spec.md and docs/user-story.md.
+Write my user story as docs/story.md, in the layout that docs/user-story.md gives.
+The first line is the title, as a level 1 heading: my alias in square brackets,
+then "Put form", the form's number from the spec, and "online". My alias is <span class="ph" data-ph="alias"><span class="ph">&lt;alias&gt;</span></span>.
+If the spec gives no number, use the form's name.
+Scope: name the sections to build today with the number of questions in each, and
+the sections left out, from the spec.
+Acceptance criteria: keep each criterion in the layout that applies to this form,
+and leave out one that does not. Add the facts from the spec that make it testable,
+such as the name of each rule. Add no requirement that is not in the spec or the
+layout.
+Do not write code. Do not create or change anything on GitHub.</code></pre>
+              </div>
+            </li>
+            <li>
+              <p>Open <code>docs/story.md</code> and read it before it goes anywhere. Correct it yourself, or tell Copilot what to change.</p>
+              <div class="table-wrap">
+                <table class="data">
+                  <colgroup><col style="width:19.6%"><col style="width:80.4%"></colgroup>
+                  <thead><tr><th scope="col">Check</th><th scope="col">What to look for</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Title</th><td>The first line starts with your alias in square brackets, for example <code>[jane.doe] Put form 11010 online</code>.</td></tr>
+                    <tr><th scope="row">Scope</th><td>The sections to build are the ones you chose in <a href="#lab1-step6">Lab 1 step 6</a>. The sections for an organization or an office are left out.</td></tr>
+                    <tr><th scope="row">Acceptance criteria</th><td>You could test each one. Nothing is there that your spec does not say.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+          </ol>
+          <p class="note">GitHub’s advice for an issue that Copilot works on is a clear description, acceptance criteria and pointers to the files. The layout has all three.</p>
         </div>
         <div class="step" id="lab2-step3">
           <div class="step-head">
-            <h3><span class="step-no">Step 3</span> Pull your user story through MCP</h3>
+            <h3><span class="step-no">Step 3</span> Create the issue through MCP and check it on GitHub</h3>
             <p class="step-meta"><span class="time">about 5 min</span></p>
-            <label class="done" data-ui><input type="checkbox" data-done="lab2-step3" aria-label="Done: step 3, Pull your user story through MCP"> Done</label>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step3" aria-label="Done: step 3, Create the issue through MCP and check it on GitHub"> Done</label>
           </div>
-          <p>Your user story is now an issue on GitHub. Ask Copilot to read it. Give it the lab repository, written as <code>organization/repository</code>, and the number of your issue.</p>
+          <p>Now Copilot puts the story on the backlog. It creates the issue through the GitHub MCP server, with your account, so the issue is in your name.</p>
           <div class="box box-prompt" data-copy>
             <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
-            <div class="fill" data-ui>
-              <span class="fill-lead">Fill in, and the prompt uses it:</span>
-              <label>Lab repository
-                <input type="text" data-fill="repo" id="prompt-9-repo" placeholder="organization/repository" autocomplete="off" spellcheck="false" size="28">
-              </label>
-              <label>Issue number
-                <input type="text" data-fill="issue" id="prompt-9-issue" placeholder="42" inputmode="numeric" autocomplete="off" size="6">
-              </label>
-            </div>
-            <pre><code>Use the GitHub MCP server. In repository <span class="ph" data-ph="repo"><span class="ph">&lt;organization&gt;</span>/<span class="ph">&lt;repository&gt;</span></span>, get issue <span class="ph" data-ph="issue"><span class="ph">&lt;number&gt;</span></span>.
-Read the issue with that server only. If it has no tool that reads an issue, stop and
+            <pre><code>Use the GitHub MCP server to create one issue in repository
+OPS-Community/ops-dev-day-dec-1-2026.
+Title: the first line of docs/story.md, without the # sign. It starts with my alias
+in square brackets.
+Body: everything below that line, exactly as written.
+Create it with that server only. If it has no tool that creates an issue, stop and
 tell me. Do not use the gh command or the web instead.
-Show its title and description exactly as written.
-Do not create or change anything on GitHub.
-Then save that text as docs/story.md.</code></pre>
+Create one issue and change nothing else on GitHub: no labels and no assignees.
+Then give me the number of the issue and its address.</code></pre>
+          </div>
+          <div class="tools">
+            <div class="tool tool-vscode">
+              <p class="tool-label">IN VS CODE</p>
+              <p>Copilot asks before it runs the tool: allow this one call. The GitHub server can then show the new issue as a form in the chat. Check the repository, the title and the description in the form, then select <strong>Create issue</strong>. Nothing is created until you do. No form? Then the issue was created when you allowed the call.</p>
+            </div>
+            <div class="tool tool-app">
+              <p class="tool-label">IN THE GITHUB COPILOT APP</p>
+              <p>Copilot asks before it runs the tool. Read the repository, the title and the body it is about to send, then approve this one call. The issue is then created. If a form appears instead, as in VS Code, check it and select <strong>Create issue</strong>.</p>
+            </div>
           </div>
           <ol>
-            <li>Copilot asks before it runs the tool. Read what it wants to run, then approve.</li>
-            <li>Expand the tool call in the conversation. Check that it used the GitHub server, that the tool reads an issue (for example <code>issue_read</code>) and that the number is yours. A terminal command such as <code>gh issue view</code> is not the MCP server: return to <a href="#lab2-step2">step 2</a>. <strong>No tool call, no proof:</strong> Copilot then wrote the story from guesswork. Delete the file and ask again, naming the server.</li>
-            <li>Open <code>docs/story.md</code> and compare it with the issue in your browser.</li>
+            <li>Approve one call at a time. Do not choose an option that always allows the tool: you want to see each change that Copilot makes on GitHub.</li>
+            <li>Expand the tool call in the conversation. Check that it used the GitHub server, that the tool creates an issue (for example <code>issue_write</code>) and that the repository is <code>OPS-Community/ops-dev-day-dec-1-2026</code>. A terminal command such as <code>gh issue create</code> is not the MCP server.</li>
+            <li>
+              <p>Check the issue on GitHub. Open the address Copilot gave you in Edge. You are signed in with your ontario.ca account.</p>
+              <div class="table-wrap">
+                <table class="data">
+                  <colgroup><col style="width:19.6%"><col style="width:80.4%"></colgroup>
+                  <thead><tr><th scope="col">Check</th><th scope="col">What to look for</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Where</th><td>The address starts with <code>github.com/OPS-Community/ops-dev-day-dec-1-2026/issues/</code>.</td></tr>
+                    <tr><th scope="row">Title</th><td>It starts with your alias in square brackets.</td></tr>
+                    <tr><th scope="row">Author</th><td>The issue was opened by you.</td></tr>
+                    <tr><th scope="row">Body</th><td>The scope and the acceptance criteria are the ones in <code>docs/story.md</code>, and they read well on the page.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+            <li>Something to correct, or to add? Edit the issue on GitHub: open the <strong>…</strong> menu at the top right of the description and select <strong>Edit</strong>. Copilot reads the issue again in <a href="#lab2-step4">step 4</a>, so what you change here is what gets built.</li>
+            <li>Note the number beside the title, for example <code>#42</code>. It is the number of your issue.</li>
           </ol>
-          <p class="note">Copilot answers that it has no tool that reads an issue? The server from the registry is not connected in that tool: return to <a href="#lab2-step2">step 2</a>. No access to GitHub issues at all? Copy <code>docs/user-story.md</code> to <code>docs/story.md</code>, put your form’s number in the title and continue.</p>
+          <p class="note">Copilot answers that it has no tool that creates an issue? The server from the registry is not connected in that tool, or it only reads: return to <a href="#lab2-step1">step 1</a>. Still no tool? Create the issue by hand. On GitHub open the lab repository, select <strong>Issues</strong>, then <strong>New issue</strong>, choose a blank issue, and paste the title and the rest of <code>docs/story.md</code>. Two issues by mistake? Open the extra one and select <strong>Close issue</strong>. No access to GitHub issues at all? Tell your table lead and go to the plan in <a href="#lab2-step4">step 4</a>: Copilot plans from <code>docs/story.md</code>.</p>
         </div>
         <div class="step" id="lab2-step4">
           <div class="step-head">
-            <h3><span class="step-no">Step 4</span> Plan the application</h3>
+            <h3><span class="step-no">Step 4</span> Plan from your issue</h3>
             <p class="step-meta"><span class="time">about 5 min</span></p>
-            <label class="done" data-ui><input type="checkbox" data-done="lab2-step4" aria-label="Done: step 4, Plan the application"> Done</label>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step4" aria-label="Done: step 4, Plan from your issue"> Done</label>
           </div>
+          <p>From here Copilot works on the issue, not on its own draft. The issue is the team’s copy of the story: you may have corrected it on GitHub, and on a real project someone else may have. So Copilot reads it back through MCP first.</p>
+          <h4>A. Read the issue through MCP</h4>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <div class="fill" data-ui>
+              <span class="fill-lead">Fill in, and the prompts use it:</span>
+              <label>Issue number
+                <input type="text" data-fill="issue" id="prompt-issue" placeholder="42" inputmode="numeric" autocomplete="off" size="6">
+              </label>
+            </div>
+            <pre><code>Use the GitHub MCP server. In repository OPS-Community/ops-dev-day-dec-1-2026, get
+issue <span class="ph" data-ph="issue"><span class="ph">&lt;number&gt;</span></span>.
+Read the issue with that server only. If it has no tool that reads an issue, stop and
+tell me. Do not use the gh command or the web instead.
+Do not create or change anything on GitHub.
+Save the issue as docs/story.md, exactly as written: the title on the first line as
+a level 1 heading, then the description.
+Tell me the title, and what changed in docs/story.md, if anything.</code></pre>
+          </div>
+          <ol>
+            <li>Copilot asks before it runs the tool. Read what it wants to run, then approve.</li>
+            <li>Expand the tool call in the conversation. Check that it used the GitHub server, that the tool reads an issue (for example <code>issue_read</code>) and that the number is yours. A terminal command such as <code>gh issue view</code> is not the MCP server: return to <a href="#lab2-step1">step 1</a>. <strong>No tool call, no proof:</strong> Copilot then answered from its own draft. Ask again, naming the server.</li>
+            <li>If you edited the issue on GitHub, Copilot tells you what changed in <code>docs/story.md</code>. The file and the issue now say the same.</li>
+          </ol>
+          <p class="note">Copilot answers that it has no tool that reads an issue? The server from the registry is not connected in that tool: return to <a href="#lab2-step1">step 1</a>. No access to GitHub issues at all? Carry on with part B: <code>docs/story.md</code> is still the story Copilot wrote in <a href="#lab2-step2">step 2</a>.</p>
+          <h4>B. Ask for a plan</h4>
           <p>This is the largest change of the day, so ask for a plan before Copilot writes any code. You choose the stack. If you have no preference, the project instructions name a simple one.</p>
           <div class="tools">
             <div class="tool tool-vscode">
@@ -735,9 +860,9 @@ git commit -m "Lab 2: first version"</code></pre>
         </div>
         <div class="step" id="lab2-step6">
           <div class="step-head">
-            <h3><span class="step-no">Step 6</span> Fix the gaps</h3>
+            <h3><span class="step-no">Step 6</span> Fix the gaps and report on your issue</h3>
             <p class="step-meta"><span class="time">about 5 min</span></p>
-            <label class="done" data-ui><input type="checkbox" data-done="lab2-step6" aria-label="Done: step 6, Fix the gaps"> Done</label>
+            <label class="done" data-ui><input type="checkbox" data-done="lab2-step6" aria-label="Done: step 6, Fix the gaps and report on your issue"> Done</label>
           </div>
           <p>Fix what the first build got wrong, one problem per prompt. Start with required questions and rules. Leave the look of the page for Lab 3.</p>
           <div class="box box-prompt" data-copy>
@@ -757,8 +882,22 @@ fix and passes after it. Run the tests.</code></pre>
 git commit -m "Lab 2: fixes"</code></pre>
               </div>
             </li>
+            <li>
+              <p>Report on your issue. Copilot adds a comment through MCP that sets what you built against each acceptance criterion.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <pre><code>Use the GitHub MCP server to add one comment to issue <span class="ph" data-ph="issue"><span class="ph">&lt;number&gt;</span></span> in repository
+OPS-Community/ops-dev-day-dec-1-2026.
+In the comment, list each acceptance criterion of the issue as met, partly met or
+not met, with one line of evidence from the code or the last test run. Write
+"not checked" where you have no evidence. End with the number of tests that pass.
+Add the comment with that server only. If it has no tool that adds a comment, stop
+and tell me. Do not close the issue and change nothing else on GitHub.</code></pre>
+              </div>
+            </li>
+            <li>Read the comment in the tool call before you approve it. The tool adds a comment, for example <code>add_issue_comment</code>. Then open your issue on GitHub and read the comment there. Is it true? Compare it with your score in <a href="#lab2-step5">step 5</a>. If it claims too much, tell Copilot what is wrong and ask it to correct the comment.</li>
           </ol>
-          <p class="note">Optional: ask Copilot to add a comment with your score to your issue. The prompt is in <code>docs/lab-prompts.md</code>. Copilot asks before it writes to GitHub.</p>
+          <p class="note">No tool that adds a comment? Leave the report out and carry on. Your issue stays open: the work is not finished until Lab 4.</p>
         </div>
       </div>
     </section>
@@ -1015,13 +1154,33 @@ Add tests for found, not found and unavailable. Run the tests.</code></pre>
             <p class="step-meta"><span class="time">about 15 min</span></p>
             <label class="done" data-ui><input type="checkbox" data-done="lab4-step3" aria-label="Done: step 3, Test the form with Playwright"> Done</label>
           </div>
-          <p><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a> drives a real browser the way a person does: it opens the form, types, clicks and checks what the page shows. You get the checks a tester would do by hand, and they run again after every change. The kit’s <code>docs/testing-with-playwright.md</code> has the details.</p>
+          <p><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a> drives a real browser the way a person does: it opens the form, types, clicks and checks what the page shows. You use it twice. First Copilot opens your form through the Playwright MCP server from <a href="#lab2-step1">Lab 2 step 1</a>, so that you see MCP drive a browser. Then Copilot writes tests: the checks a tester would do by hand, and they run again after every change. The kit’s <code>docs/testing-with-playwright.md</code> has the details.</p>
+          <h4>A. Copilot opens your form through MCP (3 min)</h4>
+          <div class="box box-prompt" data-copy>
+            <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+            <pre><code>Use the Playwright MCP server to open the web form in a browser. If the application
+is not running, start it first.
+Fill in the form with made-up data, as a person would, and submit it.
+Read each page as text, with a snapshot. Do not take screenshots.
+Tell me what you saw: each page, its questions in order and any error message.
+If you have no browser tool from that server, or the browser does not start, stop
+and tell me. Do not install a browser, do not write tests and do not change any code.</code></pre>
+          </div>
+          <ol>
+            <li>Copilot asks before it uses the browser. Approve. A browser window opens: watch Copilot fill in your form. Leave the window in view.</li>
+            <li>Expand a tool call in the conversation. The server is Playwright, and the tools open a page, read it and act on it, for example <code>browser_navigate</code>, <code>browser_snapshot</code> and <code>browser_fill_form</code>.</li>
+            <li>Compare what Copilot says it saw with your form in Edge.</li>
+          </ol>
+          <p class="note">No Playwright server, or the server says that a browser is not installed? Leave part A out: part B does not need the server. The server looks for Google Chrome unless it is set to use Microsoft Edge. Do not let Copilot install or download a browser. Tell your table lead.</p>
+          <h4>B. Copilot writes the tests (12 min)</h4>
           <div class="box box-prompt" data-copy>
             <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
             <pre><code>Add end-to-end tests with Playwright in app/e2e.
 Read docs/testing-with-playwright.md first.
 Use the Microsoft Edge that is installed on this computer (channel "msedge").
 Do not download other browsers.
+A laptop policy can block headless mode and screenshots. If either fails, do what
+"If a policy gets in the way" in that file says, and tell me. Do not get around it.
 Write these tests, with made-up data:
 1. Complete the form with valid answers and submit: a reference number is shown.
 2. Submit with a required question empty: the error summary appears and links to
@@ -1044,6 +1203,22 @@ wrong, fix the test. Tell me which was which.</code></pre>
             <li>Watch the tests drive the browser. Ask Copilot to run them in headed mode, or run <code>npx playwright test --headed</code> in the application folder.</li>
             <li>Open the report with <code>npx playwright show-report</code>.</li>
           </ol>
+          <div class="callout callout-warn" role="note">
+            <p class="callout-title">If Playwright cannot run out of sight, or cannot take a screenshot</p>
+            <p>A policy on an OPS laptop can stop a browser that a program drives. The signs: the browser does not start in headless mode (with no window), a test stops as it starts, or a screenshot fails or never finishes.</p>
+            <p>Do not look for a way around the policy. You do not need headless mode or screenshots today: the tests check what the page says, and the Playwright MCP server reads the page as text. Send this prompt.</p>
+            <div class="box box-prompt" data-copy>
+              <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+              <pre><code>Playwright cannot run the browser out of sight (headless), or cannot take a
+screenshot, on this laptop. A laptop policy blocks it. Do not try to get around it.
+In the Playwright configuration, run the browser in a window (headless: false) and
+turn off screenshots, video and trace. Do not add tests that compare screenshots.
+With the Playwright MCP server, read pages with a snapshot, not a screenshot.
+Run the tests again and tell me the result. If the browser still does not start,
+stop and show me the error.</code></pre>
+            </div>
+            <p>Keep the browser window in view while the tests run. If Edge still does not start, the policy does not let a program drive it at all, and only ITOD can change that. Tell your table lead and test by hand with the list in <code>docs/testing-with-playwright.md</code>.</p>
+          </div>
         </div>
         <div class="step" id="lab4-step4">
           <div class="step-head">
@@ -1063,7 +1238,7 @@ violations and run the tests again.</code></pre>
           <ol>
             <li>Compare what axe found with your Lighthouse result from Lab 3.</li>
           </ol>
-          <p class="note">More time? Ask Copilot to open the form in a browser and try to break it. The prompt is in <code>docs/lab-prompts.md</code>. Copilot uses the Playwright from <a href="#lab4-step3">step 3</a>, or browser tools if your tool has them.</p>
+          <p class="note">More time? Ask Copilot to try to break your form through the Playwright MCP server. The prompt is in <code>docs/lab-prompts.md</code>.</p>
         </div>
         <div class="step" id="lab4-step5">
           <div class="step-head">
@@ -1094,8 +1269,26 @@ No estimates and no praise.
 git commit -m "Lab 4: address service, tests and hand-off"</code></pre>
               </div>
             </li>
+            <li>
+              <p>Bring your issue up to date. Copilot adds a summary of the hand-off note as a comment, through MCP.</p>
+              <div class="box box-prompt" data-copy>
+                <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
+                <div class="fill" data-ui>
+                  <span class="fill-lead">Fill in, and the prompt uses it:</span>
+                  <label>Issue number
+                    <input type="text" data-fill="issue" id="prompt-issue-lab4" placeholder="42" inputmode="numeric" autocomplete="off" size="6">
+                  </label>
+                </div>
+                <pre><code>Use the GitHub MCP server to add one comment to issue <span class="ph" data-ph="issue"><span class="ph">&lt;number&gt;</span></span> in repository
+OPS-Community/ops-dev-day-dec-1-2026: the heading "Hand-off note", then a summary of
+docs/handoff.md in ten lines or fewer.
+Add the comment with that server only. If it has no tool that adds a comment, stop
+and tell me. Do not close the issue and change nothing else on GitHub.</code></pre>
+              </div>
+              <p class="see"><strong>You should see:</strong> your issue on GitHub now tells the whole story: what was asked, what the first build did and what is handed off.</p>
+            </li>
           </ol>
-          <p class="note">Optional, and only if your table lead says the lab repository accepts pushes: push your work to a branch named after you and open a draft pull request that mentions your issue. The prompt is in <code>docs/lab-prompts.md</code>. Push nowhere else.</p>
+          <p class="note">Optional, and only if your table lead says the lab repository accepts pushes: push your work to a branch named after your alias and open a draft pull request that mentions your issue. The prompt is in <code>docs/lab-prompts.md</code>. Push nowhere else.</p>
           <p><strong>For the showcase:</strong> choose one thing to show in 60 seconds. The PDF beside your web form, one thing Copilot got wrong and how you caught it, or a Playwright test driving your form.</p>
         </div>
       </div>
@@ -1116,7 +1309,7 @@ git commit -m "Lab 4: address service, tests and hand-off"</code></pre>
         </ul>
         <h3 id="after-today">After today</h3>
         <ul>
-          <li>Try the same steps on a form or a feature from your own backlog: write the spec, plan, build, check, test.</li>
+          <li>Try the same steps on a form or a feature from your own backlog: write the spec, raise the story as an issue, plan, build, check, test.</li>
           <li>Do not deploy today’s work or use it with real data. Taking a form further needs your manager’s support and the usual OPS approvals.</li>
         </ul>
       </div>
@@ -1183,19 +1376,25 @@ Include a description of when to use the skill.</code></pre>
               <tr><td>Copilot asks you to sign in, or says you have no access</td><td>Check the account you are signed in with. OPS account only. Tell your table lead.</td></tr>
               <tr><td>The GitHub Copilot app will not install or sign in</td><td>Do the labs in VS Code. Every step works there.</td></tr>
               <tr><td>No <strong>Session Target</strong> control or no <strong>Agent</strong> dropdown in VS Code</td><td>Your VS Code build differs from this guide. Ask your table lead.</td></tr>
-              <tr><td><code>git clone</code> cannot find the lab kit</td><td>Check that you are signed in to GitHub with your OPS account. Ask your table lead for a copy of the kit.</td></tr>
+              <tr><td><code>git clone</code> cannot find the lab kit, or asks for a password</td><td>The OPS repository opens only for your ontario.ca account. Open <a href="https://github.com/OPS-Community/ops-dev-day-dec-1-2026" target="_blank" rel="noopener">the lab repository<span class="sr-only" data-ui> (opens in a new tab)</span></a> in Edge. If GitHub shows <strong>Single sign-on to Government of Ontario</strong>, select <strong>Continue</strong> and sign in, then clone again. If Git signed you in with another account, tell your table lead. Still failing? Clone the backup copy in <a href="#lab1-step3">Lab 1 step 3</a>.</td></tr>
               <tr><td>The Central Forms Repository does not load, or blocks your request</td><td>Use a sample form from the kit, or ask your table lead for another way to get the PDF.</td></tr>
               <tr><td>The outline tool finds no fields, or fails on your PDF</td><td>No fields: the file is a guide or a print-only form, so choose another. Any other failure: use a sample form from the kit, or the screenshot prompt in <code>docs/lab-prompts.md</code>.</td></tr>
               <tr><td>Node.js or Python is missing, and you cannot install it</td><td>No Python: use a sample form from the kit. No Node.js: pair with a neighbour, or ask Copilot to build with the runtime you have and to test with Playwright for that language.</td></tr>
               <tr><td><code>git commit</code> prints a warning about your name and email, or stops with “Please tell me who you are”</td><td>Set them once, as in <a href="#before">Before you arrive</a>: <code>git config --global user.name "Your Name"</code>, and the same for <code>user.email</code>. Then commit again.</td></tr>
-              <tr><td>You cannot open the lab repository on GitHub, or the GitHub server is not in the list or will not install</td><td>Tell your table lead. Only servers in the ITOD registry can run. Copy <code>docs/user-story.md</code> to <code>docs/story.md</code>, put your form’s number in the title and continue.</td></tr>
-              <tr><td>Copilot describes the issue, but the conversation shows no tool call, or only a terminal command</td><td>It did not use the GitHub server. Check that the server is installed (<a href="#lab2-step2">Lab 2 step 2</a>), then send the prompt again.</td></tr>
+              <tr><td>You cannot open the lab repository on GitHub, or a server is not in the list or will not install</td><td>Tell your table lead. Only servers in the ITOD registry can run. Without the GitHub server, Copilot still writes your story in <a href="#lab2-step2">Lab 2 step 2</a>: create the issue by hand as <a href="#lab2-step3">Lab 2 step 3</a> says, or plan from <code>docs/story.md</code>. Without the Playwright server, leave out part A of <a href="#lab4-step3">Lab 4 step 3</a>.</td></tr>
+              <tr><td>Copilot says it created, read or commented on the issue, but the conversation shows no tool call, or only a terminal command</td><td>It did not use the GitHub server. Check that the server is installed (<a href="#lab2-step1">Lab 2 step 1</a>), then send the prompt again.</td></tr>
+              <tr><td>Copilot has no tool that creates an issue or adds a comment</td><td>The GitHub server from the registry is not connected in that tool, or it only reads. Check <a href="#lab2-step1">Lab 2 step 1</a>, or send the prompt from VS Code. Still none? Create the issue by hand on GitHub, as <a href="#lab2-step3">Lab 2 step 3</a> says, and leave out the comments.</td></tr>
+              <tr><td>VS Code shows a form with a <strong>Create issue</strong> button, and Copilot waits</td><td>It is waiting for you. Check the repository, the title and the description in the form, then select <strong>Create issue</strong>.</td></tr>
+              <tr><td>GitHub refuses the new issue, or the issue is in the wrong repository, or there are two</td><td>Refused: your account cannot create issues in the lab repository. Tell your table lead and plan from <code>docs/story.md</code>. Wrong repository, or two issues: open the extra one on GitHub, select <strong>Close issue</strong> and tell your table lead.</td></tr>
               <tr><td>A change made in one tool does not appear in the other</td><td>In the app, the session’s <strong>Workspace</strong> must be <strong>Current checkout</strong>. Start a new session with that setting.</td></tr>
               <tr><td>Copilot changes files you did not ask about</td><td>Review them in <strong>Source Control</strong> or <strong>Changes</strong> and discard the ones you do not want. Send the prompt again and name the folders Copilot may change.</td></tr>
               <tr><td>Copilot repeats the same failing action, or shows no progress for 5 minutes</td><td>Stop it and review what it changed. Start a fresh conversation and ask for a smaller piece, such as one section of the form.</td></tr>
               <tr><td>The address is already in use when the application starts</td><td>An earlier copy is still running. Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again: it stops the earlier copy first.</td></tr>
               <tr><td>A change does not show after you reload, or the form has lost its styling</td><td>An earlier copy of the application is still running, often out of sight. Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again, then reload.</td></tr>
               <tr><td>Packages cannot be installed, or Playwright cannot find a browser</td><td>Tell your table lead: an install can need administrator rights. Ask Copilot to use the installed Edge. If installs are blocked, test by hand with the list in <code>docs/testing-with-playwright.md</code>.</td></tr>
+              <tr><td>Playwright cannot start the browser out of sight (headless), or a screenshot fails or never finishes</td><td>A laptop policy can block both. Do not try to get around it. Send the prompt in the amber box in <a href="#lab4-step3">Lab 4 step 3</a>: it runs the browser in a window, with screenshots off. Keep that window in view.</td></tr>
+              <tr><td>Edge closes at once when Playwright starts it, or the error says that remote debugging is disallowed</td><td>A policy does not let a program drive Edge. Only ITOD can change that. Tell your table lead and test by hand with the list in <code>docs/testing-with-playwright.md</code>.</td></tr>
+              <tr><td>The Playwright server says that a browser is not installed, or asks to install Chrome</td><td>Do not install or download a browser. The server looks for Google Chrome unless it is set to use Microsoft Edge. Tell your table lead and leave out part A of <a href="#lab4-step3">Lab 4 step 3</a>: the tests in part B use the installed Edge.</td></tr>
               <tr><td><strong>Accessibility Reviewer</strong> is not offered as an agent</td><td>Check that you opened the kit folder itself, so that <code>.github/agents</code> is at its top level.</td></tr>
               <tr><td>No <strong>Lighthouse</strong> tool in DevTools</td><td>Select <strong>More tools</strong> (+) in DevTools and add it. If it is not offered, rely on the keyboard checks and the reviewer agent.</td></tr>
               <tr><td>A certificate or proxy warning</td><td>Stop and tell your table lead. Do not bypass it.</td></tr>
@@ -1213,11 +1412,11 @@ Include a description of when to use the skill.</code></pre>
               <tr><th scope="row">Forms and accessibility</th><td><a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://forms.mgcs.gov.on.ca/en/organization/" target="_blank" rel="noopener">Forms by ministry<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://www.ontario.ca/page/how-make-websites-accessible" target="_blank" rel="noopener">How to make websites accessible (AODA)<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
               <tr><th scope="row">GitHub Copilot app</th><td><a href="https://github.com/features/ai/github-app" target="_blank" rel="noopener">Download<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/get-started/quickstart-copilot-app" target="_blank" rel="noopener">Getting started<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions" target="_blank" rel="noopener">Sessions and modes<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app" target="_blank" rel="noopener">MCP, skills and agents<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
               <tr><th scope="row">VS Code</th><td><a href="https://code.visualstudio.com/docs/agent-customization/mcp-servers" target="_blank" rel="noopener">MCP servers<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agents/run/planning" target="_blank" rel="noopener">Planning<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/custom-agents" target="_blank" rel="noopener">Custom agents<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/agent-skills" target="_blank" rel="noopener">Agent skills<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
-              <tr><th scope="row">GitHub and testing</th><td><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue" target="_blank" rel="noopener">Creating an issue<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server" target="_blank" rel="noopener">GitHub MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/accessibility-testing" target="_blank" rel="noopener">Accessibility testing with axe<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">GitHub and testing</th><td><a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server" target="_blank" rel="noopener">GitHub MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/tutorials/cloud-agent/get-the-best-results" target="_blank" rel="noopener">Writing an issue for Copilot<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue" target="_blank" rel="noopener">Creating an issue by hand<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/" target="_blank" rel="noopener">Spec-driven development<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">Playwright MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/accessibility-testing" target="_blank" rel="noopener">Accessibility testing with axe<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
             </tbody>
           </table>
         </div>
-        <p class="note">Links checked on 23 November 2026. Menu names can differ in the OPS builds of VS Code and the GitHub Copilot app.</p>
+        <p class="note">Links checked on 26 November 2026. Menu names can differ in the OPS builds of VS Code and the GitHub Copilot app.</p>
       </div>
     </section>
   </main>
@@ -1230,12 +1429,13 @@ Include a description of when to use the skill.</code></pre>
         <img src="img/github-logo-white.svg" alt="GitHub" width="416" height="95">
       </p>
       <p class="footer-version">DRAFT v3.2 | 1 DECEMBER 2026</p>
+      <p class="footer-link">This guide on the web: <a href="https://aka.ms/OPSDeveloperDay">aka.ms/OPSDeveloperDay</a></p>
       <p class="footer-tools" data-ui><a href="#overview">Back to the top</a> <button type="button" id="reset-progress">Clear my ticks and entries</button></p>
       <p class="footer-note" data-ui>Your ticks and entries are saved in this browser only. Nothing is sent anywhere.</p>
     </div>
   </footer>
 
-  <script id="lab-data" type="application/json">[{"id":"lab1","lab":1,"name":"Set up and write the form spec","steps":[{"id":"lab1-step1","n":1,"title":"Set up VS Code"},{"id":"lab1-step2","n":2,"title":"Set up the GitHub Copilot app"},{"id":"lab1-step3","n":3,"title":"Get the lab kit and open it in both tools"},{"id":"lab1-step4","n":4,"title":"Choose your form"},{"id":"lab1-step5","n":5,"title":"Write the form spec with Copilot"},{"id":"lab1-step6","n":6,"title":"Check the form spec against the PDF"}]},{"id":"lab2","lab":2,"name":"Connect to GitHub issues and build","steps":[{"id":"lab2-step1","n":1,"title":"Create your user story as a GitHub issue"},{"id":"lab2-step2","n":2,"title":"Connect the GitHub MCP server"},{"id":"lab2-step3","n":3,"title":"Pull your user story through MCP"},{"id":"lab2-step4","n":4,"title":"Plan the application"},{"id":"lab2-step5","n":5,"title":"Build it and try it"},{"id":"lab2-step6","n":6,"title":"Fix the gaps"}]},{"id":"lab3","lab":3,"name":"Ontario Design System and accessibility","steps":[{"id":"lab3-step1","n":1,"title":"Find your way around the Ontario Design System"},{"id":"lab3-step2","n":2,"title":"Apply it to your form"},{"id":"lab3-step3","n":3,"title":"Check accessibility three ways"},{"id":"lab3-step4","n":4,"title":"Fix what you found"}]},{"id":"lab4","lab":4,"name":"Shared service and testing","steps":[{"id":"lab4-step1","n":1,"title":"Build the address lookup service"},{"id":"lab4-step2","n":2,"title":"Connect your form to it"},{"id":"lab4-step3","n":3,"title":"Test the form with Playwright"},{"id":"lab4-step4","n":4,"title":"Add an accessibility check to the tests"},{"id":"lab4-step5","n":5,"title":"Write the hand-off note"}]}]</script>
+  <script id="lab-data" type="application/json">[{"id":"lab1","lab":1,"name":"Set up and write the form spec","steps":[{"id":"lab1-step1","n":1,"title":"Set up VS Code"},{"id":"lab1-step2","n":2,"title":"Set up the GitHub Copilot app"},{"id":"lab1-step3","n":3,"title":"Get the lab kit and open it in both tools"},{"id":"lab1-step4","n":4,"title":"Choose your form"},{"id":"lab1-step5","n":5,"title":"Write the form spec with Copilot"},{"id":"lab1-step6","n":6,"title":"Check the form spec against the PDF"}]},{"id":"lab2","lab":2,"name":"Connect to GitHub issues and build","steps":[{"id":"lab2-step1","n":1,"title":"Connect the GitHub and Playwright MCP servers"},{"id":"lab2-step2","n":2,"title":"Write your user story with Copilot"},{"id":"lab2-step3","n":3,"title":"Create the issue through MCP and check it on GitHub"},{"id":"lab2-step4","n":4,"title":"Plan from your issue"},{"id":"lab2-step5","n":5,"title":"Build it and try it"},{"id":"lab2-step6","n":6,"title":"Fix the gaps and report on your issue"}]},{"id":"lab3","lab":3,"name":"Ontario Design System and accessibility","steps":[{"id":"lab3-step1","n":1,"title":"Find your way around the Ontario Design System"},{"id":"lab3-step2","n":2,"title":"Apply it to your form"},{"id":"lab3-step3","n":3,"title":"Check accessibility three ways"},{"id":"lab3-step4","n":4,"title":"Fix what you found"}]},{"id":"lab4","lab":4,"name":"Shared service and testing","steps":[{"id":"lab4-step1","n":1,"title":"Build the address lookup service"},{"id":"lab4-step2","n":2,"title":"Connect your form to it"},{"id":"lab4-step3","n":3,"title":"Test the form with Playwright"},{"id":"lab4-step4","n":4,"title":"Add an accessibility check to the tests"},{"id":"lab4-step5","n":5,"title":"Write the hand-off note"}]}]</script>
   <script src="guide.js"></script>
 </body>
 </html>

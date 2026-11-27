@@ -5,7 +5,7 @@ In the labs you turn one Ontario government PDF form into a small web applicatio
 GitHub Copilot. You build the application yourself, in this folder. The kit gives Copilot
 the context it needs and gives you reference material. Use what helps and ignore the rest.
 
-Kit version 3.2, updated 26 November 2026. The lab guide is in the kit: the web page
+Kit version 3.2, updated 27 November 2026. The lab guide is in the kit: the web page
 `guide/index.html`, guide version 3.2. It has the steps.
 
 Read the lab guide on the web: https://aka.ms/OPSDeveloperDay

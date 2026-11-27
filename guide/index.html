@@ -68,7 +68,7 @@
             <p class="kicker">1 DECEMBER 2026 | IN PERSON | HANDS-ON LAB GUIDE</p>
             <h1 id="page-title">OPS Microsoft Developer Day</h1>
             <p class="hero-sub">Hands-on lab guide</p>
-            <p class="hero-date">Tuesday 1 December 2026 | 08:30-16:00 ET | In person | Guide version 3.2, updated 26 November</p>
+            <p class="hero-date">Tuesday 1 December 2026 | 08:30-16:00 ET | In person | Guide version 3.2, updated 27 November</p>
             <p class="hero-intro">Today you take one Ontario government PDF form and turn it into a working web application with GitHub Copilot. You work the way you would on an OPS project: with MCP servers from the ITOD registry, the Ontario Design System and the AODA accessibility standard.</p>
           </div>
           <img class="hero-mark" src="img/event-logo.svg" alt="" width="64" height="64">
@@ -224,6 +224,7 @@ python -m pip install "pypdf[crypto]"</code></pre>
           <li><strong>Work at your own pace.</strong> The minutes beside each step are a guide. Nobody checks your progress, and there is nothing to hand in.</li>
           <li><strong>Each lab continues from the one before.</strong> If you are behind when a lab starts, finish the earlier step first.</li>
           <li><strong>Use VS Code, the GitHub Copilot app, or both.</strong> Every step works in each. Where the clicks differ, a two-column box shows both. The prompts are the same.</li>
+          <li><strong>Make Copilot Fusion your default model.</strong> It chooses a model that suits each task. That is enough for most of today’s work, and it saves tokens. GitHub also takes 30% off model costs when you use it, until 31 December 2026. If a result is weak, or you want a strong model for a planning task, select one that your model list offers, such as GPT-6.2 Sol or Claude Opus 5.5.</li>
           <li><strong>The prompts are suggestions.</strong> Change them, or write your own.</li>
           <li><strong>Everyone starts from the lab kit.</strong> It is one repository with sample forms, project instructions and a custom agent for Copilot, reference pages for the Ontario Design System and accessibility, and every prompt ready to copy. Use what helps. You build the application yourself.</li>
           <li><strong>Ask your table lead first.</strong> Each table has one, an experienced Copilot user. Work alone or as a pair.</li>
@@ -264,6 +265,7 @@ python -m pip install "pypdf[crypto]"</code></pre>
               <tr><th scope="row">Open Copilot</th><td><strong>Ctrl+Alt+I</strong> opens the Chat view</td><td>Open <strong>GitHub Copilot</strong> from the Start menu</td></tr>
               <tr><th scope="row">Start a fresh conversation</th><td><strong>New Chat</strong> (+) at the top of the Chat view</td><td><strong>+</strong> beside <strong>Sessions</strong>, then select the kit folder</td></tr>
               <tr><th scope="row">Let Copilot change files</th><td>Session Target: <strong>Copilot</strong>. Agent: <strong>Agent</strong></td><td>Mode: <strong>Interactive</strong></td></tr>
+              <tr><th scope="row">Choose the model</th><td>Model picker in the prompt box</td><td>The model name under the prompt box. Turn <strong>Copilot Fusion</strong> off to choose a model yourself</td></tr>
               <tr><th scope="row">Get a plan first</th><td>Type <code>/plan</code> before your request</td><td>Mode: <strong>Plan</strong></td></tr>
               <tr><th scope="row">Use a custom agent</th><td><strong>Agent</strong> dropdown</td><td>Agent picker in the prompt box, or type <code>/agent</code></td></tr>
               <tr><th scope="row">See and add MCP servers</th><td><strong>Extensions</strong> view, <strong>Ctrl+Shift+X</strong>: search <code>@mcp</code></td><td><strong>Customize</strong> &gt; <strong>MCP</strong></td></tr>
@@ -317,6 +319,7 @@ python -m pip install "pypdf[crypto]"</code></pre>
                 <figcaption>The Session Target control in VS Code. Source: VS Code documentation.</figcaption>
               </figure>
             </li>
+            <li>Open the model picker in the prompt box and select <strong>Copilot Fusion</strong>. Leave its effort level at <strong>Standard</strong>. No <strong>Copilot Fusion</strong> in your list? Select a strong model instead, such as <strong>GPT-6.2 Sol</strong> or <strong>Claude Opus 5.5</strong>.</li>
             <li>
               <p>Send this prompt.</p>
               <div class="box box-prompt" data-copy>
@@ -382,6 +385,7 @@ python -m pip install "pypdf[crypto]"</code></pre>
                 <li>Select <strong>+</strong> beside <strong>Sessions</strong>, then <strong>Open local folder</strong>, and select the same folder.</li>
                 <li>Under the prompt box set <strong>Environment</strong> to <strong>This computer</strong> and <strong>Workspace</strong> to <strong>Current checkout</strong>.</li>
                 <li>Set the mode to <strong>Interactive</strong>.</li>
+                <li>Select the model name under the prompt box. Turn on <strong>Copilot Fusion</strong> and select <strong>Fusion Standard</strong>.</li>
               </ol>
             </div>
           </div>
@@ -778,6 +782,7 @@ Tell me the title, and what changed in docs/story.md, if anything.</code></pre>
               <p>Start a new session in the kit folder. Set the mode to <strong>Plan</strong>, then paste the prompt.</p>
             </div>
           </div>
+          <p class="note">Want a strong model for the plan? Select it in the model picker before you send the prompt, for example <strong>GPT-6.2 Sol</strong> or <strong>Claude Opus 5.5</strong>. Go back to <strong>Copilot Fusion</strong> afterwards.</p>
           <div class="box box-prompt" data-copy>
             <p class="box-label">COPILOT PROMPT | VS CODE OR THE GITHUB COPILOT APP</p>
             <pre><code>Plan a small web application that puts the form in docs/form-spec.md online and
@@ -1376,6 +1381,7 @@ Include a description of when to use the skill.</code></pre>
               <tr><td>Copilot asks you to sign in, or says you have no access</td><td>Check the account you are signed in with. OPS account only. Tell your table lead.</td></tr>
               <tr><td>The GitHub Copilot app will not install or sign in</td><td>Do the labs in VS Code. Every step works there.</td></tr>
               <tr><td>No <strong>Session Target</strong> control or no <strong>Agent</strong> dropdown in VS Code</td><td>Your VS Code build differs from this guide. Ask your table lead.</td></tr>
+              <tr><td><strong>Copilot Fusion</strong>, or a model this guide names, is not in your model list</td><td>Your organization decides which models you see. Select a strong model that your list offers, and carry on.</td></tr>
               <tr><td><code>git clone</code> cannot find the lab kit, or asks for a password</td><td>The OPS repository opens only for your ontario.ca account. Open <a href="https://github.com/OPS-Community/ops-dev-day-dec-1-2026" target="_blank" rel="noopener">the lab repository<span class="sr-only" data-ui> (opens in a new tab)</span></a> in Edge. If GitHub shows <strong>Single sign-on to Government of Ontario</strong>, select <strong>Continue</strong> and sign in, then clone again. If Git signed you in with another account, tell your table lead. Still failing? Clone the backup copy in <a href="#lab1-step3">Lab 1 step 3</a>.</td></tr>
               <tr><td>The Central Forms Repository does not load, or blocks your request</td><td>Use a sample form from the kit, or ask your table lead for another way to get the PDF.</td></tr>
               <tr><td>The outline tool finds no fields, or fails on your PDF</td><td>No fields: the file is a guide or a print-only form, so choose another. Any other failure: use a sample form from the kit, or the screenshot prompt in <code>docs/lab-prompts.md</code>.</td></tr>
@@ -1387,6 +1393,7 @@ Include a description of when to use the skill.</code></pre>
               <tr><td>VS Code shows a form with a <strong>Create issue</strong> button, and Copilot waits</td><td>It is waiting for you. Check the repository, the title and the description in the form, then select <strong>Create issue</strong>.</td></tr>
               <tr><td>GitHub refuses the new issue, or the issue is in the wrong repository, or there are two</td><td>Refused: your account cannot create issues in the lab repository. Tell your table lead and plan from <code>docs/story.md</code>. Wrong repository, or two issues: open the extra one on GitHub, select <strong>Close issue</strong> and tell your table lead.</td></tr>
               <tr><td>A change made in one tool does not appear in the other</td><td>In the app, the session’s <strong>Workspace</strong> must be <strong>Current checkout</strong>. Start a new session with that setting.</td></tr>
+              <tr><td>Copilot’s result is weak: parts of the request are missing, or it is still wrong after you ask again</td><td>Select a strong model in the model picker, such as <strong>GPT-6.2 Sol</strong> or <strong>Claude Opus 5.5</strong>, and ask again. In the app, turn <strong>Copilot Fusion</strong> off first. Go back to <strong>Copilot Fusion</strong> afterwards.</td></tr>
               <tr><td>Copilot changes files you did not ask about</td><td>Review them in <strong>Source Control</strong> or <strong>Changes</strong> and discard the ones you do not want. Send the prompt again and name the folders Copilot may change.</td></tr>
               <tr><td>Copilot repeats the same failing action, or shows no progress for 5 minutes</td><td>Stop it and review what it changed. Start a fresh conversation and ask for a smaller piece, such as one section of the form.</td></tr>
               <tr><td>The address is already in use when the application starts</td><td>An earlier copy is still running. Send the start prompt from <a href="#lab2-step5">Lab 2 step 5</a> again: it stops the earlier copy first.</td></tr>
@@ -1412,11 +1419,12 @@ Include a description of when to use the skill.</code></pre>
               <tr><th scope="row">Forms and accessibility</th><td><a href="https://forms.mgcs.gov.on.ca/en/" target="_blank" rel="noopener">Central Forms Repository<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://forms.mgcs.gov.on.ca/en/organization/" target="_blank" rel="noopener">Forms by ministry<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://www.ontario.ca/page/how-make-websites-accessible" target="_blank" rel="noopener">How to make websites accessible (AODA)<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
               <tr><th scope="row">GitHub Copilot app</th><td><a href="https://github.com/features/ai/github-app" target="_blank" rel="noopener">Download<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/get-started/quickstart-copilot-app" target="_blank" rel="noopener">Getting started<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions" target="_blank" rel="noopener">Sessions and modes<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app" target="_blank" rel="noopener">MCP, skills and agents<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
               <tr><th scope="row">VS Code</th><td><a href="https://code.visualstudio.com/docs/agent-customization/mcp-servers" target="_blank" rel="noopener">MCP servers<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agents/run/planning" target="_blank" rel="noopener">Planning<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/custom-agents" target="_blank" rel="noopener">Custom agents<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/agent-skills" target="_blank" rel="noopener">Agent skills<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
+              <tr><th scope="row">Models</th><td><a href="https://docs.github.com/en/copilot/concepts/models/copilot-fusion" target="_blank" rel="noopener">Copilot Fusion<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/choose-a-model" target="_blank" rel="noopener">Choosing a model in the app<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://code.visualstudio.com/docs/agent-customization/language-models" target="_blank" rel="noopener">Models in VS Code<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
               <tr><th scope="row">GitHub and testing</th><td><a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server" target="_blank" rel="noopener">GitHub MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/copilot/tutorials/cloud-agent/get-the-best-results" target="_blank" rel="noopener">Writing an issue for Copilot<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue" target="_blank" rel="noopener">Creating an issue by hand<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/" target="_blank" rel="noopener">Spec-driven development<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">Playwright MCP server<span class="sr-only" data-ui> (opens in a new tab)</span></a>  |  <a href="https://playwright.dev/docs/accessibility-testing" target="_blank" rel="noopener">Accessibility testing with axe<span class="sr-only" data-ui> (opens in a new tab)</span></a></td></tr>
             </tbody>
           </table>
         </div>
-        <p class="note">Links checked on 26 November 2026. Menu names can differ in the OPS builds of VS Code and the GitHub Copilot app.</p>
+        <p class="note">Links checked on 27 November 2026. Menu names can differ in the OPS builds of VS Code and the GitHub Copilot app.</p>
       </div>
     </section>
   </main>
